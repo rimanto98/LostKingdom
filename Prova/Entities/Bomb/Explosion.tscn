@@ -1,0 +1,45 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Entities/Bomb/Explosion.gd" type="Script" id=1]
+[ext_resource path="res://Entities/Bomb/09-Bomb/Boooooom/tile000.png" type="Texture" id=2]
+[ext_resource path="res://Entities/Bomb/09-Bomb/Boooooom/tile001.png" type="Texture" id=3]
+[ext_resource path="res://Entities/Bomb/09-Bomb/Boooooom/tile002.png" type="Texture" id=4]
+[ext_resource path="res://Entities/Bomb/09-Bomb/Boooooom/tile003.png" type="Texture" id=5]
+[ext_resource path="res://Entities/Bomb/09-Bomb/Boooooom/tile004.png" type="Texture" id=6]
+[ext_resource path="res://Entities/Bomb/09-Bomb/Boooooom/tile005.png" type="Texture" id=7]
+[ext_resource path="res://Audio/bombExplosionSound.wav" type="AudioStream" id=8]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": false,
+"name": "explosion",
+"speed": 10.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 52.3119, 44.1832 )
+
+[node name="Area2D" type="Area2D"]
+position = Vector2( -0.31189, 0.935677 )
+script = ExtResource( 1 )
+
+[node name="Explosion" type="AnimatedSprite" parent="."]
+position = Vector2( 0.857376, 1.28606 )
+scale = Vector2( 2.02225, 1.5971 )
+frames = SubResource( 1 )
+animation = "explosion"
+
+[node name="ExplosionHitBox" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 1.24757 )
+shape = SubResource( 2 )
+
+[node name="ActiveTime" type="Timer" parent="."]
+wait_time = 0.6
+one_shot = true
+
+[node name="HitTime" type="Timer" parent="."]
+
+[node name="ExplosionSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -20.0

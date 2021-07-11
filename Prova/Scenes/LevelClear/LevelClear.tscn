@@ -1,0 +1,37 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/Diamond/tile000.png" type="Texture" id=1]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/Diamond/tile001.png" type="Texture" id=2]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/Diamond/tile002.png" type="Texture" id=3]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/Diamond/tile003.png" type="Texture" id=4]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/Diamond/tile004.png" type="Texture" id=5]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/Diamond/tile005.png" type="Texture" id=6]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/Diamond/tile006.png" type="Texture" id=7]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/Diamond/tile007.png" type="Texture" id=8]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/Diamond/tile008.png" type="Texture" id=9]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/Diamond/tile009.png" type="Texture" id=10]
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 6.16235, 5.13242 )
+
+[sub_resource type="SpriteFrames" id=17]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "idle",
+"speed": 9.0
+} ]
+
+[node name="LevelClear" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 16 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -2.03975, 0.114182 )
+frames = SubResource( 17 )
+animation = "idle"
+frame = 5
+playing = true

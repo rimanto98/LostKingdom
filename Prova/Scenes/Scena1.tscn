@@ -1,0 +1,1098 @@
+[gd_scene load_steps=138 format=2]
+
+[ext_resource path="res://Scenes/Scena1/Scena1.gd" type="Script" id=1]
+[ext_resource path="res://Entities/TileMap/TileMap.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Entities/Background/BackGround.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Sign/Sign.gd" type="Script" id=4]
+[ext_resource path="res://assets/signpost.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Cabinet.gd" type="Script" id=6]
+[ext_resource path="res://assets/Cabinet_sprites/tile000.png" type="Texture" id=7]
+[ext_resource path="res://assets/Cabinet_sprites/tile001.png" type="Texture" id=8]
+[ext_resource path="res://assets/Cabinet_sprites/tile002.png" type="Texture" id=9]
+[ext_resource path="res://assets/Cabinet_sprites/tile003.png" type="Texture" id=10]
+[ext_resource path="res://Audio/changeOption.wav" type="AudioStream" id=11]
+[ext_resource path="res://Scenes/Bomb1.gd" type="Script" id=12]
+[ext_resource path="res://Entities/Bomb/09-Bomb/Bomb Off.png" type="Texture" id=13]
+[ext_resource path="res://Scenes/Emeny.gd" type="Script" id=14]
+[ext_resource path="res://Entities/Enemy/03-Pig/Idle/tile000.png" type="Texture" id=15]
+[ext_resource path="res://Entities/Enemy/03-Pig/Idle/tile001.png" type="Texture" id=16]
+[ext_resource path="res://Entities/Enemy/03-Pig/Idle/tile002.png" type="Texture" id=17]
+[ext_resource path="res://Entities/Enemy/03-Pig/Idle/tile003.png" type="Texture" id=18]
+[ext_resource path="res://Entities/Enemy/03-Pig/Idle/tile004.png" type="Texture" id=19]
+[ext_resource path="res://Entities/Enemy/03-Pig/Idle/tile005.png" type="Texture" id=20]
+[ext_resource path="res://Entities/Enemy/03-Pig/Idle/tile006.png" type="Texture" id=21]
+[ext_resource path="res://Entities/Enemy/03-Pig/Idle/tile007.png" type="Texture" id=22]
+[ext_resource path="res://Entities/Enemy/03-Pig/Idle/tile008.png" type="Texture" id=23]
+[ext_resource path="res://Entities/Enemy/03-Pig/Idle/tile009.png" type="Texture" id=24]
+[ext_resource path="res://Entities/Enemy/03-Pig/Idle/tile010.png" type="Texture" id=25]
+[ext_resource path="res://Entities/Enemy/03-Pig/Death/tile000.png" type="Texture" id=26]
+[ext_resource path="res://Entities/Enemy/03-Pig/Death/tile001.png" type="Texture" id=27]
+[ext_resource path="res://Entities/Enemy/03-Pig/Death/tile002.png" type="Texture" id=28]
+[ext_resource path="res://Entities/Enemy/03-Pig/Death/tile003.png" type="Texture" id=29]
+[ext_resource path="res://Entities/Enemy/03-Pig/Run/tile000.png" type="Texture" id=30]
+[ext_resource path="res://Entities/Enemy/03-Pig/Run/tile001.png" type="Texture" id=31]
+[ext_resource path="res://Entities/Enemy/03-Pig/Run/tile002.png" type="Texture" id=32]
+[ext_resource path="res://Entities/Enemy/03-Pig/Run/tile003.png" type="Texture" id=33]
+[ext_resource path="res://Entities/Enemy/03-Pig/Run/tile004.png" type="Texture" id=34]
+[ext_resource path="res://Entities/Enemy/03-Pig/Run/tile005.png" type="Texture" id=35]
+[ext_resource path="res://Scenes/HitBox.gd" type="Script" id=36]
+[ext_resource path="res://Scenes/HurtBox.gd" type="Script" id=37]
+[ext_resource path="res://Audio/enemyKilled.wav" type="AudioStream" id=38]
+[ext_resource path="res://Scenes/KinematicBody2D.gd" type="Script" id=39]
+[ext_resource path="res://Scenes/PauseMenu/Pause.gd" type="Script" id=40]
+[ext_resource path="res://AllSprites/Sprites/13-Dialogue Boxes/lunchds.ttf" type="DynamicFontData" id=41]
+[ext_resource path="res://Scenes/PauseMenu/Resume.gd" type="Script" id=42]
+[ext_resource path="res://Scenes/Scena1/Guide.gd" type="Script" id=43]
+[ext_resource path="res://Scenes/PauseMenu/TitleScreen.gd" type="Script" id=44]
+[ext_resource path="res://assets/RPGIcons/tile005.png" type="Texture" id=45]
+[ext_resource path="res://Scenes/PauseMenu/PointerPauseMenu.gd" type="Script" id=46]
+[ext_resource path="res://Audio/rejectOption.wav" type="AudioStream" id=47]
+[ext_resource path="res://Audio/confirm.wav" type="AudioStream" id=48]
+[ext_resource path="res://Entities/Player/01-King Human/Idle/tile000.png" type="Texture" id=49]
+[ext_resource path="res://Entities/Player/01-King Human/Idle/tile001.png" type="Texture" id=50]
+[ext_resource path="res://Entities/Player/01-King Human/Idle/tile002.png" type="Texture" id=51]
+[ext_resource path="res://Entities/Player/01-King Human/Idle/tile003.png" type="Texture" id=52]
+[ext_resource path="res://Entities/Player/01-King Human/Idle/tile004.png" type="Texture" id=53]
+[ext_resource path="res://Entities/Player/01-King Human/Idle/tile005.png" type="Texture" id=54]
+[ext_resource path="res://Entities/Player/01-King Human/Idle/tile006.png" type="Texture" id=55]
+[ext_resource path="res://Entities/Player/01-King Human/Idle/tile007.png" type="Texture" id=56]
+[ext_resource path="res://Entities/Player/01-King Human/Idle/tile008.png" type="Texture" id=57]
+[ext_resource path="res://Entities/Player/01-King Human/Idle/tile009.png" type="Texture" id=58]
+[ext_resource path="res://Entities/Player/01-King Human/Idle/tile010.png" type="Texture" id=59]
+[ext_resource path="res://Entities/Player/01-King Human/Death/tile000.png" type="Texture" id=60]
+[ext_resource path="res://Entities/Player/01-King Human/Death/tile001.png" type="Texture" id=61]
+[ext_resource path="res://Entities/Player/01-King Human/Death/tile002.png" type="Texture" id=62]
+[ext_resource path="res://Entities/Player/01-King Human/Death/tile003.png" type="Texture" id=63]
+[ext_resource path="res://Entities/Player/01-King Human/Hit/tile000.png" type="Texture" id=64]
+[ext_resource path="res://Entities/Player/01-King Human/Hit/tile001.png" type="Texture" id=65]
+[ext_resource path="res://Entities/Player/01-King Human/Jump (78x58).png" type="Texture" id=66]
+[ext_resource path="res://Entities/Player/01-King Human/Attack/tile000.png" type="Texture" id=67]
+[ext_resource path="res://Entities/Player/01-King Human/Attack/tile001.png" type="Texture" id=68]
+[ext_resource path="res://Entities/Player/01-King Human/Attack/tile002.png" type="Texture" id=69]
+[ext_resource path="res://Entities/Player/01-King Human/Run/tile000.png" type="Texture" id=70]
+[ext_resource path="res://Entities/Player/01-King Human/Run/tile001.png" type="Texture" id=71]
+[ext_resource path="res://Entities/Player/01-King Human/Run/tile002.png" type="Texture" id=72]
+[ext_resource path="res://Entities/Player/01-King Human/Run/tile003.png" type="Texture" id=73]
+[ext_resource path="res://Entities/Player/01-King Human/Run/tile004.png" type="Texture" id=74]
+[ext_resource path="res://Entities/Player/01-King Human/Run/tile005.png" type="Texture" id=75]
+[ext_resource path="res://Entities/Player/01-King Human/Run/tile006.png" type="Texture" id=76]
+[ext_resource path="res://Entities/Player/01-King Human/Run/tile007.png" type="Texture" id=77]
+[ext_resource path="res://Entities/Player/01-King Human/DoorOut/tile000.png" type="Texture" id=78]
+[ext_resource path="res://Entities/Player/01-King Human/DoorOut/tile001.png" type="Texture" id=79]
+[ext_resource path="res://Entities/Player/01-King Human/DoorOut/tile002.png" type="Texture" id=80]
+[ext_resource path="res://Entities/Player/01-King Human/DoorOut/tile003.png" type="Texture" id=81]
+[ext_resource path="res://Entities/Player/01-King Human/DoorOut/tile004.png" type="Texture" id=82]
+[ext_resource path="res://Entities/Player/01-King Human/DoorOut/tile005.png" type="Texture" id=83]
+[ext_resource path="res://Entities/Player/01-King Human/DoorOut/tile006.png" type="Texture" id=84]
+[ext_resource path="res://Entities/Player/01-King Human/DoorOut/tile007.png" type="Texture" id=85]
+[ext_resource path="res://Entities/Player/01-King Human/Fall (78x58).png" type="Texture" id=86]
+[ext_resource path="res://Entities/Player/01-King Human/Ground (78x58).png" type="Texture" id=87]
+[ext_resource path="res://assets/Keyboard & Mouse/Light/Keyboard_White_Enter_Alt.png" type="Texture" id=88]
+[ext_resource path="res://Audio/bomb_pickup_sound.wav" type="AudioStream" id=89]
+[ext_resource path="res://Audio/jumpSound.wav" type="AudioStream" id=90]
+[ext_resource path="res://Audio/bombDropSound.wav" type="AudioStream" id=91]
+[ext_resource path="res://Audio/damageTaken.wav" type="AudioStream" id=92]
+[ext_resource path="res://Audio/gameOver.wav" type="AudioStream" id=93]
+[ext_resource path="res://Audio/swing.wav" type="AudioStream" id=94]
+[ext_resource path="res://Scenes/HammerHitbox.gd" type="Script" id=95]
+[ext_resource path="res://Scenes/UI.gd" type="Script" id=96]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/Live Bar.png" type="Texture" id=97]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/HeartIdle/tile000.png" type="Texture" id=98]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/HeartIdle/tile001.png" type="Texture" id=99]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/HeartIdle/tile002.png" type="Texture" id=100]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/HeartIdle/tile003.png" type="Texture" id=101]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/HeartIdle/tile004.png" type="Texture" id=102]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/HeartIdle/tile005.png" type="Texture" id=103]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/HeartIdle/tile006.png" type="Texture" id=104]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/HeartIdle/tile007.png" type="Texture" id=105]
+[ext_resource path="res://assets/menu-frame-9patch.png" type="Texture" id=106]
+[ext_resource path="res://Scenes/TextBox.gd" type="Script" id=107]
+[ext_resource path="res://Audio/SuperHero_original_no_Intro.wav" type="AudioStream" id=108]
+[ext_resource path="res://Scenes/LevelClear/Level1Clear.gd" type="Script" id=109]
+[ext_resource path="res://Audio/LevelClear.wav" type="AudioStream" id=110]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/Diamond/tile000.png" type="Texture" id=111]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/Diamond/tile001.png" type="Texture" id=112]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/Diamond/tile002.png" type="Texture" id=113]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/Diamond/tile003.png" type="Texture" id=114]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/Diamond/tile004.png" type="Texture" id=115]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/Diamond/tile005.png" type="Texture" id=116]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/Diamond/tile006.png" type="Texture" id=117]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/Diamond/tile007.png" type="Texture" id=118]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/Diamond/tile008.png" type="Texture" id=119]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/Diamond/tile009.png" type="Texture" id=120]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 43.4512, 40.1776 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 8.0116, 8.18249 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 9.45868, 5.06414 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "idle",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ],
+"loop": true,
+"name": "death",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ) ],
+"loop": true,
+"name": "run",
+"speed": 10.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 11.5177, 7.32815 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 9.26367, 3.31779 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 150
+font_data = ExtResource( 41 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 100
+font_data = ExtResource( 41 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 9.09615, 12.4611 )
+
+[sub_resource type="SpriteFrames" id=11]
+animations = [ {
+"frames": [ ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ) ],
+"loop": true,
+"name": "idle",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ) ],
+"loop": false,
+"name": "death",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 64 ), ExtResource( 65 ) ],
+"loop": true,
+"name": "hit",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 66 ) ],
+"loop": false,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ) ],
+"loop": false,
+"name": "attack",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ) ],
+"loop": true,
+"name": "run",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 78 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 85 ) ],
+"loop": false,
+"name": "door_out",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 86 ) ],
+"loop": false,
+"name": "falling",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 87 ) ],
+"loop": false,
+"name": "ground",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 11.444, 18.9335 )
+
+[sub_resource type="SpriteFrames" id=13]
+animations = [ {
+"frames": [ ExtResource( 98 ), ExtResource( 99 ), ExtResource( 100 ), ExtResource( 101 ), ExtResource( 102 ), ExtResource( 103 ), ExtResource( 104 ), ExtResource( 105 ) ],
+"loop": true,
+"name": "heart_idle",
+"speed": 10.0
+} ]
+
+[sub_resource type="DynamicFont" id=14]
+font_data = ExtResource( 41 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 50
+font_data = ExtResource( 41 )
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 6.16235, 5.13242 )
+
+[sub_resource type="SpriteFrames" id=17]
+animations = [ {
+"frames": [ ExtResource( 111 ), ExtResource( 112 ), ExtResource( 113 ), ExtResource( 114 ), ExtResource( 115 ), ExtResource( 116 ), ExtResource( 117 ), ExtResource( 118 ), ExtResource( 119 ), ExtResource( 120 ) ],
+"loop": true,
+"name": "idle",
+"speed": 9.0
+} ]
+
+[node name="Game" type="Node2D"]
+position = Vector2( 17.9999, 24 )
+script = ExtResource( 1 )
+
+[node name="TileMap" parent="." instance=ExtResource( 2 )]
+tile_data = PoolIntArray( -393047, 6, 0, -327511, 6, 0, -261975, 6, 0, -196439, 6, 0, -130903, 6, 0, -65367, 6, 0, -65362, 6, 0, 169, 6, 0, 174, 6, 0, 65592, 4, 0, 65598, 4, 0, 65685, 10, 0, 65686, 10, 0, 65687, 10, 0, 65688, 10, 0, 65689, 10, 0, 65690, 10, 0, 65691, 10, 0, 65692, 10, 0, 65693, 10, 0, 65694, 10, 0, 65695, 10, 0, 65696, 10, 0, 65697, 10, 0, 65698, 10, 0, 65699, 10, 0, 65700, 10, 0, 65701, 10, 0, 65702, 10, 0, 65703, 10, 0, 65704, 10, 0, 65705, 10, 0, 65710, 6, 0, 131096, 0, 0, 131097, 3, 0, 131128, 0, 0, 131129, 1, 0, 131130, 1, 0, 131131, 1, 0, 131132, 1, 0, 131133, 1, 0, 131134, 3, 0, 131138, 6, 0, 131164, 2, 0, 131171, 2, 0, 131218, 2, 0, 131246, 6, 0, 196627, 0, 0, 196628, 3, 0, 196661, 2, 0, 196703, 0, 0, 196704, 3, 0, 196712, 10, 0, 196733, 10, 0, 196749, 0, 0, 196750, 3, 0, 196757, 19, 0, 196759, 19, 0, 196760, 19, 0, 196761, 19, 0, 196763, 19, 0, 196764, 19, 0, 196765, 19, 0, 196766, 19, 0, 196767, 19, 0, 196768, 19, 0, 196769, 19, 0, 196770, 19, 0, 196772, 19, 0, 196773, 19, 0, 196774, 19, 0, 196775, 19, 0, 196776, 19, 0, 196782, 6, 0, 262158, 0, 0, 262159, 3, 0, 262174, 10, 0, 262188, 10, 0, 262193, 0, 0, 262194, 3, 0, 262224, 0, 0, 262225, 1, 0, 262226, 1, 0, 262227, 1, 0, 262228, 3, 0, 262279, 0, 0, 262280, 1, 0, 262281, 3, 0, 262293, 19, 0, 262295, 19, 0, 262296, 19, 0, 262298, 19, 0, 262299, 19, 0, 262300, 19, 0, 262301, 19, 0, 262302, 19, 0, 262303, 19, 0, 262304, 19, 0, 262305, 19, 0, 262306, 19, 0, 262308, 19, 0, 262318, 6, 0, 393207, 10, 0, 393208, 10, 0, 393209, 10, 0, 393210, 10, 0, 393211, 10, 0, 393212, 10, 0, 393213, 10, 0, 393214, 10, 0, 393215, 10, 0, 327680, 10, 0, 327681, 10, 0, 327682, 10, 0, 327683, 10, 0, 327684, 10, 0, 327685, 10, 0, 327686, 10, 0, 327687, 10, 0, 327688, 10, 0, 327689, 10, 0, 327690, 10, 0, 327691, 10, 0, 327692, 10, 0, 327693, 10, 0, 327694, 10, 0, 327695, 10, 0, 327696, 10, 0, 327697, 10, 0, 327698, 10, 0, 327699, 10, 0, 327700, 10, 0, 327701, 10, 0, 327702, 10, 0, 327703, 10, 0, 327704, 10, 0, 327705, 10, 0, 327706, 10, 0, 327707, 10, 0, 327708, 10, 0, 327709, 10, 0, 327711, 10, 0, 327712, 10, 0, 327713, 10, 0, 327714, 10, 0, 327715, 10, 0, 327716, 10, 0, 327717, 10, 0, 327718, 10, 0, 327719, 10, 0, 327720, 10, 0, 327721, 10, 0, 327722, 10, 0, 327723, 10, 0, 327725, 10, 0, 327726, 10, 0, 327727, 10, 0, 327728, 10, 0, 327729, 10, 0, 327730, 10, 0, 327731, 10, 0, 327732, 10, 0, 327733, 10, 0, 327734, 10, 0, 327735, 10, 0, 327736, 10, 0, 327737, 10, 0, 327738, 10, 0, 327739, 10, 0, 327740, 10, 0, 327741, 10, 0, 327742, 10, 0, 327743, 10, 0, 327744, 10, 0, 327745, 10, 0, 327746, 10, 0, 327747, 10, 0, 327748, 10, 0, 327749, 10, 0, 327750, 10, 0, 327751, 10, 0, 327752, 10, 0, 327753, 10, 0, 327754, 10, 0, 327755, 10, 0, 327769, 10, 0, 327770, 10, 0, 327771, 10, 0, 327772, 10, 0, 327773, 10, 0, 327774, 10, 0, 327775, 10, 0, 327776, 10, 0, 327777, 10, 0, 327778, 10, 0, 327779, 10, 0, 327780, 10, 0, 327781, 10, 0, 327782, 10, 0, 327783, 10, 0, 327784, 11, 0, 327785, 10, 0, 327786, 10, 0, 327787, 10, 0, 327788, 10, 0, 327789, 10, 0, 327790, 10, 0, 327791, 10, 0, 327792, 10, 0, 327793, 10, 0, 327794, 10, 0, 327795, 10, 0, 327796, 10, 0, 327797, 10, 0, 327798, 10, 0, 327799, 10, 0, 327800, 10, 0, 327801, 10, 0, 327802, 10, 0, 327803, 10, 0, 327804, 10, 0, 327805, 11, 0, 327806, 10, 0, 327807, 10, 0, 327808, 10, 0, 327809, 10, 0, 327810, 10, 0, 327811, 10, 0, 327829, 19, 0, 327831, 19, 0, 327832, 19, 0, 327833, 19, 0, 327835, 19, 0, 327836, 19, 0, 327837, 19, 0, 327838, 19, 0, 327839, 19, 0, 327840, 19, 0, 327841, 19, 0, 327842, 19, 0, 327844, 21, 0, 327845, 21, 0, 327854, 6, 0, 458744, 11, 0, 458745, 19, 0, 458746, 19, 0, 458747, 19, 0, 458748, 19, 0, 458749, 19, 0, 458750, 19, 0, 458751, 19, 0, 393216, 19, 0, 393217, 19, 0, 393218, 11, 0, 393219, 11, 0, 393220, 11, 0, 393221, 11, 0, 393222, 11, 0, 393223, 11, 0, 393224, 11, 0, 393225, 11, 0, 393226, 19, 0, 393227, 19, 0, 393228, 19, 0, 393245, 19, 0, 393257, 19, 0, 393259, 19, 0, 393320, 19, 0, 393368, 19, 0, 393370, 21, 0, 393371, 21, 0, 393372, 21, 0, 393373, 21, 0, 393374, 21, 0, 393375, 21, 0, 393376, 21, 0, 393377, 21, 0, 393378, 21, 0, 393379, 21, 0, 393380, 21, 0, 393381, 21, 0, 393384, 10, 0, 393385, 10, 0, 393386, 10, 0, 393387, 10, 0, 393388, 10, 0, 393389, 10, 0, 393390, 10, 0, 524279, 19, 0, 524280, 19, 0, 524281, 19, 0, 524282, 19, 0, 524283, 19, 0, 524284, 19, 0, 524285, 19, 0, 524286, 19, 0, 524287, 19, 0, 458752, 19, 0, 458753, 19, 0, 458754, 19, 0, 458755, 19, 0, 458756, 19, 0, 458757, 19, 0, 458758, 19, 0, 458761, 19, 0, 458762, 19, 0, 458764, 19, 0, 458765, 19, 0, 458766, 19, 0, 458767, 19, 0, 458768, 19, 0, 458769, 19, 0, 458770, 19, 0, 458771, 19, 0, 458772, 19, 0, 458773, 19, 0, 458774, 19, 0, 458775, 19, 0, 458776, 19, 0, 458777, 19, 0, 458778, 19, 0, 458779, 19, 0, 458780, 19, 0, 458781, 19, 0, 458782, 19, 0, 458783, 19, 0, 458784, 19, 0, 458785, 19, 0, 458786, 19, 0, 458787, 19, 0, 458788, 19, 0, 458789, 19, 0, 458790, 19, 0, 458791, 19, 0, 458792, 19, 0, 458793, 19, 0, 458795, 19, 0, 458796, 19, 0, 458798, 19, 0, 458799, 19, 0, 458800, 19, 0, 458801, 19, 0, 458802, 19, 0, 458803, 19, 0, 458804, 19, 0, 458805, 19, 0, 458806, 19, 0, 458807, 19, 0, 458808, 19, 0, 458809, 19, 0, 458810, 19, 0, 458811, 19, 0, 458813, 19, 0, 458814, 19, 0, 458815, 19, 0, 458816, 19, 0, 458818, 19, 0, 458819, 19, 0, 458820, 19, 0, 458821, 19, 0, 458822, 19, 0, 458823, 19, 0, 458824, 19, 0, 458825, 19, 0, 458826, 19, 0, 458841, 19, 0, 458843, 19, 0, 458845, 19, 0, 458847, 19, 0, 458848, 19, 0, 458850, 19, 0, 458851, 19, 0, 458852, 19, 0, 458853, 19, 0, 458854, 19, 0, 458856, 19, 0, 458857, 19, 0, 458858, 19, 0, 458859, 19, 0, 458860, 19, 0, 458861, 19, 0, 458862, 19, 0, 458864, 19, 0, 458865, 19, 0, 458866, 19, 0, 458867, 19, 0, 458868, 19, 0, 458869, 19, 0, 458870, 19, 0, 458871, 19, 0, 458872, 19, 0, 458873, 19, 0, 458874, 19, 0, 458875, 19, 0, 458876, 19, 0, 458877, 19, 0, 458878, 19, 0, 458879, 19, 0, 458880, 19, 0, 458881, 19, 0, 458882, 19, 0, 458904, 19, 0, 458906, 21, 0, 458907, 21, 0, 458908, 21, 0, 458909, 21, 0, 458910, 21, 0, 458911, 21, 0, 458912, 21, 0, 458913, 21, 0, 458914, 21, 0, 458915, 21, 0, 458916, 21, 0, 458917, 21, 0, 458919, 10, 0, 458922, 12, 0, 458925, 11, 0, 589815, 19, 0, 589816, 19, 0, 589817, 19, 0, 589818, 19, 0, 589819, 19, 0, 589820, 19, 0, 589821, 19, 0, 589822, 19, 0, 589823, 19, 0, 524288, 19, 0, 524289, 19, 0, 524290, 19, 0, 524291, 19, 0, 524292, 19, 0, 524349, 19, 0, 524351, 19, 0, 524352, 19, 0, 524353, 19, 0, 524354, 19, 0, 524355, 19, 0, 524356, 19, 0, 524357, 19, 0, 524358, 19, 0, 524359, 19, 0, 524360, 19, 0, 524361, 19, 0, 524362, 19, 0, 524377, 19, 0, 524379, 19, 0, 524380, 19, 0, 524381, 19, 0, 524382, 19, 0, 524383, 19, 0, 524384, 19, 0, 524385, 19, 0, 524386, 19, 0, 524387, 19, 0, 524388, 19, 0, 524389, 19, 0, 524390, 19, 0, 524405, 19, 0, 524406, 19, 0, 524407, 19, 0, 524408, 19, 0, 524409, 19, 0, 524410, 19, 0, 524411, 19, 0, 524412, 19, 0, 524413, 19, 0, 524414, 19, 0, 524415, 19, 0, 524416, 19, 0, 524417, 19, 0, 524418, 19, 0, 524437, 19, 0, 524440, 19, 0, 524442, 21, 0, 524443, 21, 0, 524444, 21, 0, 524445, 19, 0, 524447, 21, 0, 524448, 21, 0, 524449, 19, 0, 524450, 19, 0, 524452, 19, 0, 524453, 19, 0, 524454, 19, 0, 524455, 19, 0, 524456, 19, 0, 524460, 11, 0, 524461, 19, 0, 655351, 19, 0, 655352, 19, 0, 655353, 19, 0, 655354, 19, 0, 655355, 19, 0, 655356, 19, 0, 655357, 19, 0, 655358, 19, 0, 655359, 19, 0, 589824, 19, 0, 589825, 19, 0, 589826, 19, 0, 589827, 19, 0, 589828, 19, 0, 589885, 19, 0, 589886, 19, 0, 589887, 19, 0, 589888, 19, 0, 589889, 19, 0, 589890, 19, 0, 589891, 19, 0, 589892, 19, 0, 589893, 19, 0, 589894, 19, 0, 589895, 19, 0, 589896, 19, 0, 589897, 19, 0, 589898, 19, 0, 589913, 19, 0, 589915, 19, 0, 589916, 19, 0, 589917, 19, 0, 589918, 19, 0, 589919, 19, 0, 589920, 19, 0, 589921, 19, 0, 589922, 19, 0, 589923, 19, 0, 589924, 19, 0, 589925, 19, 0, 589926, 19, 0, 589941, 19, 0, 589942, 19, 0, 589943, 19, 0, 589944, 19, 0, 589945, 19, 0, 589946, 19, 0, 589947, 19, 0, 589948, 19, 0, 589949, 19, 0, 589950, 19, 0, 589951, 19, 0, 589952, 19, 0, 589954, 19, 0, 589973, 19, 0, 589975, 21, 0, 589976, 19, 0, 589978, 21, 0, 589979, 21, 0, 589980, 21, 0, 589981, 21, 0, 589982, 21, 0, 589983, 21, 0, 589984, 21, 0, 589985, 19, 0, 589986, 19, 0, 589988, 19, 0, 589989, 19, 0, 589990, 19, 0, 589992, 19, 0, 589993, 19, 0, 589994, 19, 0, 589995, 19, 0, 589997, 19, 0, 720887, 19, 0, 720888, 19, 0, 720889, 19, 0, 720890, 19, 0, 720891, 19, 0, 720892, 19, 0, 720893, 19, 0, 720894, 19, 0, 720895, 19, 0, 655360, 19, 0, 655361, 19, 0, 655362, 19, 0, 655363, 19, 0, 655364, 19, 0, 655421, 19, 0, 655422, 19, 0, 655423, 19, 0, 655424, 19, 0, 655425, 19, 0, 655427, 19, 0, 655428, 19, 0, 655429, 19, 0, 655430, 19, 0, 655431, 19, 0, 655432, 19, 0, 655434, 19, 0, 655449, 19, 0, 655450, 19, 0, 655451, 19, 0, 655452, 19, 0, 655453, 19, 0, 655454, 19, 0, 655455, 19, 0, 655456, 19, 0, 655457, 19, 0, 655458, 19, 0, 655460, 19, 0, 655461, 19, 0, 655462, 19, 0, 655477, 19, 0, 655478, 19, 0, 655479, 19, 0, 655480, 19, 0, 655481, 19, 0, 655482, 19, 0, 655483, 19, 0, 655484, 19, 0, 655485, 19, 0, 655486, 19, 0, 655487, 19, 0, 655488, 19, 0, 655490, 19, 0, 655509, 19, 0, 655511, 21, 0, 655512, 19, 0, 655513, 19, 0, 655515, 21, 0, 655516, 21, 0, 655517, 21, 0, 655518, 21, 0, 655519, 21, 0, 655520, 21, 0, 655521, 19, 0, 655522, 19, 0, 655524, 19, 0, 655526, 19, 0, 655527, 19, 0, 655528, 19, 0, 655529, 19, 0, 655530, 19, 0, 655531, 19, 0, 655533, 19, 0, 786423, 19, 0, 786424, 19, 0, 786425, 19, 0, 786426, 19, 0, 786427, 19, 0, 786428, 19, 0, 786429, 19, 0, 786430, 19, 0, 786431, 19, 0, 720896, 19, 0, 720897, 19, 0, 720898, 19, 0, 720899, 19, 0, 720900, 19, 0, 720957, 19, 0, 720958, 19, 0, 720960, 19, 0, 720961, 19, 0, 720962, 19, 0, 720963, 19, 0, 720964, 19, 0, 720965, 19, 0, 720966, 19, 0, 720967, 19, 0, 720968, 19, 0, 720970, 19, 0, 720985, 19, 0, 720986, 19, 0, 720987, 19, 0, 720988, 19, 0, 720989, 19, 0, 720990, 19, 0, 720991, 19, 0, 720992, 19, 0, 720993, 19, 0, 720994, 19, 0, 720995, 19, 0, 720996, 19, 0, 720997, 19, 0, 720998, 19, 0, 721013, 19, 0, 721014, 19, 0, 721015, 19, 0, 721016, 19, 0, 721017, 19, 0, 721018, 19, 0, 721019, 19, 0, 721020, 19, 0, 721021, 19, 0, 721022, 19, 0, 721023, 19, 0, 721024, 19, 0, 721026, 19, 0, 721045, 19, 0, 721047, 21, 0, 721048, 19, 0, 721049, 19, 0, 721051, 21, 0, 721052, 19, 0, 721054, 21, 0, 721055, 21, 0, 721056, 21, 0, 721057, 19, 0, 721058, 19, 0, 721060, 19, 0, 721061, 19, 0, 721062, 19, 0, 721063, 19, 0, 721064, 19, 0, 721065, 19, 0, 721066, 19, 0, 721067, 19, 0, 721068, 19, 0, 721069, 19, 0, 851959, 19, 0, 851960, 19, 0, 851961, 19, 0, 851962, 19, 0, 851963, 19, 0, 851964, 19, 0, 851965, 19, 0, 851966, 19, 0, 851967, 19, 0, 786432, 19, 0, 786433, 19, 0, 786434, 19, 0, 786435, 19, 0, 786436, 19, 0, 786493, 19, 0, 786494, 19, 0, 786495, 19, 0, 786496, 19, 0, 786497, 19, 0, 786498, 19, 0, 786499, 19, 0, 786500, 19, 0, 786501, 19, 0, 786502, 19, 0, 786503, 19, 0, 786504, 19, 0, 786506, 19, 0, 786521, 19, 0, 786522, 19, 0, 786523, 19, 0, 786524, 19, 0, 786525, 19, 0, 786526, 19, 0, 786527, 19, 0, 786528, 19, 0, 786530, 19, 0, 786531, 19, 0, 786533, 19, 0, 786534, 19, 0, 786549, 19, 0, 786550, 19, 0, 786551, 19, 0, 786552, 19, 0, 786553, 19, 0, 786554, 19, 0, 786555, 19, 0, 786556, 19, 0, 786557, 19, 0, 786558, 19, 0, 786559, 19, 0, 786560, 19, 0, 786562, 19, 0, 786581, 19, 0, 786583, 21, 0, 786584, 19, 0, 786586, 21, 0, 786587, 21, 0, 786588, 21, 0, 786589, 21, 0, 786590, 21, 0, 786591, 21, 0, 786592, 21, 0, 786593, 19, 0, 786594, 19, 0, 786596, 19, 0, 786597, 19, 0, 786598, 19, 0, 786599, 19, 0, 786601, 19, 0, 786603, 19, 0, 786604, 19, 0, 786605, 19, 0, 917495, 19, 0, 917496, 19, 0, 917497, 19, 0, 917498, 19, 0, 917499, 19, 0, 917500, 19, 0, 917501, 19, 0, 917502, 19, 0, 917503, 19, 0, 851968, 19, 0, 851969, 19, 0, 851970, 19, 0, 851971, 19, 0, 851972, 19, 0, 852029, 19, 0, 852030, 19, 0, 852031, 19, 0, 852032, 19, 0, 852033, 19, 0, 852034, 19, 0, 852035, 19, 0, 852036, 19, 0, 852037, 19, 0, 852038, 19, 0, 852039, 19, 0, 852040, 19, 0, 852041, 19, 0, 852042, 19, 0, 852057, 19, 0, 852059, 19, 0, 852060, 19, 0, 852061, 19, 0, 852062, 19, 0, 852063, 19, 0, 852064, 19, 0, 852066, 19, 0, 852067, 19, 0, 852068, 19, 0, 852069, 19, 0, 852070, 19, 0, 852085, 19, 0, 852086, 19, 0, 852087, 19, 0, 852088, 19, 0, 852089, 19, 0, 852090, 19, 0, 852091, 19, 0, 852092, 19, 0, 852093, 19, 0, 852094, 19, 0, 852095, 19, 0, 852096, 19, 0, 852098, 19, 0, 852117, 19, 0, 852119, 21, 0, 852120, 21, 0, 852121, 21, 0, 852122, 21, 0, 852123, 21, 0, 852124, 21, 0, 852125, 21, 0, 852126, 21, 0, 852127, 19, 0, 852129, 19, 0, 852130, 19, 0, 852132, 19, 0, 852133, 19, 0, 852134, 19, 0, 852135, 19, 0, 852137, 19, 0, 852139, 19, 0, 852140, 19, 0, 852141, 19, 0, 983031, 19, 0, 983032, 19, 0, 983033, 19, 0, 983034, 19, 0, 983035, 19, 0, 983036, 19, 0, 983037, 19, 0, 983038, 19, 0, 983039, 19, 0, 917504, 19, 0, 917505, 19, 0, 917506, 19, 0, 917507, 19, 0, 917508, 19, 0, 917565, 19, 0, 917566, 19, 0, 917568, 19, 0, 917569, 19, 0, 917570, 19, 0, 917571, 19, 0, 917572, 19, 0, 917573, 19, 0, 917574, 19, 0, 917575, 19, 0, 917576, 19, 0, 917578, 19, 0, 917593, 19, 0, 917595, 19, 0, 917596, 19, 0, 917597, 19, 0, 917598, 19, 0, 917599, 19, 0, 917600, 19, 0, 917601, 19, 0, 917602, 19, 0, 917603, 19, 0, 917604, 19, 0, 917605, 19, 0, 917606, 19, 0, 917621, 19, 0, 917622, 19, 0, 917623, 19, 0, 917624, 19, 0, 917625, 19, 0, 917626, 19, 0, 917627, 19, 0, 917628, 19, 0, 917629, 19, 0, 917630, 19, 0, 917631, 19, 0, 917632, 19, 0, 917634, 19, 0, 917653, 19, 0, 917655, 21, 0, 917656, 21, 0, 917657, 21, 0, 917658, 21, 0, 917659, 21, 0, 917660, 21, 0, 917661, 21, 0, 917662, 21, 0, 917663, 21, 0, 917664, 21, 0, 917665, 19, 0, 917666, 19, 0, 917667, 19, 0, 917668, 19, 0, 917669, 19, 0, 917670, 19, 0, 917671, 19, 0, 917673, 19, 0, 917675, 19, 0, 917676, 19, 0, 917677, 19, 0, 1048567, 19, 0, 1048568, 19, 0, 1048569, 19, 0, 1048570, 19, 0, 1048571, 19, 0, 1048572, 19, 0, 1048573, 19, 0, 1048574, 19, 0, 1048575, 19, 0, 983040, 19, 0, 983041, 19, 0, 983042, 19, 0, 983043, 19, 0, 983044, 19, 0, 983101, 19, 0, 983102, 19, 0, 983103, 19, 0, 983104, 19, 0, 983105, 19, 0, 983106, 19, 0, 983107, 19, 0, 983108, 19, 0, 983109, 19, 0, 983110, 19, 0, 983111, 19, 0, 983112, 19, 0, 983114, 19, 0, 983129, 19, 0, 983131, 19, 0, 983132, 19, 0, 983133, 19, 0, 983134, 19, 0, 983136, 19, 0, 983137, 19, 0, 983139, 19, 0, 983140, 19, 0, 983141, 19, 0, 983142, 19, 0, 983157, 19, 0, 983158, 19, 0, 983159, 19, 0, 983160, 19, 0, 983161, 19, 0, 983162, 19, 0, 983163, 19, 0, 983164, 19, 0, 983165, 19, 0, 983166, 19, 0, 983167, 19, 0, 983168, 19, 0, 983170, 19, 0, 983189, 19, 0, 983191, 19, 0, 983193, 19, 0, 983194, 19, 0, 983195, 19, 0, 983196, 19, 0, 983197, 19, 0, 983198, 19, 0, 983199, 19, 0, 983200, 19, 0, 983201, 19, 0, 983202, 19, 0, 983204, 19, 0, 983205, 19, 0, 983206, 19, 0, 983207, 19, 0, 983208, 19, 0, 983209, 19, 0, 983210, 19, 0, 983212, 19, 0, 983213, 19, 0, 1114103, 19, 0, 1114104, 19, 0, 1114105, 19, 0, 1114106, 19, 0, 1114107, 19, 0, 1114108, 19, 0, 1114109, 19, 0, 1114110, 19, 0, 1114111, 19, 0, 1048576, 19, 0, 1048577, 19, 0, 1048578, 19, 0, 1048579, 19, 0, 1048580, 19, 0, 1048637, 19, 0, 1048638, 19, 0, 1048639, 19, 0, 1048640, 19, 0, 1048641, 19, 0, 1048642, 19, 0, 1048644, 19, 0, 1048646, 19, 0, 1048647, 19, 0, 1048648, 19, 0, 1048650, 19, 0, 1048665, 19, 0, 1048667, 19, 0, 1048668, 19, 0, 1048669, 19, 0, 1048670, 19, 0, 1048671, 19, 0, 1048672, 19, 0, 1048673, 19, 0, 1048674, 19, 0, 1048675, 19, 0, 1048676, 19, 0, 1048677, 19, 0, 1048678, 19, 0, 1048693, 19, 0, 1048694, 19, 0, 1048695, 19, 0, 1048696, 19, 0, 1048697, 19, 0, 1048698, 19, 0, 1048699, 19, 0, 1048700, 19, 0, 1048701, 19, 0, 1048702, 19, 0, 1048703, 19, 0, 1048704, 19, 0, 1048706, 19, 0, 1048725, 19, 0, 1048727, 19, 0, 1048729, 19, 0, 1048730, 19, 0, 1048731, 19, 0, 1048732, 19, 0, 1048733, 19, 0, 1048735, 19, 0, 1048736, 19, 0, 1048737, 19, 0, 1048738, 19, 0, 1048740, 19, 0, 1048741, 19, 0, 1048742, 19, 0, 1048743, 19, 0, 1048744, 19, 0, 1048745, 19, 0, 1048747, 19, 0, 1048748, 19, 0, 1048749, 19, 0, 1179639, 19, 0, 1179640, 19, 0, 1179641, 19, 0, 1179642, 19, 0, 1179643, 19, 0, 1179644, 19, 0, 1179645, 19, 0, 1179646, 19, 0, 1179647, 19, 0, 1114112, 19, 0, 1114113, 19, 0, 1114114, 19, 0, 1114115, 19, 0, 1114116, 19, 0, 1114173, 19, 0, 1114174, 19, 0, 1114175, 19, 0, 1114176, 19, 0, 1114177, 19, 0, 1114178, 19, 0, 1114179, 19, 0, 1114180, 19, 0, 1114181, 19, 0, 1114182, 19, 0, 1114183, 19, 0, 1114184, 19, 0, 1114185, 19, 0, 1114186, 19, 0, 1114201, 19, 0, 1114202, 19, 0, 1114204, 19, 0, 1114206, 19, 0, 1114208, 19, 0, 1114209, 19, 0, 1114210, 19, 0, 1114211, 19, 0, 1114212, 19, 0, 1114213, 19, 0, 1114214, 19, 0, 1114229, 19, 0, 1114230, 19, 0, 1114231, 19, 0, 1114232, 19, 0, 1114233, 19, 0, 1114234, 19, 0, 1114235, 19, 0, 1114236, 19, 0, 1114237, 19, 0, 1114238, 19, 0, 1114239, 19, 0, 1114240, 19, 0, 1114242, 19, 0, 1114261, 19, 0, 1114263, 19, 0, 1114265, 19, 0, 1114266, 19, 0, 1114267, 19, 0, 1114268, 19, 0, 1114269, 19, 0, 1114270, 19, 0, 1114271, 19, 0, 1114272, 19, 0, 1114273, 19, 0, 1114274, 19, 0, 1114276, 19, 0, 1114277, 19, 0, 1114278, 19, 0, 1114279, 19, 0, 1114280, 19, 0, 1114281, 19, 0, 1114283, 19, 0, 1114285, 19, 0, 1245175, 19, 0, 1245176, 19, 0, 1245177, 19, 0, 1245178, 19, 0, 1245179, 19, 0, 1245180, 19, 0, 1245181, 19, 0, 1245182, 19, 0, 1245183, 19, 0, 1179648, 19, 0, 1179649, 19, 0, 1179650, 19, 0, 1179651, 19, 0, 1179652, 19, 0, 1179709, 19, 0, 1179710, 19, 0, 1179711, 19, 0, 1179712, 19, 0, 1179713, 19, 0, 1179714, 19, 0, 1179715, 19, 0, 1179716, 19, 0, 1179717, 19, 0, 1179718, 19, 0, 1179719, 19, 0, 1179720, 19, 0, 1179721, 19, 0, 1179722, 19, 0, 1179737, 19, 0, 1179738, 19, 0, 1179739, 19, 0, 1179740, 19, 0, 1179741, 19, 0, 1179742, 19, 0, 1179743, 19, 0, 1179744, 19, 0, 1179745, 19, 0, 1179746, 19, 0, 1179747, 19, 0, 1179748, 19, 0, 1179749, 19, 0, 1179750, 19, 0, 1179765, 19, 0, 1179766, 19, 0, 1179767, 19, 0, 1179768, 19, 0, 1179769, 19, 0, 1179770, 19, 0, 1179771, 19, 0, 1179772, 19, 0, 1179773, 19, 0, 1179774, 19, 0, 1179775, 19, 0, 1179776, 19, 0, 1179777, 19, 0, 1179778, 19, 0, 1179797, 19, 0, 1179799, 19, 0, 1179800, 19, 0, 1179801, 19, 0, 1179802, 19, 0, 1179803, 19, 0, 1179804, 19, 0, 1179805, 19, 0, 1179806, 19, 0, 1179807, 19, 0, 1179808, 19, 0, 1179809, 19, 0, 1179810, 19, 0, 1179812, 19, 0, 1179813, 19, 0, 1179814, 19, 0, 1179815, 19, 0, 1179816, 19, 0, 1179817, 19, 0, 1179819, 19, 0, 1179820, 19, 0, 1179821, 19, 0 )
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 3 )]
+
+[node name="Signposts" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="Sign" type="Area2D" parent="Signposts"]
+position = Vector2( 5847.54, 312.47 )
+z_index = -1
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Signposts/Sign"]
+position = Vector2( 23.2233, 6.65259 )
+scale = Vector2( 1.79677, 1.93724 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Signposts/Sign"]
+position = Vector2( 21.2905, 5.42113 )
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Signposts/Sign"]
+visible = false
+margin_right = 40.0
+margin_bottom = 14.0
+text = "When you use a bomb in the air you get an additional jump."
+
+[node name="Sign3" type="Area2D" parent="Signposts"]
+position = Vector2( 8325.78, 309.928 )
+z_index = -1
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Signposts/Sign3"]
+position = Vector2( 23.2233, 6.65259 )
+scale = Vector2( 1.79677, 1.93724 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Signposts/Sign3"]
+position = Vector2( 21.2905, 5.42113 )
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Signposts/Sign3"]
+visible = false
+margin_right = 40.0
+margin_bottom = 14.0
+text = "The Diamonds teleport you closer to the evil king."
+
+[node name="Sign2" type="Area2D" parent="Signposts"]
+editor/display_folded = true
+position = Vector2( 713.459, 313.837 )
+z_index = -1
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Signposts/Sign2"]
+position = Vector2( 23.2233, 6.65259 )
+scale = Vector2( 1.79677, 1.93724 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Signposts/Sign2"]
+position = Vector2( 21.2905, 5.42113 )
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Signposts/Sign2"]
+visible = false
+margin_right = 40.0
+margin_bottom = 14.0
+text = "Press ESC to pause the game and consult the guide."
+
+[node name="Sign4" type="Area2D" parent="Signposts"]
+editor/display_folded = true
+position = Vector2( 299.404, 313.768 )
+z_index = -1
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Signposts/Sign4"]
+position = Vector2( 23.2233, 6.65259 )
+scale = Vector2( 1.79677, 1.93724 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Signposts/Sign4"]
+position = Vector2( 21.2905, 5.42113 )
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Signposts/Sign4"]
+visible = false
+margin_right = 40.0
+margin_bottom = 14.0
+text = "Free the kingdom from the evil king."
+
+[node name="Cabinet" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 10234.5, 925.636 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Cabinet"]
+position = Vector2( 23.2233, 6.65259 )
+scale = Vector2( 1.79677, 1.93724 )
+frames = SubResource( 2 )
+frame = 2
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cabinet"]
+position = Vector2( 21.2905, 5.42113 )
+shape = SubResource( 1 )
+
+[node name="changeOption" type="AudioStreamPlayer" parent="Cabinet"]
+stream = ExtResource( 11 )
+volume_db = -28.0
+
+[node name="Bombs" type="Node2D" parent="."]
+editor/display_folded = true
+position = Vector2( 1366.77, -165.498 )
+
+[node name="Bomb1" type="Area2D" parent="Bombs"]
+editor/display_folded = true
+position = Vector2( 229.627, 259.388 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bombs/Bomb1"]
+position = Vector2( 0.31189, 3.4308 )
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="Bombs/Bomb1"]
+texture = ExtResource( 13 )
+
+[node name="Bomb2" type="Area2D" parent="Bombs"]
+editor/display_folded = true
+position = Vector2( 2627.64, 204.844 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bombs/Bomb2"]
+position = Vector2( 0.31189, 3.4308 )
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="Bombs/Bomb2"]
+texture = ExtResource( 13 )
+
+[node name="Bomb3" type="Area2D" parent="Bombs"]
+editor/display_folded = true
+position = Vector2( 5006.77, 249.494 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bombs/Bomb3"]
+position = Vector2( 0.31189, 3.4308 )
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="Bombs/Bomb3"]
+texture = ExtResource( 13 )
+
+[node name="Bomb4" type="Area2D" parent="Bombs"]
+editor/display_folded = true
+position = Vector2( 4548.89, 235.744 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bombs/Bomb4"]
+position = Vector2( 0.31189, 3.4308 )
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="Bombs/Bomb4"]
+texture = ExtResource( 13 )
+
+[node name="Enemies" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="Enemy" type="KinematicBody2D" parent="Enemies"]
+position = Vector2( 2435.88, 276.218 )
+scale = Vector2( 3, 3 )
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Collision" type="CollisionShape2D" parent="Enemies/Enemy"]
+position = Vector2( -3.27586, 9.22631 )
+shape = SubResource( 4 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Enemies/Enemy"]
+frames = SubResource( 5 )
+animation = "death"
+flip_h = true
+
+[node name="Timer" type="Timer" parent="Enemies/Enemy"]
+one_shot = true
+
+[node name="HitBox" type="Area2D" parent="Enemies/Enemy"]
+space_override = 3
+script = ExtResource( 36 )
+
+[node name="HitBoxCollision" type="CollisionShape2D" parent="Enemies/Enemy/HitBox"]
+position = Vector2( -2.54088, 6.62963 )
+shape = SubResource( 6 )
+
+[node name="HurtBox" type="Area2D" parent="Enemies/Enemy"]
+editor/display_folded = true
+space_override = 3
+script = ExtResource( 37 )
+
+[node name="HurtBoxCollision" type="CollisionShape2D" parent="Enemies/Enemy/HurtBox"]
+position = Vector2( -2.6934, -4.14747 )
+shape = SubResource( 7 )
+
+[node name="enemyKilled" type="AudioStreamPlayer" parent="Enemies/Enemy"]
+stream = ExtResource( 38 )
+volume_db = -28.0
+
+[node name="Enemy2" type="KinematicBody2D" parent="Enemies"]
+editor/display_folded = true
+position = Vector2( 3709.88, 87.2607 )
+scale = Vector2( 3, 3 )
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Collision" type="CollisionShape2D" parent="Enemies/Enemy2"]
+position = Vector2( -3.27586, 9.22631 )
+shape = SubResource( 4 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Enemies/Enemy2"]
+frames = SubResource( 5 )
+animation = "death"
+flip_h = true
+
+[node name="Timer" type="Timer" parent="Enemies/Enemy2"]
+one_shot = true
+
+[node name="HitBox" type="Area2D" parent="Enemies/Enemy2"]
+space_override = 3
+script = ExtResource( 36 )
+
+[node name="HitBoxCollision" type="CollisionShape2D" parent="Enemies/Enemy2/HitBox"]
+position = Vector2( -2.54088, 6.62963 )
+shape = SubResource( 6 )
+
+[node name="HurtBox" type="Area2D" parent="Enemies/Enemy2"]
+editor/display_folded = true
+space_override = 3
+script = ExtResource( 37 )
+
+[node name="HurtBoxCollision" type="CollisionShape2D" parent="Enemies/Enemy2/HurtBox"]
+position = Vector2( -2.6934, -4.14747 )
+shape = SubResource( 7 )
+
+[node name="enemyKilled" type="AudioStreamPlayer" parent="Enemies/Enemy2"]
+stream = ExtResource( 38 )
+volume_db = -28.0
+
+[node name="Enemy3" type="KinematicBody2D" parent="Enemies"]
+editor/display_folded = true
+position = Vector2( 3137.17, 280.114 )
+scale = Vector2( 3, 3 )
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Collision" type="CollisionShape2D" parent="Enemies/Enemy3"]
+position = Vector2( -3.27586, 9.22631 )
+shape = SubResource( 4 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Enemies/Enemy3"]
+frames = SubResource( 5 )
+animation = "death"
+flip_h = true
+
+[node name="Timer" type="Timer" parent="Enemies/Enemy3"]
+one_shot = true
+
+[node name="HitBox" type="Area2D" parent="Enemies/Enemy3"]
+space_override = 3
+script = ExtResource( 36 )
+
+[node name="HitBoxCollision" type="CollisionShape2D" parent="Enemies/Enemy3/HitBox"]
+position = Vector2( -2.54088, 6.62963 )
+shape = SubResource( 6 )
+
+[node name="HurtBox" type="Area2D" parent="Enemies/Enemy3"]
+editor/display_folded = true
+space_override = 3
+script = ExtResource( 37 )
+
+[node name="HurtBoxCollision" type="CollisionShape2D" parent="Enemies/Enemy3/HurtBox"]
+position = Vector2( -2.6934, -4.14747 )
+shape = SubResource( 7 )
+
+[node name="enemyKilled" type="AudioStreamPlayer" parent="Enemies/Enemy3"]
+stream = ExtResource( 38 )
+volume_db = -28.0
+
+[node name="Enemy4" type="KinematicBody2D" parent="Enemies"]
+editor/display_folded = true
+position = Vector2( 7616.91, 279.377 )
+scale = Vector2( 3, 3 )
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Collision" type="CollisionShape2D" parent="Enemies/Enemy4"]
+position = Vector2( -3.27586, 9.22631 )
+shape = SubResource( 4 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Enemies/Enemy4"]
+frames = SubResource( 5 )
+animation = "death"
+flip_h = true
+
+[node name="Timer" type="Timer" parent="Enemies/Enemy4"]
+one_shot = true
+
+[node name="HitBox" type="Area2D" parent="Enemies/Enemy4"]
+space_override = 3
+script = ExtResource( 36 )
+
+[node name="HitBoxCollision" type="CollisionShape2D" parent="Enemies/Enemy4/HitBox"]
+position = Vector2( -2.54088, 6.62963 )
+shape = SubResource( 6 )
+
+[node name="HurtBox" type="Area2D" parent="Enemies/Enemy4"]
+editor/display_folded = true
+space_override = 3
+script = ExtResource( 37 )
+
+[node name="HurtBoxCollision" type="CollisionShape2D" parent="Enemies/Enemy4/HurtBox"]
+position = Vector2( -2.6934, -4.14747 )
+shape = SubResource( 7 )
+
+[node name="enemyKilled" type="AudioStreamPlayer" parent="Enemies/Enemy4"]
+stream = ExtResource( 38 )
+volume_db = -28.0
+
+[node name="Enemy5" type="KinematicBody2D" parent="Enemies"]
+editor/display_folded = true
+position = Vector2( 7299.57, 280.525 )
+scale = Vector2( 3, 3 )
+script = ExtResource( 14 )
+
+[node name="Collision" type="CollisionShape2D" parent="Enemies/Enemy5"]
+position = Vector2( -3.27586, 9.22631 )
+shape = SubResource( 4 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Enemies/Enemy5"]
+frames = SubResource( 5 )
+animation = "death"
+flip_h = true
+
+[node name="Timer" type="Timer" parent="Enemies/Enemy5"]
+one_shot = true
+
+[node name="HitBox" type="Area2D" parent="Enemies/Enemy5"]
+space_override = 3
+script = ExtResource( 36 )
+
+[node name="HitBoxCollision" type="CollisionShape2D" parent="Enemies/Enemy5/HitBox"]
+position = Vector2( -2.54088, 6.62963 )
+shape = SubResource( 6 )
+
+[node name="HurtBox" type="Area2D" parent="Enemies/Enemy5"]
+space_override = 3
+script = ExtResource( 37 )
+
+[node name="HurtBoxCollision" type="CollisionShape2D" parent="Enemies/Enemy5/HurtBox"]
+position = Vector2( -3.4915, -4.14747 )
+shape = SubResource( 7 )
+
+[node name="enemyKilled" type="AudioStreamPlayer" parent="Enemies/Enemy5"]
+stream = ExtResource( 38 )
+volume_db = -28.0
+
+[node name="Enemy6" type="KinematicBody2D" parent="Enemies"]
+editor/display_folded = true
+position = Vector2( 6903.07, 281.283 )
+scale = Vector2( 3, 3 )
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Collision" type="CollisionShape2D" parent="Enemies/Enemy6"]
+position = Vector2( -3.27586, 9.22631 )
+shape = SubResource( 4 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Enemies/Enemy6"]
+frames = SubResource( 5 )
+animation = "death"
+flip_h = true
+
+[node name="Timer" type="Timer" parent="Enemies/Enemy6"]
+one_shot = true
+
+[node name="HitBox" type="Area2D" parent="Enemies/Enemy6"]
+space_override = 3
+script = ExtResource( 36 )
+
+[node name="HitBoxCollision" type="CollisionShape2D" parent="Enemies/Enemy6/HitBox"]
+position = Vector2( -2.54088, 6.62963 )
+shape = SubResource( 6 )
+
+[node name="HurtBox" type="Area2D" parent="Enemies/Enemy6"]
+editor/display_folded = true
+space_override = 3
+script = ExtResource( 37 )
+
+[node name="HurtBoxCollision" type="CollisionShape2D" parent="Enemies/Enemy6/HurtBox"]
+position = Vector2( -2.6934, -4.14747 )
+shape = SubResource( 7 )
+
+[node name="enemyKilled" type="AudioStreamPlayer" parent="Enemies/Enemy6"]
+stream = ExtResource( 38 )
+volume_db = -28.0
+
+[node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( 70.7815, 300.396 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 39 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2( 14.2105, -12.6316 )
+scale = Vector2( 1.36437, 1.43557 )
+offset = Vector2( -550, -550 )
+anchor_mode = 0
+current = true
+zoom = Vector2( 0.7, 0.7 )
+
+[node name="PauseLayer" type="CanvasLayer" parent="Player/Camera2D"]
+pause_mode = 2
+layer = 2
+
+[node name="Pause" type="Control" parent="Player/Camera2D/PauseLayer"]
+pause_mode = 2
+visible = false
+margin_left = 528.999
+margin_top = 187.816
+margin_right = 1421.0
+margin_bottom = 856.816
+script = ExtResource( 40 )
+
+[node name="ColorRect" type="ColorRect" parent="Player/Camera2D/PauseLayer/Pause"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0509804, 0.121569, 0.223529, 0.831373 )
+
+[node name="MarginContainer" type="MarginContainer" parent="Player/Camera2D/PauseLayer/Pause/ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 110.0
+margin_top = 38.0
+margin_right = -69.9999
+margin_bottom = 2.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Player/Camera2D/PauseLayer/Pause/ColorRect/MarginContainer"]
+margin_right = 712.0
+margin_bottom = 633.0
+
+[node name="Title" type="Label" parent="Player/Camera2D/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer"]
+margin_right = 712.0
+margin_bottom = 151.0
+custom_fonts/font = SubResource( 8 )
+text = "Pause"
+align = 1
+
+[node name="MenuEntries" type="VBoxContainer" parent="Player/Camera2D/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer"]
+pause_mode = 2
+margin_top = 155.0
+margin_right = 712.0
+margin_bottom = 633.0
+size_flags_vertical = 3
+custom_constants/separation = 15
+alignment = 1
+
+[node name="Resume" type="Label" parent="Player/Camera2D/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer/MenuEntries"]
+pause_mode = 2
+margin_top = 72.0
+margin_right = 712.0
+margin_bottom = 173.0
+custom_fonts/font = SubResource( 9 )
+text = "Resume"
+script = ExtResource( 42 )
+
+[node name="Guide" type="Label" parent="Player/Camera2D/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer/MenuEntries"]
+pause_mode = 2
+margin_top = 188.0
+margin_right = 712.0
+margin_bottom = 289.0
+custom_fonts/font = SubResource( 9 )
+text = "Guide"
+script = ExtResource( 43 )
+
+[node name="TitleScreen" type="Label" parent="Player/Camera2D/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer/MenuEntries"]
+pause_mode = 2
+margin_top = 304.0
+margin_right = 712.0
+margin_bottom = 405.0
+custom_fonts/font = SubResource( 9 )
+text = "Title Screen"
+script = ExtResource( 44 )
+
+[node name="Pointer" type="Sprite" parent="Player/Camera2D/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer/MenuEntries"]
+pause_mode = 2
+position = Vector2( -45.9886, 123.807 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 45 )
+script = ExtResource( 46 )
+
+[node name="Sounds" type="Node" parent="Player/Camera2D/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer/MenuEntries/Pointer"]
+pause_mode = 2
+
+[node name="changeOption" type="AudioStreamPlayer" parent="Player/Camera2D/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer/MenuEntries/Pointer/Sounds"]
+stream = ExtResource( 11 )
+volume_db = -28.0
+
+[node name="rejectOption" type="AudioStreamPlayer" parent="Player/Camera2D/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer/MenuEntries/Pointer/Sounds"]
+stream = ExtResource( 47 )
+volume_db = -15.0
+
+[node name="confirmOption" type="AudioStreamPlayer" parent="Player/Camera2D/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer/MenuEntries/Pointer/Sounds"]
+stream = ExtResource( 48 )
+volume_db = -16.0
+
+[node name="Hurtbox" type="CollisionShape2D" parent="Player"]
+position = Vector2( -11.9297, 2.7294 )
+shape = SubResource( 10 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
+position = Vector2( -4.20714, 0.205643 )
+frames = SubResource( 11 )
+animation = "idle"
+
+[node name="BombsCooldown" type="Timer" parent="Player"]
+wait_time = 0.3
+one_shot = true
+
+[node name="EnterInteractionSprite" type="Sprite" parent="Player"]
+visible = false
+position = Vector2( -11.6098, -23.5514 )
+scale = Vector2( 0.12, 0.15 )
+texture = ExtResource( 88 )
+
+[node name="Sounds" type="Node" parent="Player"]
+editor/display_folded = true
+
+[node name="PickUpBombSound" type="AudioStreamPlayer" parent="Player/Sounds"]
+stream = ExtResource( 89 )
+volume_db = -28.0
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="Player/Sounds"]
+stream = ExtResource( 90 )
+volume_db = -25.0
+
+[node name="bombDropSound" type="AudioStreamPlayer" parent="Player/Sounds"]
+stream = ExtResource( 91 )
+volume_db = -22.0
+
+[node name="damageTaken" type="AudioStreamPlayer" parent="Player/Sounds"]
+stream = ExtResource( 92 )
+volume_db = -20.0
+
+[node name="gameOver" type="AudioStreamPlayer" parent="Player/Sounds"]
+stream = ExtResource( 93 )
+volume_db = -20.0
+
+[node name="hammerSwing" type="AudioStreamPlayer" parent="Player/Sounds"]
+stream = ExtResource( 94 )
+volume_db = -18.0
+
+[node name="AttackCooldown" type="Timer" parent="Player"]
+wait_time = 0.7
+one_shot = true
+
+[node name="HammerHitbox" type="Area2D" parent="Player"]
+script = ExtResource( 95 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="HitboxCollision" type="CollisionShape2D" parent="Player/HammerHitbox"]
+position = Vector2( 15.5, 0.999985 )
+shape = SubResource( 12 )
+disabled = true
+
+[node name="ActiveHammerHitbox" type="Timer" parent="Player/HammerHitbox"]
+wait_time = 0.4
+one_shot = true
+
+[node name="InvincibilityTime" type="Timer" parent="Player"]
+wait_time = 0.5
+one_shot = true
+
+[node name="BombRaycast" type="RayCast2D" parent="Player"]
+visible = false
+position = Vector2( -11.809, 2.42651 )
+
+[node name="UI" type="CanvasLayer" parent="."]
+editor/display_folded = true
+script = ExtResource( 96 )
+
+[node name="LifeBar" type="TextureRect" parent="UI"]
+editor/display_folded = true
+margin_left = 7.01755
+margin_top = 7.01755
+margin_right = 73.0175
+margin_bottom = 47.0175
+rect_scale = Vector2( 3.5, 3.5 )
+texture = ExtResource( 97 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Hearts" type="Node2D" parent="UI/LifeBar"]
+position = Vector2( 0, -1 )
+
+[node name="AnimatedHeart1" type="AnimatedSprite" parent="UI/LifeBar/Hearts"]
+position = Vector2( 19.2982, 17.8947 )
+scale = Vector2( 0.8, 0.8 )
+frames = SubResource( 13 )
+animation = "heart_idle"
+frame = 7
+playing = true
+
+[node name="AnimatedHeart2" type="AnimatedSprite" parent="UI/LifeBar/Hearts"]
+position = Vector2( 31, 17.895 )
+scale = Vector2( 0.8, 0.8 )
+frames = SubResource( 13 )
+animation = "heart_idle"
+frame = 7
+playing = true
+
+[node name="AnimatedHeart3" type="AnimatedSprite" parent="UI/LifeBar/Hearts"]
+position = Vector2( 42, 17.895 )
+scale = Vector2( 0.8, 0.8 )
+frames = SubResource( 13 )
+animation = "heart_idle"
+frame = 7
+playing = true
+
+[node name="BombCount" type="TextureRect" parent="UI"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -99.0
+margin_top = 10.0
+margin_right = -99.0
+margin_bottom = 10.0
+rect_scale = Vector2( 2.5, 2.5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Bomb" type="Sprite" parent="UI/BombCount"]
+position = Vector2( 21.0527, 16.8421 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+
+[node name="Label" type="Label" parent="UI/BombCount"]
+margin_left = -35.7895
+margin_top = 18.9474
+margin_right = 4.21051
+margin_bottom = 32.9474
+custom_fonts/font = SubResource( 14 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0"
+align = 2
+
+[node name="TextBox1" type="NinePatchRect" parent="UI"]
+visible = false
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 58.0
+margin_top = -113.0
+margin_right = -34.0
+margin_bottom = -7.0
+texture = ExtResource( 106 )
+patch_margin_left = 21
+patch_margin_top = 21
+patch_margin_right = 21
+patch_margin_bottom = 21
+script = ExtResource( 107 )
+
+[node name="Label" type="Label" parent="UI/TextBox1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+custom_fonts/font = SubResource( 15 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 3
+autowrap = true
+clip_text = true
+
+[node name="Pointer" type="Sprite" parent="UI/TextBox1"]
+position = Vector2( 547, 40.436 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 45 )
+
+[node name="Sounds" type="Node" parent="UI/TextBox1"]
+editor/display_folded = true
+
+[node name="confirm" type="AudioStreamPlayer" parent="UI/TextBox1/Sounds"]
+stream = ExtResource( 48 )
+volume_db = -16.0
+
+[node name="reject" type="AudioStreamPlayer" parent="UI/TextBox1/Sounds"]
+stream = ExtResource( 47 )
+volume_db = -15.0
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 108 )
+volume_db = -20.0
+autoplay = true
+
+[node name="FadingTime" type="Timer" parent="."]
+wait_time = 0.7
+one_shot = true
+
+[node name="LevelClearPoints" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="LevelClear" type="Node2D" parent="LevelClearPoints"]
+position = Vector2( 9971.56, 50.434 )
+scale = Vector2( 4, 4 )
+z_index = -1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="LevelClearPoints/LevelClear"]
+pause_mode = 2
+script = ExtResource( 109 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelClearPoints/LevelClear/Area2D"]
+shape = SubResource( 16 )
+
+[node name="LevelClearSound" type="AudioStreamPlayer" parent="LevelClearPoints/LevelClear/Area2D"]
+stream = ExtResource( 110 )
+volume_db = -18.0
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="LevelClearPoints/LevelClear"]
+position = Vector2( -2.03975, 0.114182 )
+frames = SubResource( 17 )
+animation = "idle"
+frame = 9
+playing = true
+
+[node name="LevelClear2" type="Node2D" parent="LevelClearPoints"]
+editor/display_folded = true
+position = Vector2( 11032.7, 379.645 )
+scale = Vector2( 4, 4 )
+z_index = -1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="LevelClearPoints/LevelClear2"]
+pause_mode = 2
+script = ExtResource( 109 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelClearPoints/LevelClear2/Area2D"]
+shape = SubResource( 16 )
+
+[node name="LevelClearSound" type="AudioStreamPlayer" parent="LevelClearPoints/LevelClear2/Area2D"]
+stream = ExtResource( 110 )
+volume_db = -18.0
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="LevelClearPoints/LevelClear2"]
+position = Vector2( -2.03975, 0.114182 )
+frames = SubResource( 17 )
+animation = "idle"
+frame = 8
+playing = true
+[connection signal="in_cabinet_range" from="Signposts/Sign" to="Player" method="_on_Cabinet_in_cabinet_range"]
+[connection signal="out_cabinet_range" from="Signposts/Sign" to="Player" method="_on_Cabinet_out_cabinet_range"]
+[connection signal="in_cabinet_range" from="Signposts/Sign3" to="Player" method="_on_Cabinet_in_cabinet_range"]
+[connection signal="out_cabinet_range" from="Signposts/Sign3" to="Player" method="_on_Cabinet_out_cabinet_range"]
+[connection signal="in_cabinet_range" from="Signposts/Sign2" to="Player" method="_on_Cabinet_in_cabinet_range"]
+[connection signal="out_cabinet_range" from="Signposts/Sign2" to="Player" method="_on_Cabinet_out_cabinet_range"]
+[connection signal="in_cabinet_range" from="Signposts/Sign4" to="Player" method="_on_Cabinet_in_cabinet_range"]
+[connection signal="out_cabinet_range" from="Signposts/Sign4" to="Player" method="_on_Cabinet_out_cabinet_range"]
+[connection signal="change_selection" from="Cabinet" to="UI/TextBox1" method="_on_Cabinet_change_selection"]
+[connection signal="in_cabinet_range" from="Cabinet" to="Player" method="_on_Cabinet_in_cabinet_range"]
+[connection signal="out_cabinet_range" from="Cabinet" to="Player" method="_on_Cabinet_out_cabinet_range"]
+[connection signal="increase_bombs" from="Bombs/Bomb1" to="Player" method="_on_Bomb1_increase_bombs"]
+[connection signal="increase_bombs" from="Bombs/Bomb2" to="Player" method="_on_Bomb1_increase_bombs"]
+[connection signal="increase_bombs" from="Bombs/Bomb3" to="Player" method="_on_Bomb1_increase_bombs"]
+[connection signal="increase_bombs" from="Bombs/Bomb4" to="Player" method="_on_Bomb1_increase_bombs"]
+[connection signal="player_hit" from="Enemies/Enemy/HitBox" to="Player" method="_on_HitBox_player_hit"]
+[connection signal="enemy_death" from="Enemies/Enemy/HurtBox" to="Enemies/Enemy" method="_on_HurtBox_enemy_death"]
+[connection signal="player_hit" from="Enemies/Enemy2/HitBox" to="Player" method="_on_HitBox_player_hit"]
+[connection signal="enemy_death" from="Enemies/Enemy2/HurtBox" to="Enemies/Enemy2" method="_on_HurtBox_enemy_death"]
+[connection signal="player_hit" from="Enemies/Enemy3/HitBox" to="Player" method="_on_HitBox_player_hit"]
+[connection signal="enemy_death" from="Enemies/Enemy3/HurtBox" to="Enemies/Enemy3" method="_on_HurtBox_enemy_death"]
+[connection signal="player_hit" from="Enemies/Enemy4/HitBox" to="Player" method="_on_HitBox_player_hit"]
+[connection signal="enemy_death" from="Enemies/Enemy4/HurtBox" to="Enemies/Enemy4" method="_on_HurtBox_enemy_death"]
+[connection signal="player_hit" from="Enemies/Enemy5/HitBox" to="Player" method="_on_HitBox_player_hit"]
+[connection signal="enemy_death" from="Enemies/Enemy5/HurtBox" to="Enemies/Enemy5" method="_on_HurtBox_enemy_death"]
+[connection signal="player_hit" from="Enemies/Enemy6/HitBox" to="Player" method="_on_HitBox_player_hit"]
+[connection signal="enemy_death" from="Enemies/Enemy6/HurtBox" to="Enemies/Enemy6" method="_on_HurtBox_enemy_death"]
+[connection signal="bomb_dropped" from="Player" to="UI" method="_on_Player_bomb_dropped"]
+[connection signal="bomb_taken" from="Player" to="UI" method="_on_Player_bomb_taken"]
+[connection signal="view_cabinet_text" from="Player" to="Cabinet" method="_on_Player_view_cabinet_text"]
+[connection signal="view_cabinet_text" from="Player" to="UI/TextBox1" method="_on_Player_view_cabinet_text"]
+[connection signal="guide" from="Player/Camera2D/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer/MenuEntries/Guide" to="Player/Camera2D/PauseLayer/Pause" method="_on_Guide_guide"]
+[connection signal="dialog_finished" from="UI/TextBox1" to="Player" method="_on_TextBox_dialog_finished"]
+
+[editable path="TileMap"]

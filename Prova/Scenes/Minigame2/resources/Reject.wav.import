@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Reject.wav-97c740ce5d5e2a66b5ab97a23cc044e6.sample"
+
+[deps]
+
+source_file="res://Scenes/Minigame2/resources/Reject.wav"
+dest_files=[ "res://.import/Reject.wav-97c740ce5d5e2a66b5ab97a23cc044e6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

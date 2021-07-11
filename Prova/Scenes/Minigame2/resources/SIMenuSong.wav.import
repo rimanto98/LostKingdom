@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SIMenuSong.wav-f286d9d7add11473d7ef7b1cba47b3fb.sample"
+
+[deps]
+
+source_file="res://Scenes/Minigame2/resources/SIMenuSong.wav"
+dest_files=[ "res://.import/SIMenuSong.wav-f286d9d7add11473d7ef7b1cba47b3fb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=true
+compress/mode=0

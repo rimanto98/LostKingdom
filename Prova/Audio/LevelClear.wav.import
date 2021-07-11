@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/LevelClear.wav-8de11239f757de951e1fe4d1cbcb97f5.sample"
+
+[deps]
+
+source_file="res://Audio/LevelClear.wav"
+dest_files=[ "res://.import/LevelClear.wav-8de11239f757de951e1fe4d1cbcb97f5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

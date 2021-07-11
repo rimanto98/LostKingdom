@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SuperHero_original_no_Intro.wav-865f86308aa732e94d35ea2a922ebb96.sample"
+
+[deps]
+
+source_file="res://Audio/SuperHero_original_no_Intro.wav"
+dest_files=[ "res://.import/SuperHero_original_no_Intro.wav-865f86308aa732e94d35ea2a922ebb96.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=true
+compress/mode=0

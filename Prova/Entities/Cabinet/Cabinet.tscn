@@ -1,0 +1,41 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scenes/Cabinet.gd" type="Script" id=1]
+[ext_resource path="res://assets/Cabinet_sprites/tile000.png" type="Texture" id=2]
+[ext_resource path="res://assets/Cabinet_sprites/tile001.png" type="Texture" id=3]
+[ext_resource path="res://assets/Cabinet_sprites/tile002.png" type="Texture" id=4]
+[ext_resource path="res://assets/Cabinet_sprites/tile003.png" type="Texture" id=5]
+[ext_resource path="res://Audio/changeOption.wav" type="AudioStream" id=6]
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 43.4512, 31.7292 )
+
+[node name="Cabinet" type="Area2D"]
+editor/display_folded = true
+position = Vector2( 348.776, 285.044 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 23.2233, 6.65259 )
+scale = Vector2( 1.79677, 1.93724 )
+frames = SubResource( 6 )
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 21.2905, 5.42113 )
+shape = SubResource( 7 )
+
+[node name="changeOption" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -28.0

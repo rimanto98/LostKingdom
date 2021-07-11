@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/GameOverSpace.wav-53eb9b364b9a16d5422c4493807129cf.sample"
+
+[deps]
+
+source_file="res://Scenes/Minigame2/resources/GameOverSpace.wav"
+dest_files=[ "res://.import/GameOverSpace.wav-53eb9b364b9a16d5422c4493807129cf.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

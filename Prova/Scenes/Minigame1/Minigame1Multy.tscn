@@ -1,0 +1,667 @@
+[gd_scene load_steps=49 format=2]
+
+[ext_resource path="res://Scenes/Minigame1/Minigame1.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Minigame1/Textures/Tiles034_2K_Color.jpg" type="Texture" id=2]
+[ext_resource path="res://Scenes/Minigame1/Textures/Tiles034_2K_Normal.jpg" type="Texture" id=3]
+[ext_resource path="res://Scenes/Minigame1/Textures/Tiles034_2K_Roughness.jpg" type="Texture" id=4]
+[ext_resource path="res://Scenes/Minigame1/Enemy/EnemySafeSpot.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/Minigame1/Ball.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Minigame1/Ball/Ball.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/Minigame1/Ball/Area.gd" type="Script" id=8]
+[ext_resource path="res://Audio/bounce.wav" type="AudioStream" id=9]
+[ext_resource path="res://Audio/ball_fall.wav" type="AudioStream" id=10]
+[ext_resource path="res://Audio/respawn.wav" type="AudioStream" id=11]
+[ext_resource path="res://Scenes/Minigame1/Enemy/NBABall.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Minigame1/Ball2.gd" type="Script" id=13]
+[ext_resource path="res://Scenes/Minigame1/Enviroment/enviroment.tres" type="Environment" id=14]
+[ext_resource path="res://Scenes/Minigame1/Mesh/blocksLibrary.tres" type="MeshLibrary" id=15]
+[ext_resource path="res://Audio/Minigame1BackgroundMusic.wav" type="AudioStream" id=16]
+[ext_resource path="res://Scenes/Minigame1/Pause/Pause3D.gd" type="Script" id=17]
+[ext_resource path="res://Scenes/Minigame1/Font/ALBAS___.TTF" type="DynamicFontData" id=18]
+[ext_resource path="res://Scenes/Minigame1/Pause/Resume3D.gd" type="Script" id=19]
+[ext_resource path="res://Scenes/Minigame1/Guide2.gd" type="Script" id=20]
+[ext_resource path="res://Scenes/Minigame1/Camera.gd" type="Script" id=21]
+[ext_resource path="res://Scenes/Minigame1/Pause/TitleScreen3D.gd" type="Script" id=22]
+[ext_resource path="res://Scenes/PauseMenu/PointerPauseMenu.gd" type="Script" id=23]
+[ext_resource path="res://Audio/changeSelection3D.wav" type="AudioStream" id=24]
+[ext_resource path="res://Audio/reject3D.wav" type="AudioStream" id=25]
+[ext_resource path="res://Audio/confirm3D.wav" type="AudioStream" id=26]
+[ext_resource path="res://Scenes/Minigame1/UI/LifePlayer1.gd" type="Script" id=27]
+[ext_resource path="res://Scenes/Minigame1/Ball/SoccerBall .tres" type="ArrayMesh" id=28]
+[ext_resource path="res://Scenes/Minigame1/Enemy/NBABall.tres" type="ArrayMesh" id=29]
+[ext_resource path="res://Scenes/Minigame1/BoostPlayer.gd" type="Script" id=30]
+[ext_resource path="res://Scenes/Minigame1/UI/icons8-cornice-80.png" type="Texture" id=31]
+[ext_resource path="res://Scenes/Minigame1/UI/soccer_ball_004.jpg" type="Texture" id=32]
+[ext_resource path="res://Scenes/Minigame1/BoostPlayer2.gd" type="Script" id=33]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 9, 1, 9 )
+
+[sub_resource type="CubeMesh" id=2]
+size = Vector3( 18, 2, 18 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.427451, 0.607843, 1, 1 )
+albedo_texture = ExtResource( 2 )
+roughness_texture = ExtResource( 4 )
+normal_enabled = true
+normal_scale = -5.0
+normal_texture = ExtResource( 3 )
+uv1_scale = Vector3( 0.2, 0.2, 0.2 )
+uv1_triplanar = true
+
+[sub_resource type="BoxShape" id=4]
+
+[sub_resource type="SphereShape" id=5]
+radius = 1.5
+
+[sub_resource type="DynamicFont" id=6]
+size = 150
+font_data = ExtResource( 18 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 90
+font_data = ExtResource( 18 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 100
+font_data = ExtResource( 18 )
+
+[sub_resource type="Animation" id=9]
+length = 3.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 90, 0, 0 ), Vector3( 180, 0, 0 ), Vector3( 270, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 3.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 90, 0, 0 ), Vector3( 180, 0, 0 ), Vector3( 270, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+length = 3.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 90, 0, 0 ), Vector3( 180, 0, 0 ), Vector3( 270, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+length = 3.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 90, 0, 0 ), Vector3( 180, 0, 0 ), Vector3( 270, 0, 0 ) ]
+}
+
+[sub_resource type="DynamicFont" id=13]
+size = 50
+font_data = ExtResource( 18 )
+
+[sub_resource type="Animation" id=14]
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 5.0, 0.0, -5.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 2, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.8, 0.8 ), Vector2( 1, 1 ), Vector2( 0.8, 0.8 ), Vector2( 1, 1 ), Vector2( 0.8, 0.8 ) ]
+}
+
+[sub_resource type="Animation" id=15]
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 5.0, 0.0, -5.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 2, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.8, 0.8 ), Vector2( 1, 1 ), Vector2( 0.8, 0.8 ), Vector2( 1, 1 ), Vector2( 0.8, 0.8 ) ]
+}
+
+[node name="Minigame1Multy" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.668877, -0.0371542, -0.225681 )
+script = ExtResource( 1 )
+
+[node name="Floor" type="StaticBody" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13454, -0.999998, -0.736121 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0274394, 0.0101013, -0.222706 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="EnemySafeSpot" type="Area" parent="Floor"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2125, 1.60227, -16.9875 )
+script = ExtResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor/EnemySafeSpot"]
+shape = SubResource( 4 )
+
+[node name="Ball" parent="." instance=ExtResource( 6 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.59812, 1.0006, 4.63661 )
+script = ExtResource( 7 )
+
+[node name="SlowFall" type="Timer" parent="Ball"]
+wait_time = 0.7
+one_shot = true
+
+[node name="VelocityCooldown" type="Timer" parent="Ball"]
+wait_time = 3.0
+one_shot = true
+
+[node name="ActiveVelocity" type="Timer" parent="Ball"]
+wait_time = 4.0
+one_shot = true
+
+[node name="Area2" type="Area" parent="Ball"]
+editor/display_folded = true
+space_override = 3
+script = ExtResource( 8 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Ball/Area2"]
+shape = SubResource( 5 )
+
+[node name="Timer" type="Timer" parent="Ball/Area2"]
+wait_time = 0.03
+one_shot = true
+
+[node name="Bounce" type="AudioStreamPlayer" parent="Ball/Area2"]
+stream = ExtResource( 9 )
+volume_db = -20.0
+
+[node name="Sounds" type="Node" parent="Ball"]
+
+[node name="Fall" type="AudioStreamPlayer" parent="Ball/Sounds"]
+stream = ExtResource( 10 )
+volume_db = -20.0
+
+[node name="Respawn" type="AudioStreamPlayer" parent="Ball/Sounds"]
+stream = ExtResource( 11 )
+volume_db = -15.0
+
+[node name="Ball2" parent="." instance=ExtResource( 12 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.654, 1.001, -6.858 )
+script = ExtResource( 13 )
+
+[node name="SlowFall" type="Timer" parent="Ball2"]
+wait_time = 0.7
+one_shot = true
+
+[node name="VelocityCooldown" type="Timer" parent="Ball2"]
+wait_time = 3.0
+one_shot = true
+
+[node name="ActiveVelocity" type="Timer" parent="Ball2"]
+wait_time = 4.0
+one_shot = true
+
+[node name="Sounds" type="Node" parent="Ball2"]
+editor/display_folded = true
+
+[node name="Fall" type="AudioStreamPlayer" parent="Ball2/Sounds"]
+stream = ExtResource( 10 )
+volume_db = -20.0
+
+[node name="Respawn" type="AudioStreamPlayer" parent="Ball2/Sounds"]
+stream = ExtResource( 11 )
+volume_db = -15.0
+
+[node name="InterpolatedCamera" type="InterpolatedCamera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 10, 20 )
+environment = ExtResource( 14 )
+target = NodePath("../CameraTarget2")
+speed = 5.0
+enabled = true
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 0.944705, -0.32577, 0.0374976, -0.227038, -0.567274, 0.791615, -0.236613, -0.756356, -0.609868, -7.926, 10, -15.049 )
+light_color = Color( 0.976471, 0.866667, 0.282353, 1 )
+light_energy = 3.0
+shadow_enabled = true
+directional_shadow_split_1 = 0.039
+directional_shadow_split_2 = 0.3
+directional_shadow_max_distance = 100.0
+
+[node name="GridMap" type="GridMap" parent="."]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1, 0 )
+mesh_library = ExtResource( 15 )
+cell_size = Vector3( 1, 1, 1 )
+cell_center_y = false
+data = {
+"cells": PoolIntArray( 4, 2, 196608, 65532, 2, 196608, 3, 3, 196608, 4, 3, 196608, 65532, 3, 537067520, 65533, 3, 1610809344, 3, 65531, 196608, 4, 65531, 196608, 65532, 65531, 1310720, 65533, 65531, 538181632, 4, 65532, 196608, 65532, 65532, 1310720 )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 16 )
+volume_db = -10.0
+autoplay = true
+
+[node name="CameraTarget2" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0.589, 8.5, 16 )
+
+[node name="Pause3D" type="Control" parent="."]
+editor/display_folded = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 0.857361
+margin_bottom = 0.857422
+
+[node name="PauseLayer" type="CanvasLayer" parent="Pause3D"]
+pause_mode = 2
+layer = 2
+
+[node name="Pause" type="Control" parent="Pause3D/PauseLayer"]
+pause_mode = 2
+visible = false
+margin_left = 528.999
+margin_top = 29.1941
+margin_right = 1421.0
+margin_bottom = 698.194
+script = ExtResource( 17 )
+
+[node name="ColorRect" type="ColorRect" parent="Pause3D/PauseLayer/Pause"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 25.999
+margin_bottom = 332.0
+color = Color( 0.113725, 0.0235294, 0.223529, 0.831373 )
+
+[node name="MarginContainer" type="MarginContainer" parent="Pause3D/PauseLayer/Pause/ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 83.6918
+margin_top = 40.3917
+margin_right = -96.3081
+margin_bottom = 4.39166
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause3D/PauseLayer/Pause/ColorRect/MarginContainer"]
+margin_right = 738.0
+margin_bottom = 964.0
+
+[node name="Label" type="Label" parent="Pause3D/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer"]
+pause_mode = 2
+margin_right = 738.0
+margin_bottom = 237.0
+custom_fonts/font = SubResource( 6 )
+text = "Pause"
+align = 1
+
+[node name="MenuEntries" type="VBoxContainer" parent="Pause3D/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer"]
+pause_mode = 2
+margin_top = 241.0
+margin_right = 738.0
+margin_bottom = 697.0
+custom_constants/separation = 15
+
+[node name="Resume" type="Label" parent="Pause3D/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer/MenuEntries"]
+pause_mode = 2
+margin_right = 738.0
+margin_bottom = 142.0
+custom_fonts/font = SubResource( 7 )
+text = "Resume"
+align = 1
+script = ExtResource( 19 )
+
+[node name="Guide" type="Label" parent="Pause3D/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer/MenuEntries"]
+pause_mode = 2
+margin_top = 157.0
+margin_right = 738.0
+margin_bottom = 299.0
+custom_fonts/font = SubResource( 7 )
+text = "Guide"
+align = 1
+script = ExtResource( 20 )
+
+[node name="Camera" type="Label" parent="Pause3D/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer/MenuEntries"]
+pause_mode = 2
+visible = false
+margin_top = 314.0
+margin_right = 738.0
+margin_bottom = 456.0
+custom_fonts/font = SubResource( 7 )
+text = "Change Camera"
+align = 1
+script = ExtResource( 21 )
+
+[node name="Titlescreen" type="Label" parent="Pause3D/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer/MenuEntries"]
+pause_mode = 2
+margin_top = 314.0
+margin_right = 738.0
+margin_bottom = 456.0
+custom_fonts/font = SubResource( 7 )
+text = "Titlescreen"
+align = 1
+script = ExtResource( 22 )
+
+[node name="Pointer" type="Sprite" parent="Pause3D/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer/MenuEntries"]
+pause_mode = 2
+position = Vector2( 110.016, 71.5927 )
+script = ExtResource( 23 )
+
+[node name="Label" type="Label" parent="Pause3D/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer/MenuEntries/Pointer"]
+margin_left = -35.875
+margin_top = -76.5331
+margin_right = 42.125
+margin_bottom = 81.4669
+custom_fonts/font = SubResource( 8 )
+text = "---"
+
+[node name="Sounds" type="Node" parent="Pause3D/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer/MenuEntries/Pointer"]
+
+[node name="changeOption" type="AudioStreamPlayer" parent="Pause3D/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer/MenuEntries/Pointer/Sounds"]
+stream = ExtResource( 24 )
+volume_db = -15.0
+
+[node name="rejectOption" type="AudioStreamPlayer" parent="Pause3D/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer/MenuEntries/Pointer/Sounds"]
+stream = ExtResource( 25 )
+volume_db = -20.0
+
+[node name="confirmOption" type="AudioStreamPlayer" parent="Pause3D/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer/MenuEntries/Pointer/Sounds"]
+stream = ExtResource( 26 )
+volume_db = -15.0
+
+[node name="UI" type="CanvasLayer" parent="."]
+editor/display_folded = true
+
+[node name="LifePlayer1" type="Node" parent="UI"]
+editor/display_folded = true
+script = ExtResource( 27 )
+
+[node name="RotatingBall" type="ViewportContainer" parent="UI/LifePlayer1"]
+margin_left = -123.0
+margin_top = -116.0
+margin_right = 277.0
+margin_bottom = 284.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Viewport" type="Viewport" parent="UI/LifePlayer1/RotatingBall"]
+size = Vector2( 400, 400 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="InterpolatedCamera" type="InterpolatedCamera" parent="UI/LifePlayer1/RotatingBall/Viewport"]
+transform = Transform( -4.37114e-008, -1, 1.19249e-008, 0, 1.19249e-008, 1, -1, 4.37114e-008, -5.21254e-016, -0.216659, 42.1987, 141.109 )
+cull_mask = 524288
+current = true
+target = NodePath("../Ball")
+
+[node name="Ball" type="MeshInstance" parent="UI/LifePlayer1/RotatingBall/Viewport"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, -0.216659, 37.1987, 141.109 )
+layers = 524288
+mesh = ExtResource( 28 )
+material/0 = null
+material/1 = null
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/LifePlayer1/RotatingBall/Viewport/Ball"]
+autoplay = "rotatingBall"
+anims/rotatingBall = SubResource( 9 )
+
+[node name="RotatingBall2" type="ViewportContainer" parent="UI/LifePlayer1"]
+editor/display_folded = true
+margin_left = 17.982
+margin_top = -116.0
+margin_right = 417.982
+margin_bottom = 284.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Viewport" type="Viewport" parent="UI/LifePlayer1/RotatingBall2"]
+size = Vector2( 400, 400 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="InterpolatedCamera" type="InterpolatedCamera" parent="UI/LifePlayer1/RotatingBall2/Viewport"]
+transform = Transform( -4.37114e-008, -1, 1.19249e-008, 0, 1.19249e-008, 1, -1, 4.37114e-008, -5.21254e-016, -1.01468, 36.9437, -34.1596 )
+cull_mask = 524288
+current = true
+target = NodePath("../Ball")
+
+[node name="Ball" type="MeshInstance" parent="UI/LifePlayer1/RotatingBall2/Viewport"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, -1.01468, 31.9437, -34.1596 )
+layers = 524288
+mesh = ExtResource( 28 )
+material/0 = null
+material/1 = null
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/LifePlayer1/RotatingBall2/Viewport/Ball"]
+autoplay = "rotatingBall"
+anims/rotatingBall = SubResource( 10 )
+
+[node name="LifePlayer2" type="Node" parent="UI"]
+editor/display_folded = true
+script = ExtResource( 27 )
+
+[node name="RotatingBall" type="ViewportContainer" parent="UI/LifePlayer2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1650.0
+margin_top = -116.0
+margin_right = 130.0
+margin_bottom = -796.0
+
+[node name="Viewport" type="Viewport" parent="UI/LifePlayer2/RotatingBall"]
+size = Vector2( 400, 400 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="Camera" type="Camera" parent="UI/LifePlayer2/RotatingBall/Viewport"]
+transform = Transform( -4.37114e-008, -1, 1.19249e-008, 0, 1.19249e-008, 1, -1, 4.37114e-008, -5.21254e-016, -11.477, 40.9669, 7.94379 )
+cull_mask = 524288
+current = true
+
+[node name="Ball" type="MeshInstance" parent="UI/LifePlayer2/RotatingBall/Viewport"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, -11.477, 35.9669, 7.94379 )
+layers = 524288
+mesh = ExtResource( 29 )
+material/0 = null
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/LifePlayer2/RotatingBall/Viewport/Ball"]
+autoplay = "rotatingBall"
+anims/rotatingBall = SubResource( 11 )
+
+[node name="RotatingBall2" type="ViewportContainer" parent="UI/LifePlayer2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1511.0
+margin_top = -116.0
+margin_right = -9.0
+margin_bottom = -796.0
+
+[node name="Viewport" type="Viewport" parent="UI/LifePlayer2/RotatingBall2"]
+size = Vector2( 400, 400 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="Camera" type="Camera" parent="UI/LifePlayer2/RotatingBall2/Viewport"]
+transform = Transform( -4.37114e-008, -1, 1.19249e-008, 0, 1.19249e-008, 1, -1, 4.37114e-008, -5.21254e-016, -11.477, 40.9669, 7.94379 )
+cull_mask = 524288
+current = true
+
+[node name="Ball" type="MeshInstance" parent="UI/LifePlayer2/RotatingBall2/Viewport"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, -11.477, 35.9669, 7.94379 )
+layers = 524288
+mesh = ExtResource( 29 )
+material/0 = null
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/LifePlayer2/RotatingBall2/Viewport/Ball"]
+autoplay = "rotatingBall"
+anims/rotatingBall = SubResource( 12 )
+
+[node name="BoostPlayer1" type="Node" parent="UI"]
+script = ExtResource( 30 )
+
+[node name="Frame" type="Sprite" parent="UI/BoostPlayer1"]
+position = Vector2( 177.226, 928.451 )
+scale = Vector2( 2.3, 1.6 )
+texture = ExtResource( 31 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="BoostIcon" type="Sprite" parent="UI/BoostPlayer1/Frame"]
+position = Vector2( -0.285316, -0.768158 )
+scale = Vector2( 0.00857143, 0.0115385 )
+texture = ExtResource( 32 )
+
+[node name="ColorRect" type="ColorRect" parent="UI/BoostPlayer1/Frame"]
+visible = false
+margin_left = -22.0
+margin_top = -30.0
+margin_right = 23.0
+margin_bottom = 30.0
+color = Color( 0.286275, 0.286275, 0.286275, 0.639216 )
+
+[node name="Label" type="Label" parent="UI/BoostPlayer1"]
+editor/display_folded = true
+margin_left = 48.117
+margin_top = 784.047
+margin_right = 329.117
+margin_bottom = 864.047
+rect_scale = Vector2( 0.8, 0.8 )
+rect_pivot_offset = Vector2( 104.5, 40 )
+custom_fonts/font = SubResource( 13 )
+text = " PRESS Shift"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/BoostPlayer1/Label"]
+autoplay = "PressZ"
+anims/PressZ = SubResource( 14 )
+
+[node name="BoostPlayer2" type="Node" parent="UI"]
+editor/display_folded = true
+script = ExtResource( 33 )
+
+[node name="Frame" type="Sprite" parent="UI/BoostPlayer2"]
+position = Vector2( 1730.5, 928.451 )
+scale = Vector2( 2.3, 1.6 )
+texture = ExtResource( 31 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="BoostIcon" type="Sprite" parent="UI/BoostPlayer2/Frame"]
+position = Vector2( -0.285316, -0.768158 )
+scale = Vector2( 0.00857143, 0.0115385 )
+texture = ExtResource( 32 )
+
+[node name="ColorRect" type="ColorRect" parent="UI/BoostPlayer2/Frame"]
+visible = false
+margin_left = -22.0
+margin_top = -30.0
+margin_right = 23.0
+margin_bottom = 30.0
+color = Color( 0.286275, 0.286275, 0.286275, 0.639216 )
+
+[node name="Label" type="Label" parent="UI/BoostPlayer2"]
+margin_left = 1600.0
+margin_top = 784.047
+margin_right = 1897.0
+margin_bottom = 864.047
+rect_scale = Vector2( 0.8, 0.8 )
+rect_pivot_offset = Vector2( 104.5, 40 )
+custom_fonts/font = SubResource( 13 )
+text = " PRESS Minus"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/BoostPlayer2/Label"]
+autoplay = "PressZ"
+anims/PressZ = SubResource( 15 )
+[connection signal="boostAvailable" from="Ball" to="UI/BoostPlayer1" method="_on_Ball_boostAvailable"]
+[connection signal="death" from="Ball" to="." method="_on_Ball_death"]
+[connection signal="lifeLost" from="Ball" to="UI/LifePlayer1" method="_on_Ball_lifeLost"]
+[connection signal="boostAvailable" from="Ball2" to="UI/BoostPlayer2" method="_on_Ball2_boostAvailable"]
+[connection signal="death" from="Ball2" to="." method="_on_Ball2_death"]
+[connection signal="lifeLost" from="Ball2" to="UI/LifePlayer2" method="_on_Ball2_lifeLost"]
+[connection signal="guide" from="Pause3D/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer/MenuEntries/Guide" to="Pause3D/PauseLayer/Pause" method="_on_Guide_guide"]
+
+[editable path="Ball2"]

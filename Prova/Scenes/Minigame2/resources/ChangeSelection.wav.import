@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ChangeSelection.wav-8675b09a07fdd207b74aa2260720d1d6.sample"
+
+[deps]
+
+source_file="res://Scenes/Minigame2/resources/ChangeSelection.wav"
+dest_files=[ "res://.import/ChangeSelection.wav-8675b09a07fdd207b74aa2260720d1d6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

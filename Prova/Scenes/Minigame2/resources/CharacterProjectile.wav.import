@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/CharacterProjectile.wav-9e20ba5ba3b08303f8cc030387a9e2e9.sample"
+
+[deps]
+
+source_file="res://Scenes/Minigame2/resources/CharacterProjectile.wav"
+dest_files=[ "res://.import/CharacterProjectile.wav-9e20ba5ba3b08303f8cc030387a9e2e9.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

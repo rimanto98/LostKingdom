@@ -1,0 +1,79 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/Minigame1/WinScreen/P1Wins.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Minigame1/Font/ALBAS___.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://Scenes/Minigame1/Ball/SoccerBall .tres" type="ArrayMesh" id=3]
+[ext_resource path="res://Audio/Lose3D.wav" type="AudioStream" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 200
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "rotatingBall"
+length = 3.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 90, 0, 0 ), Vector3( 180, 0, 0 ), Vector3( 270, 0, 0 ) ]
+}
+
+[node name="EnemyWins" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="ColorRect"]
+margin_left = 520.0
+margin_top = 631.0
+margin_right = 1477.0
+margin_bottom = 946.0
+custom_fonts/font = SubResource( 1 )
+text = "YOU LOSE"
+
+[node name="Spatial" type="ViewportContainer" parent="ColorRect"]
+margin_left = 707.931
+margin_top = 114.799
+margin_right = 1207.93
+margin_bottom = 614.799
+
+[node name="Viewport" type="Viewport" parent="ColorRect/Spatial"]
+size = Vector2( 500, 500 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="InterpolatedCamera" type="InterpolatedCamera" parent="ColorRect/Spatial/Viewport"]
+transform = Transform( -4.37114e-008, -1, 1.19249e-008, 0, 1.19249e-008, 1, -1, 4.37114e-008, -5.21253e-016, 0, 5, 0 )
+cull_mask = 524288
+current = true
+target = NodePath("../Ball")
+
+[node name="Ball" type="MeshInstance" parent="ColorRect/Spatial/Viewport"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 0, 0 )
+layers = 524288
+mesh = ExtResource( 3 )
+material/0 = null
+material/1 = null
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect/Spatial/Viewport/Ball"]
+autoplay = "rotatingBall"
+anims/rotatingBall = SubResource( 2 )
+
+[node name="Lose" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -20.0
+autoplay = true

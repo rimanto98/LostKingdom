@@ -1,0 +1,1908 @@
+[gd_scene load_steps=174 format=2]
+
+[ext_resource path="res://Scenes/Scena2.gd" type="Script" id=1]
+[ext_resource path="res://assets/CastleAssets/tile_castle.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Sign/Sign.gd" type="Script" id=3]
+[ext_resource path="res://assets/signpost.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Cabinet.gd" type="Script" id=5]
+[ext_resource path="res://assets/Cabinet_sprites/tile000.png" type="Texture" id=6]
+[ext_resource path="res://assets/Cabinet_sprites/tile001.png" type="Texture" id=7]
+[ext_resource path="res://assets/Cabinet_sprites/tile002.png" type="Texture" id=8]
+[ext_resource path="res://assets/Cabinet_sprites/tile003.png" type="Texture" id=9]
+[ext_resource path="res://Audio/changeOption.wav" type="AudioStream" id=10]
+[ext_resource path="res://Scenes/Bomb1.gd" type="Script" id=11]
+[ext_resource path="res://Entities/Bomb/09-Bomb/Bomb Off.png" type="Texture" id=12]
+[ext_resource path="res://Scenes/Emeny.gd" type="Script" id=13]
+[ext_resource path="res://Entities/Enemy/03-Pig/Idle/tile000.png" type="Texture" id=14]
+[ext_resource path="res://Entities/Enemy/03-Pig/Idle/tile001.png" type="Texture" id=15]
+[ext_resource path="res://Entities/Enemy/03-Pig/Idle/tile002.png" type="Texture" id=16]
+[ext_resource path="res://Entities/Enemy/03-Pig/Idle/tile003.png" type="Texture" id=17]
+[ext_resource path="res://Entities/Enemy/03-Pig/Idle/tile004.png" type="Texture" id=18]
+[ext_resource path="res://Entities/Enemy/03-Pig/Idle/tile005.png" type="Texture" id=19]
+[ext_resource path="res://Entities/Enemy/03-Pig/Idle/tile006.png" type="Texture" id=20]
+[ext_resource path="res://Entities/Enemy/03-Pig/Idle/tile007.png" type="Texture" id=21]
+[ext_resource path="res://Entities/Enemy/03-Pig/Idle/tile008.png" type="Texture" id=22]
+[ext_resource path="res://Entities/Enemy/03-Pig/Idle/tile009.png" type="Texture" id=23]
+[ext_resource path="res://Entities/Enemy/03-Pig/Idle/tile010.png" type="Texture" id=24]
+[ext_resource path="res://Entities/Enemy/03-Pig/Death/tile000.png" type="Texture" id=25]
+[ext_resource path="res://Entities/Enemy/03-Pig/Death/tile001.png" type="Texture" id=26]
+[ext_resource path="res://Entities/Enemy/03-Pig/Death/tile002.png" type="Texture" id=27]
+[ext_resource path="res://Entities/Enemy/03-Pig/Death/tile003.png" type="Texture" id=28]
+[ext_resource path="res://Entities/Enemy/03-Pig/Run/tile000.png" type="Texture" id=29]
+[ext_resource path="res://Entities/Enemy/03-Pig/Run/tile001.png" type="Texture" id=30]
+[ext_resource path="res://Entities/Enemy/03-Pig/Run/tile002.png" type="Texture" id=31]
+[ext_resource path="res://Entities/Enemy/03-Pig/Run/tile003.png" type="Texture" id=32]
+[ext_resource path="res://Entities/Enemy/03-Pig/Run/tile004.png" type="Texture" id=33]
+[ext_resource path="res://Entities/Enemy/03-Pig/Run/tile005.png" type="Texture" id=34]
+[ext_resource path="res://Scenes/HitBox.gd" type="Script" id=35]
+[ext_resource path="res://Scenes/HurtBox.gd" type="Script" id=36]
+[ext_resource path="res://Audio/enemyKilled.wav" type="AudioStream" id=37]
+[ext_resource path="res://Entities/FlyingEnemy/FlyingEnemy.gd" type="Script" id=38]
+[ext_resource path="res://Entities/FlyingEnemy/Death/tile000.png" type="Texture" id=39]
+[ext_resource path="res://Entities/FlyingEnemy/Death/tile001.png" type="Texture" id=40]
+[ext_resource path="res://Entities/FlyingEnemy/Death/tile002.png" type="Texture" id=41]
+[ext_resource path="res://Entities/FlyingEnemy/Death/tile003.png" type="Texture" id=42]
+[ext_resource path="res://Entities/FlyingEnemy/Death/tile007.png" type="Texture" id=43]
+[ext_resource path="res://Entities/FlyingEnemy/Death/tile008.png" type="Texture" id=44]
+[ext_resource path="res://Entities/FlyingEnemy/Death/tile009.png" type="Texture" id=45]
+[ext_resource path="res://Entities/FlyingEnemy/Death/tile010.png" type="Texture" id=46]
+[ext_resource path="res://Entities/FlyingEnemy/Fly/tile000.png" type="Texture" id=47]
+[ext_resource path="res://Entities/FlyingEnemy/Fly/tile001.png" type="Texture" id=48]
+[ext_resource path="res://Entities/FlyingEnemy/Fly/tile002.png" type="Texture" id=49]
+[ext_resource path="res://Entities/FlyingEnemy/Fly/tile003.png" type="Texture" id=50]
+[ext_resource path="res://Entities/FlyingEnemy/Fly/tile004.png" type="Texture" id=51]
+[ext_resource path="res://Entities/FlyingEnemy/Fly/tile005.png" type="Texture" id=52]
+[ext_resource path="res://Entities/FlyingEnemy/Fly/tile006.png" type="Texture" id=53]
+[ext_resource path="res://Scenes/KinematicBody2D.gd" type="Script" id=54]
+[ext_resource path="res://Scenes/PauseMenu/Pause.gd" type="Script" id=55]
+[ext_resource path="res://AllSprites/Sprites/13-Dialogue Boxes/lunchds.ttf" type="DynamicFontData" id=56]
+[ext_resource path="res://Scenes/PauseMenu/Resume.gd" type="Script" id=57]
+[ext_resource path="res://Scenes/Scena1/Guide.gd" type="Script" id=58]
+[ext_resource path="res://Scenes/PauseMenu/TitleScreen.gd" type="Script" id=59]
+[ext_resource path="res://assets/RPGIcons/tile005.png" type="Texture" id=60]
+[ext_resource path="res://Scenes/PauseMenu/PointerPauseMenu.gd" type="Script" id=61]
+[ext_resource path="res://Audio/rejectOption.wav" type="AudioStream" id=62]
+[ext_resource path="res://Audio/confirm.wav" type="AudioStream" id=63]
+[ext_resource path="res://Entities/Player/01-King Human/Idle/tile000.png" type="Texture" id=64]
+[ext_resource path="res://Entities/Player/01-King Human/Idle/tile001.png" type="Texture" id=65]
+[ext_resource path="res://Entities/Player/01-King Human/Idle/tile002.png" type="Texture" id=66]
+[ext_resource path="res://Entities/Player/01-King Human/Idle/tile003.png" type="Texture" id=67]
+[ext_resource path="res://Entities/Player/01-King Human/Idle/tile004.png" type="Texture" id=68]
+[ext_resource path="res://Entities/Player/01-King Human/Idle/tile005.png" type="Texture" id=69]
+[ext_resource path="res://Entities/Player/01-King Human/Idle/tile006.png" type="Texture" id=70]
+[ext_resource path="res://Entities/Player/01-King Human/Idle/tile007.png" type="Texture" id=71]
+[ext_resource path="res://Entities/Player/01-King Human/Idle/tile008.png" type="Texture" id=72]
+[ext_resource path="res://Entities/Player/01-King Human/Idle/tile009.png" type="Texture" id=73]
+[ext_resource path="res://Entities/Player/01-King Human/Idle/tile010.png" type="Texture" id=74]
+[ext_resource path="res://Entities/Player/01-King Human/Death/tile000.png" type="Texture" id=75]
+[ext_resource path="res://Entities/Player/01-King Human/Death/tile001.png" type="Texture" id=76]
+[ext_resource path="res://Entities/Player/01-King Human/Death/tile002.png" type="Texture" id=77]
+[ext_resource path="res://Entities/Player/01-King Human/Death/tile003.png" type="Texture" id=78]
+[ext_resource path="res://Entities/Player/01-King Human/Hit/tile000.png" type="Texture" id=79]
+[ext_resource path="res://Entities/Player/01-King Human/Hit/tile001.png" type="Texture" id=80]
+[ext_resource path="res://Entities/Player/01-King Human/Jump (78x58).png" type="Texture" id=81]
+[ext_resource path="res://Entities/Player/01-King Human/Attack/tile000.png" type="Texture" id=82]
+[ext_resource path="res://Entities/Player/01-King Human/Attack/tile001.png" type="Texture" id=83]
+[ext_resource path="res://Entities/Player/01-King Human/Attack/tile002.png" type="Texture" id=84]
+[ext_resource path="res://Entities/Player/01-King Human/Run/tile000.png" type="Texture" id=85]
+[ext_resource path="res://Entities/Player/01-King Human/Run/tile001.png" type="Texture" id=86]
+[ext_resource path="res://Entities/Player/01-King Human/Run/tile002.png" type="Texture" id=87]
+[ext_resource path="res://Entities/Player/01-King Human/Run/tile003.png" type="Texture" id=88]
+[ext_resource path="res://Entities/Player/01-King Human/Run/tile004.png" type="Texture" id=89]
+[ext_resource path="res://Entities/Player/01-King Human/Run/tile005.png" type="Texture" id=90]
+[ext_resource path="res://Entities/Player/01-King Human/Run/tile006.png" type="Texture" id=91]
+[ext_resource path="res://Entities/Player/01-King Human/Run/tile007.png" type="Texture" id=92]
+[ext_resource path="res://Entities/Player/01-King Human/DoorOut/tile000.png" type="Texture" id=93]
+[ext_resource path="res://Entities/Player/01-King Human/DoorOut/tile001.png" type="Texture" id=94]
+[ext_resource path="res://Entities/Player/01-King Human/DoorOut/tile002.png" type="Texture" id=95]
+[ext_resource path="res://Entities/Player/01-King Human/DoorOut/tile003.png" type="Texture" id=96]
+[ext_resource path="res://Entities/Player/01-King Human/DoorOut/tile004.png" type="Texture" id=97]
+[ext_resource path="res://Entities/Player/01-King Human/DoorOut/tile005.png" type="Texture" id=98]
+[ext_resource path="res://Entities/Player/01-King Human/DoorOut/tile006.png" type="Texture" id=99]
+[ext_resource path="res://Entities/Player/01-King Human/DoorOut/tile007.png" type="Texture" id=100]
+[ext_resource path="res://Entities/Player/01-King Human/Fall (78x58).png" type="Texture" id=101]
+[ext_resource path="res://Entities/Player/01-King Human/Ground (78x58).png" type="Texture" id=102]
+[ext_resource path="res://assets/Keyboard & Mouse/Light/Keyboard_White_Enter_Alt.png" type="Texture" id=103]
+[ext_resource path="res://Audio/bomb_pickup_sound.wav" type="AudioStream" id=104]
+[ext_resource path="res://Audio/jumpSound.wav" type="AudioStream" id=105]
+[ext_resource path="res://Audio/bombDropSound.wav" type="AudioStream" id=106]
+[ext_resource path="res://Audio/damageTaken.wav" type="AudioStream" id=107]
+[ext_resource path="res://Audio/gameOver.wav" type="AudioStream" id=108]
+[ext_resource path="res://Audio/swing.wav" type="AudioStream" id=109]
+[ext_resource path="res://Scenes/HammerHitbox.gd" type="Script" id=110]
+[ext_resource path="res://Scenes/UI.gd" type="Script" id=111]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/Live Bar.png" type="Texture" id=112]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/HeartIdle/tile000.png" type="Texture" id=113]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/HeartIdle/tile001.png" type="Texture" id=114]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/HeartIdle/tile002.png" type="Texture" id=115]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/HeartIdle/tile003.png" type="Texture" id=116]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/HeartIdle/tile004.png" type="Texture" id=117]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/HeartIdle/tile005.png" type="Texture" id=118]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/HeartIdle/tile006.png" type="Texture" id=119]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/HeartIdle/tile007.png" type="Texture" id=120]
+[ext_resource path="res://assets/menu-frame-9patch.png" type="Texture" id=121]
+[ext_resource path="res://Scenes/TextBox.gd" type="Script" id=122]
+[ext_resource path="res://Audio/Returning to OpenMPT III.wav" type="AudioStream" id=123]
+[ext_resource path="res://Scenes/LevelClear/Level2Clear.gd" type="Script" id=124]
+[ext_resource path="res://Audio/LevelClear.wav" type="AudioStream" id=125]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/Diamond/tile000.png" type="Texture" id=126]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/Diamond/tile001.png" type="Texture" id=127]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/Diamond/tile002.png" type="Texture" id=128]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/Diamond/tile003.png" type="Texture" id=129]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/Diamond/tile004.png" type="Texture" id=130]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/Diamond/tile005.png" type="Texture" id=131]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/Diamond/tile006.png" type="Texture" id=132]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/Diamond/tile007.png" type="Texture" id=133]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/Diamond/tile008.png" type="Texture" id=134]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/Diamond/tile009.png" type="Texture" id=135]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 96, 38.7023, 0.0133438, 38.6724, 0, 29.2812, 96, 29.2812 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 0, 29.2812, 32, 29.2812, 32, 38.8369, 0, 38.8369 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 0, 0, 96, 0, 96, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+points = PoolVector2Array( 0, 32, 32, 32, 32, 128, 0, 128 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+points = PoolVector2Array( 0, 16, 32, 16, 32, 96, 0, 96 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+points = PoolVector2Array( 6.26776, 4.55652, 25.8035, 4.78906, 26.036, 30.6041, 6.26776, 30.6041 )
+
+[sub_resource type="ConvexPolygonShape2D" id=10]
+points = PoolVector2Array( 0, 32, 96, 32, 96, 128, 0, 128 )
+
+[sub_resource type="ConvexPolygonShape2D" id=11]
+points = PoolVector2Array( 0, 0, 64, 0, 64, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=12]
+points = PoolVector2Array( 0, 0, 96, 0, 96, 96, 0, 96 )
+
+[sub_resource type="ConvexPolygonShape2D" id=13]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 96, 0, 96 )
+
+[sub_resource type="ConvexPolygonShape2D" id=14]
+points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=15]
+points = PoolVector2Array( 0, 0, 96, 0, 96, 32, 0, 32 )
+
+[sub_resource type="TileSet" id=16]
+0/name = "tile_castle.png 0"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 384, 96, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "tile_castle.png 1"
+1/texture = ExtResource( 2 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 96, 384, 32, 64 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+2/name = "tile_castle.png 2"
+2/texture = ExtResource( 2 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 224, 32, 32, 96 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 8 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
+3/name = "tile_castle.png 3"
+3/texture = ExtResource( 2 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 0, 96, 128 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 10 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+3/z_index = 0
+4/name = "tile_castle.png 4"
+4/texture = ExtResource( 2 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 384, 160, 64, 32 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 11 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+4/z_index = 0
+5/name = "tile_castle.png 5"
+5/texture = ExtResource( 2 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 0, 128, 96, 96 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shapes = [  ]
+5/z_index = 0
+6/name = "tile_castle.png 6"
+6/texture = ExtResource( 2 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 96, 128, 96, 96 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 12 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+6/z_index = 0
+7/name = "tile_castle.png 7"
+7/texture = ExtResource( 2 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 192, 128, 32, 96 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 13 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+7/z_index = 0
+8/name = "tile_castle.png 8"
+8/texture = ExtResource( 2 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 224, 128, 64, 64 )
+8/tile_mode = 0
+8/occluder_offset = Vector2( 0, 0 )
+8/navigation_offset = Vector2( 0, 0 )
+8/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 14 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+8/z_index = 0
+9/name = "tile_castle.png 9"
+9/texture = ExtResource( 2 )
+9/tex_offset = Vector2( 0, 0 )
+9/modulate = Color( 1, 1, 1, 1 )
+9/region = Rect2( 224, 192, 96, 32 )
+9/tile_mode = 0
+9/occluder_offset = Vector2( 0, 0 )
+9/navigation_offset = Vector2( 0, 0 )
+9/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 15 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+9/z_index = 0
+10/name = "tile_castle.png 10"
+10/texture = ExtResource( 2 )
+10/tex_offset = Vector2( 0, 0 )
+10/modulate = Color( 1, 1, 1, 1 )
+10/region = Rect2( 128, 64, 32, 32 )
+10/tile_mode = 0
+10/occluder_offset = Vector2( 0, 0 )
+10/navigation_offset = Vector2( 0, 0 )
+10/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+10/z_index = 0
+11/name = "tile_castle.png 11"
+11/texture = ExtResource( 2 )
+11/tex_offset = Vector2( 0, 0 )
+11/modulate = Color( 1, 1, 1, 1 )
+11/region = Rect2( 256, 0, 32, 32 )
+11/tile_mode = 0
+11/occluder_offset = Vector2( 0, 0 )
+11/navigation_offset = Vector2( 0, 0 )
+11/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+11/z_index = 0
+12/name = "tile_castle.png 12"
+12/texture = ExtResource( 2 )
+12/tex_offset = Vector2( 0, 0 )
+12/modulate = Color( 1, 1, 1, 1 )
+12/region = Rect2( 352, 0, 32, 32 )
+12/tile_mode = 0
+12/occluder_offset = Vector2( 0, 0 )
+12/navigation_offset = Vector2( 0, 0 )
+12/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+12/z_index = 0
+13/name = "tile_castle.png 13"
+13/texture = ExtResource( 2 )
+13/tex_offset = Vector2( 0, 0 )
+13/modulate = Color( 1, 1, 1, 1 )
+13/region = Rect2( 128, 0, 96, 32 )
+13/tile_mode = 0
+13/occluder_offset = Vector2( 0, 0 )
+13/navigation_offset = Vector2( 0, 0 )
+13/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+13/z_index = 0
+14/name = "tile_castle.png 14"
+14/texture = ExtResource( 2 )
+14/tex_offset = Vector2( 0, 0 )
+14/modulate = Color( 1, 1, 1, 1 )
+14/region = Rect2( 96, 0, 32, 128 )
+14/tile_mode = 0
+14/occluder_offset = Vector2( 0, 0 )
+14/navigation_offset = Vector2( 0, 0 )
+14/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 7 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+14/z_index = 0
+15/name = "tile_castle.png 15"
+15/texture = ExtResource( 2 )
+15/tex_offset = Vector2( 0, 0 )
+15/modulate = Color( 1, 1, 1, 1 )
+15/region = Rect2( 0, 224, 128, 64 )
+15/tile_mode = 0
+15/occluder_offset = Vector2( 0, 0 )
+15/navigation_offset = Vector2( 0, 0 )
+15/shapes = [  ]
+15/z_index = 0
+16/name = "tile_castle.png 16"
+16/texture = ExtResource( 2 )
+16/tex_offset = Vector2( 0, -32 )
+16/modulate = Color( 1, 1, 1, 1 )
+16/region = Rect2( 128, 256, 32, 32 )
+16/tile_mode = 0
+16/occluder_offset = Vector2( 0, -32 )
+16/navigation_offset = Vector2( 0, -32 )
+16/shapes = [  ]
+16/z_index = -1
+17/name = "tile_castle.png 17"
+17/texture = ExtResource( 2 )
+17/tex_offset = Vector2( 0, 0 )
+17/modulate = Color( 1, 1, 1, 1 )
+17/region = Rect2( 160, 224, 64, 64 )
+17/tile_mode = 0
+17/occluder_offset = Vector2( 0, 0 )
+17/navigation_offset = Vector2( 0, 0 )
+17/shapes = [  ]
+17/z_index = 0
+21/name = "tile_castle.png 21"
+21/texture = ExtResource( 2 )
+21/tex_offset = Vector2( 0, 0 )
+21/modulate = Color( 1, 1, 1, 1 )
+21/region = Rect2( 0, 352, 32, 32 )
+21/tile_mode = 0
+21/occluder_offset = Vector2( 0, 0 )
+21/navigation_offset = Vector2( 0, 0 )
+21/shapes = [  ]
+21/z_index = 0
+22/name = "tile_castle.png 22"
+22/texture = ExtResource( 2 )
+22/tex_offset = Vector2( 0, 0 )
+22/modulate = Color( 1, 1, 1, 1 )
+22/region = Rect2( 32, 352, 32, 32 )
+22/tile_mode = 0
+22/occluder_offset = Vector2( 0, 0 )
+22/navigation_offset = Vector2( 0, 0 )
+22/shapes = [  ]
+22/z_index = 0
+23/name = "tile_castle.png 23"
+23/texture = ExtResource( 2 )
+23/tex_offset = Vector2( 0, 0 )
+23/modulate = Color( 1, 1, 1, 1 )
+23/region = Rect2( 64, 352, 32, 32 )
+23/tile_mode = 0
+23/occluder_offset = Vector2( 0, 0 )
+23/navigation_offset = Vector2( 0, 0 )
+23/shapes = [  ]
+23/z_index = 0
+24/name = "tile_castle.png 24"
+24/texture = ExtResource( 2 )
+24/tex_offset = Vector2( 0, 0 )
+24/modulate = Color( 1, 1, 1, 1 )
+24/region = Rect2( 96, 352, 32, 32 )
+24/tile_mode = 0
+24/occluder_offset = Vector2( 0, 0 )
+24/navigation_offset = Vector2( 0, 0 )
+24/shapes = [  ]
+24/z_index = 0
+25/name = "tile_castle.png 25"
+25/texture = ExtResource( 2 )
+25/tex_offset = Vector2( 0, 0 )
+25/modulate = Color( 1, 1, 1, 1 )
+25/region = Rect2( 128, 352, 32, 32 )
+25/tile_mode = 0
+25/occluder_offset = Vector2( 0, 0 )
+25/navigation_offset = Vector2( 0, 0 )
+25/shapes = [  ]
+25/z_index = 0
+26/name = "tile_castle.png 26"
+26/texture = ExtResource( 2 )
+26/tex_offset = Vector2( 0, 0 )
+26/modulate = Color( 1, 1, 1, 1 )
+26/region = Rect2( 160, 352, 32, 32 )
+26/tile_mode = 0
+26/occluder_offset = Vector2( 0, 0 )
+26/navigation_offset = Vector2( 0, 0 )
+26/shapes = [  ]
+26/z_index = 0
+27/name = "tile_castle.png 27"
+27/texture = ExtResource( 2 )
+27/tex_offset = Vector2( 0, 0 )
+27/modulate = Color( 1, 1, 1, 1 )
+27/region = Rect2( 192, 352, 32, 32 )
+27/tile_mode = 0
+27/occluder_offset = Vector2( 0, 0 )
+27/navigation_offset = Vector2( 0, 0 )
+27/shapes = [  ]
+27/z_index = 0
+28/name = "tile_castle.png 28"
+28/texture = ExtResource( 2 )
+28/tex_offset = Vector2( 0, 16 )
+28/modulate = Color( 1, 1, 1, 1 )
+28/region = Rect2( 320, 448, 32, 32 )
+28/tile_mode = 0
+28/occluder_offset = Vector2( 0, 16 )
+28/navigation_offset = Vector2( 0, 16 )
+28/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 9 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 16 )
+} ]
+28/z_index = 1
+29/name = "tile_castle.png 29"
+29/texture = ExtResource( 2 )
+29/tex_offset = Vector2( 0, 16 )
+29/modulate = Color( 1, 1, 1, 1 )
+29/region = Rect2( 288, 448, 32, 32 )
+29/tile_mode = 0
+29/occluder_offset = Vector2( 0, 16 )
+29/navigation_offset = Vector2( 0, 16 )
+29/shapes = [  ]
+29/z_index = 1
+30/name = "tile_castle.png 30"
+30/texture = ExtResource( 2 )
+30/tex_offset = Vector2( 0, 0 )
+30/modulate = Color( 1, 1, 1, 1 )
+30/region = Rect2( 256, 224, 96, 128 )
+30/tile_mode = 0
+30/occluder_offset = Vector2( 0, 0 )
+30/navigation_offset = Vector2( 0, 0 )
+30/shapes = [  ]
+30/z_index = 0
+31/name = "tile_castle.png 31"
+31/texture = ExtResource( 2 )
+31/tex_offset = Vector2( 0, 0 )
+31/modulate = Color( 1, 1, 1, 1 )
+31/region = Rect2( 352, 224, 32, 128 )
+31/tile_mode = 0
+31/occluder_offset = Vector2( 0, 0 )
+31/navigation_offset = Vector2( 0, 0 )
+31/shapes = [  ]
+31/z_index = 0
+32/name = "tile_castle.png 32"
+32/texture = ExtResource( 2 )
+32/tex_offset = Vector2( 0, 0 )
+32/modulate = Color( 1, 1, 1, 1 )
+32/region = Rect2( 416, 224, 32, 64 )
+32/tile_mode = 0
+32/occluder_offset = Vector2( 0, 0 )
+32/navigation_offset = Vector2( 0, 0 )
+32/shapes = [  ]
+32/z_index = 0
+33/name = "tile_castle.png 33"
+33/texture = ExtResource( 2 )
+33/tex_offset = Vector2( 0, 0 )
+33/modulate = Color( 1, 1, 1, 1 )
+33/region = Rect2( 384, 224, 32, 128 )
+33/tile_mode = 0
+33/occluder_offset = Vector2( 0, 0 )
+33/navigation_offset = Vector2( 0, 0 )
+33/shapes = [  ]
+33/z_index = 0
+34/name = "tile_castle.png 34"
+34/texture = ExtResource( 2 )
+34/tex_offset = Vector2( 0, 0 )
+34/modulate = Color( 1, 1, 1, 1 )
+34/region = Rect2( 224, 224, 32, 128 )
+34/tile_mode = 0
+34/occluder_offset = Vector2( 0, 0 )
+34/navigation_offset = Vector2( 0, 0 )
+34/shapes = [  ]
+34/z_index = 0
+35/name = "tile_castle.png 35"
+35/texture = ExtResource( 2 )
+35/tex_offset = Vector2( 0, 0 )
+35/modulate = Color( 1, 1, 1, 1 )
+35/region = Rect2( 160, 256, 32, 32 )
+35/tile_mode = 0
+35/occluder_offset = Vector2( 0, 0 )
+35/navigation_offset = Vector2( 0, 0 )
+35/shapes = [  ]
+35/z_index = 0
+36/name = "tile_castle.png 36"
+36/texture = ExtResource( 2 )
+36/tex_offset = Vector2( 0, 0 )
+36/modulate = Color( 1, 1, 1, 1 )
+36/region = Rect2( 192, 256, 32, 32 )
+36/tile_mode = 0
+36/occluder_offset = Vector2( 0, 0 )
+36/navigation_offset = Vector2( 0, 0 )
+36/shapes = [  ]
+36/z_index = 0
+37/name = "tile_castle.png 37"
+37/texture = ExtResource( 2 )
+37/tex_offset = Vector2( 0, 0 )
+37/modulate = Color( 1, 1, 1, 1 )
+37/region = Rect2( 64, 256, 32, 32 )
+37/tile_mode = 0
+37/occluder_offset = Vector2( 0, 0 )
+37/navigation_offset = Vector2( 0, 0 )
+37/shapes = [  ]
+37/z_index = 0
+38/name = "tile_castle.png 38"
+38/texture = ExtResource( 2 )
+38/tex_offset = Vector2( 0, 0 )
+38/modulate = Color( 1, 1, 1, 1 )
+38/region = Rect2( 32, 256, 32, 32 )
+38/tile_mode = 0
+38/occluder_offset = Vector2( 0, 0 )
+38/navigation_offset = Vector2( 0, 0 )
+38/shapes = [  ]
+38/z_index = 0
+39/name = "tile_castle.png 39"
+39/texture = ExtResource( 2 )
+39/tex_offset = Vector2( 0, 0 )
+39/modulate = Color( 1, 1, 1, 1 )
+39/region = Rect2( 32, 256, 96, 32 )
+39/tile_mode = 0
+39/occluder_offset = Vector2( 0, 0 )
+39/navigation_offset = Vector2( 0, 0 )
+39/shapes = [  ]
+39/z_index = 0
+40/name = "tile_castle.png 40"
+40/texture = ExtResource( 2 )
+40/tex_offset = Vector2( 0, 0 )
+40/modulate = Color( 1, 1, 1, 1 )
+40/region = Rect2( 160, 256, 64, 32 )
+40/tile_mode = 0
+40/occluder_offset = Vector2( 0, 0 )
+40/navigation_offset = Vector2( 0, 0 )
+40/shapes = [  ]
+40/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 43.4512, 40.1776 )
+
+[sub_resource type="SpriteFrames" id=18]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 43.4512, 31.7292 )
+
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 8.0116, 8.18249 )
+
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 9.45868, 5.06414 )
+
+[sub_resource type="SpriteFrames" id=22]
+animations = [ {
+"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ) ],
+"loop": true,
+"name": "idle",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ) ],
+"loop": true,
+"name": "death",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ) ],
+"loop": true,
+"name": "run",
+"speed": 10.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 11.5177, 7.32815 )
+
+[sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 8.68042, 3.31779 )
+
+[sub_resource type="RectangleShape2D" id=25]
+extents = Vector2( 60.5632, 7.9295 )
+
+[sub_resource type="SpriteFrames" id=26]
+animations = [ {
+"frames": [ ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ) ],
+"loop": true,
+"name": "death",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ) ],
+"loop": true,
+"name": "fly",
+"speed": 6.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=27]
+extents = Vector2( 61.3975, 7.98517 )
+
+[sub_resource type="RectangleShape2D" id=28]
+extents = Vector2( 34.2172, 11.2375 )
+
+[sub_resource type="DynamicFont" id=29]
+size = 150
+font_data = ExtResource( 56 )
+
+[sub_resource type="DynamicFont" id=30]
+size = 100
+font_data = ExtResource( 56 )
+
+[sub_resource type="RectangleShape2D" id=31]
+extents = Vector2( 9.09615, 12.4611 )
+
+[sub_resource type="SpriteFrames" id=32]
+animations = [ {
+"frames": [ ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ) ],
+"loop": true,
+"name": "idle",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 78 ) ],
+"loop": false,
+"name": "death",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 79 ), ExtResource( 80 ) ],
+"loop": true,
+"name": "hit",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 81 ) ],
+"loop": false,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 82 ), ExtResource( 83 ), ExtResource( 84 ) ],
+"loop": false,
+"name": "attack",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 85 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 92 ) ],
+"loop": true,
+"name": "run",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 93 ), ExtResource( 94 ), ExtResource( 95 ), ExtResource( 96 ), ExtResource( 97 ), ExtResource( 98 ), ExtResource( 99 ), ExtResource( 100 ) ],
+"loop": false,
+"name": "door_out",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 101 ) ],
+"loop": false,
+"name": "falling",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 102 ) ],
+"loop": false,
+"name": "ground",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=33]
+extents = Vector2( 11.444, 18.9335 )
+
+[sub_resource type="SpriteFrames" id=34]
+animations = [ {
+"frames": [ ExtResource( 113 ), ExtResource( 114 ), ExtResource( 115 ), ExtResource( 116 ), ExtResource( 117 ), ExtResource( 118 ), ExtResource( 119 ), ExtResource( 120 ) ],
+"loop": true,
+"name": "heart_idle",
+"speed": 10.0
+} ]
+
+[sub_resource type="DynamicFont" id=35]
+font_data = ExtResource( 56 )
+
+[sub_resource type="DynamicFont" id=36]
+size = 50
+font_data = ExtResource( 56 )
+
+[sub_resource type="RectangleShape2D" id=37]
+extents = Vector2( 6.16235, 5.13242 )
+
+[sub_resource type="SpriteFrames" id=38]
+animations = [ {
+"frames": [ ExtResource( 126 ), ExtResource( 127 ), ExtResource( 128 ), ExtResource( 129 ), ExtResource( 130 ), ExtResource( 131 ), ExtResource( 132 ), ExtResource( 133 ), ExtResource( 134 ), ExtResource( 135 ) ],
+"loop": true,
+"name": "idle",
+"speed": 9.0
+} ]
+
+[node name="Game" type="Node2D"]
+position = Vector2( 17.9999, 24 )
+script = ExtResource( 1 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+editor/display_folded = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.15, 0.15 )
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer"]
+margin_left = -1168.0
+margin_top = -395.0
+margin_right = 5732.0
+margin_bottom = 1048.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="InnerCastle" type="TileMap" parent="."]
+scale = Vector2( 2, 2 )
+tile_set = SubResource( 16 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -720734, 14, 0, -655198, 14, 0, -589662, 14, 0, -524126, 14, 0, -458590, 14, 0, -393054, 14, 0, -327518, 14, 0, -261982, 14, 0, -196446, 14, 0, -130910, 14, 0, -65485, 14, 0, -65374, 14, 0, 55, 1, 0, 162, 14, 0, 65573, 17, 0, 65579, 15, 0, 65682, 1, 0, 65685, 2, 0, 65686, 2, 0, 65687, 2, 0, 65688, 2, 0, 65689, 2, 0, 65690, 2, 0, 65691, 2, 0, 65692, 2, 0, 65693, 2, 0, 65694, 2, 0, 65695, 2, 0, 65696, 2, 0, 65697, 2, 0, 131072, 15, 0, 131076, 33, 0, 131077, 30, 0, 131080, 33, 0, 131085, 17, 0, 131125, 1, 0, 131135, 1, 0, 131136, 1, 0, 131221, 4, 0, 131222, 4, 0, 131223, 4, 0, 131224, 4, 0, 131225, 4, 0, 131226, 4, 0, 131227, 4, 0, 131228, 4, 0, 131229, 4, 0, 131230, 4, 0, 131231, 4, 0, 196609, 39, 0, 196610, 26, 0, 196645, 40, 0, 196651, 40, 0, 196652, 37, 0, 196653, 40, 0, 196654, 36, 0, 196665, 0, 0, 196703, 15, 0, 196707, 33, 0, 196708, 34, 0, 196709, 33, 0, 196710, 15, 0, 196748, 0, 0, 196757, 4, 0, 196758, 4, 0, 196759, 4, 0, 196760, 4, 0, 196761, 4, 0, 196762, 4, 0, 196763, 4, 0, 196764, 4, 0, 196765, 4, 0, 196766, 4, 0, 196767, 4, 0, 196768, 4, 0, 196769, 4, 0, 262144, 35, 0, 262145, 39, 0, 262146, 29, 0, 262147, 29, 0, 262157, 40, 0, 262158, 28, 0, 262165, 0, 0, 262170, 1, 0, 262175, 1, 0, 262180, 28, 0, 262181, 40, 0, 262187, 40, 0, 262189, 40, 0, 262190, 36, 0, 262191, 28, 0, 262195, 3, 0, 262212, 1, 0, 262222, 26, 0, 262247, 26, 0, 262281, 1, 0, 262293, 4, 0, 262294, 4, 0, 262295, 4, 0, 262296, 4, 0, 262297, 4, 0, 262298, 4, 0, 262299, 4, 0, 262300, 4, 0, 262301, 4, 0, 262302, 4, 0, 262303, 4, 0, 262304, 4, 0, 262305, 4, 0, 393211, 2, 0, 393212, 2, 0, 393213, 2, 0, 393214, 2, 0, 393215, 2, 0, 327680, 2, 0, 327681, 2, 0, 327682, 2, 0, 327683, 2, 0, 327684, 2, 0, 327685, 2, 0, 327686, 2, 0, 327687, 2, 0, 327688, 2, 0, 327689, 2, 0, 327690, 2, 0, 327691, 2, 0, 327692, 2, 0, 327693, 2, 0, 327694, 2, 0, 327695, 2, 0, 327696, 2, 0, 327716, 2, 0, 327717, 2, 0, 327718, 2, 0, 327719, 2, 0, 327720, 2, 0, 327721, 2, 0, 327722, 2, 0, 327723, 2, 0, 327724, 2, 0, 327725, 2, 0, 327726, 2, 0, 327727, 2, 0, 327758, 31, 0, 327764, 28, 0, 327775, 35, 0, 327776, 39, 0, 327777, 26, 0, 327778, 29, 0, 327782, 39, 0, 327784, 28, 0, 327785, 36, 0, 327786, 29, 0, 327787, 29, 0, 327829, 4, 0, 327830, 4, 0, 327831, 4, 0, 327832, 4, 0, 327833, 4, 0, 327834, 4, 0, 327835, 4, 0, 327836, 4, 0, 327837, 4, 0, 327838, 4, 0, 327839, 4, 0, 327840, 4, 0, 327841, 4, 0, 458747, 4, 0, 458748, 4, 0, 458749, 4, 0, 458750, 4, 0, 458751, 4, 0, 393216, 16, 0, 393217, 16, 0, 393218, 16, 0, 393219, 16, 0, 393220, 4, 0, 393221, 4, 0, 393222, 4, 0, 393223, 4, 0, 393224, 4, 0, 393225, 4, 0, 393226, 4, 0, 393227, 4, 0, 393228, 4, 0, 393229, 16, 0, 393230, 16, 0, 393253, 16, 0, 393254, 16, 0, 393259, 16, 0, 393260, 16, 0, 393261, 16, 0, 393262, 16, 0, 393288, 14, 0, 393295, 14, 0, 393300, 2, 0, 393301, 2, 0, 393302, 2, 0, 393303, 2, 0, 393304, 2, 0, 393305, 2, 0, 393306, 2, 0, 393307, 2, 0, 393308, 2, 0, 393309, 2, 0, 393310, 2, 0, 393311, 2, 0, 393312, 2, 0, 393313, 2, 0, 393314, 2, 0, 393315, 2, 0, 393316, 2, 0, 393317, 2, 0, 393318, 2, 0, 393319, 2, 0, 393320, 2, 0, 393321, 2, 0, 393322, 2, 0, 393323, 2, 0, 393324, 2, 0, 393349, 1, 0, 393365, 4, 0, 393366, 4, 0, 393367, 4, 0, 393368, 4, 0, 393369, 4, 0, 393370, 4, 0, 393371, 4, 0, 393372, 4, 0, 393373, 4, 0, 393374, 4, 0, 393375, 4, 0, 393376, 4, 0, 393377, 4, 0, 524283, 4, 0, 524284, 4, 0, 524285, 4, 0, 524286, 4, 0, 524287, 4, 0, 458752, 4, 0, 458753, 4, 0, 458754, 4, 0, 458755, 4, 0, 458756, 4, 0, 458757, 4, 0, 458758, 4, 0, 458759, 4, 0, 458760, 4, 0, 458761, 4, 0, 458762, 4, 0, 458763, 4, 0, 458764, 4, 0, 458765, 4, 0, 458766, 4, 0, 458767, 4, 0, 458768, 11, 0, 458788, 4, 0, 458789, 4, 0, 458790, 4, 0, 458791, 4, 0, 458792, 4, 0, 458793, 4, 0, 458794, 4, 0, 458795, 4, 0, 458796, 4, 0, 458797, 4, 0, 458798, 4, 0, 458803, 11, 0, 458804, 4, 0, 458805, 12, 0, 458825, 0, 0, 458828, 0, 0, 458847, 16, 0, 458848, 16, 0, 458849, 16, 0, 458850, 16, 0, 458854, 16, 0, 458855, 16, 0, 458856, 16, 0, 458857, 16, 0, 458901, 4, 0, 458902, 4, 0, 458903, 4, 0, 458904, 4, 0, 458905, 4, 0, 458906, 4, 0, 458907, 4, 0, 458908, 4, 0, 458909, 4, 0, 458910, 4, 0, 458911, 4, 0, 458912, 4, 0, 458913, 4, 0, 589819, 4, 0, 589820, 4, 0, 589821, 4, 0, 589822, 4, 0, 589823, 4, 0, 524288, 4, 0, 524289, 4, 0, 524290, 4, 0, 524291, 4, 0, 524292, 4, 0, 524293, 4, 0, 524294, 4, 0, 524295, 4, 0, 524296, 4, 0, 524297, 4, 0, 524298, 4, 0, 524299, 4, 0, 524300, 4, 0, 524301, 4, 0, 524302, 4, 0, 524303, 4, 0, 524324, 4, 0, 524325, 4, 0, 524326, 4, 0, 524327, 4, 0, 524328, 4, 0, 524329, 4, 0, 524330, 4, 0, 524331, 4, 0, 524332, 4, 0, 524333, 4, 0, 524334, 4, 0, 524339, 4, 0, 524340, 4, 0, 524372, 4, 0, 524373, 4, 0, 524374, 4, 0, 524375, 4, 0, 524376, 4, 0, 524377, 4, 0, 524378, 4, 0, 524379, 4, 0, 524380, 4, 0, 524381, 4, 0, 524383, 4, 0, 524384, 4, 0, 524385, 4, 0, 524386, 4, 0, 524387, 4, 0, 524388, 4, 0, 524389, 4, 0, 524391, 4, 0, 524392, 4, 0, 524393, 4, 0, 524394, 4, 0, 524395, 4, 0, 524417, 1, 0, 524437, 4, 0, 524438, 4, 0, 524439, 4, 0, 524440, 4, 0, 524441, 4, 0, 524442, 4, 0, 524443, 4, 0, 524444, 4, 0, 524445, 4, 0, 524446, 4, 0, 524447, 4, 0, 524448, 4, 0, 524449, 4, 0, 655355, 4, 0, 655356, 4, 0, 655357, 4, 0, 655358, 4, 0, 655359, 4, 0, 589824, 4, 0, 589825, 4, 0, 589826, 4, 0, 589827, 4, 0, 589828, 4, 0, 589829, 4, 0, 589830, 4, 0, 589831, 4, 0, 589832, 4, 0, 589833, 4, 0, 589834, 4, 0, 589835, 4, 0, 589836, 4, 0, 589837, 4, 0, 589838, 4, 0, 589839, 4, 0, 589860, 4, 0, 589861, 4, 0, 589862, 4, 0, 589863, 4, 0, 589864, 4, 0, 589865, 4, 0, 589866, 4, 0, 589867, 4, 0, 589868, 4, 0, 589869, 4, 0, 589870, 4, 0, 589875, 4, 0, 589876, 4, 0, 589896, 12, 0, 589897, 2, 0, 589898, 2, 0, 589899, 2, 0, 589900, 2, 0, 589901, 2, 0, 589902, 2, 0, 589903, 11, 0, 589908, 4, 0, 589909, 4, 0, 589911, 4, 0, 589912, 4, 0, 589914, 4, 0, 589915, 4, 0, 589916, 4, 0, 589917, 4, 0, 589919, 4, 0, 589921, 4, 0, 589922, 4, 0, 589923, 4, 0, 589925, 4, 0, 589926, 4, 0, 589927, 4, 0, 589928, 4, 0, 589929, 4, 0, 589930, 4, 0, 589931, 4, 0, 589973, 4, 0, 589974, 4, 0, 589975, 4, 0, 589976, 4, 0, 589977, 4, 0, 589978, 4, 0, 589979, 4, 0, 589980, 4, 0, 589981, 4, 0, 589982, 4, 0, 589983, 4, 0, 589984, 4, 0, 589985, 4, 0, 720891, 4, 0, 720892, 4, 0, 720893, 4, 0, 720894, 4, 0, 720895, 4, 0, 655360, 4, 0, 655361, 4, 0, 655362, 4, 0, 655363, 4, 0, 655364, 4, 0, 655365, 4, 0, 655366, 4, 0, 655367, 4, 0, 655368, 4, 0, 655369, 4, 0, 655370, 4, 0, 655371, 4, 0, 655372, 4, 0, 655373, 4, 0, 655374, 4, 0, 655375, 4, 0, 655396, 4, 0, 655397, 4, 0, 655398, 4, 0, 655399, 4, 0, 655400, 4, 0, 655401, 4, 0, 655402, 4, 0, 655403, 4, 0, 655404, 4, 0, 655405, 4, 0, 655406, 4, 0, 655411, 4, 0, 655412, 4, 0, 655432, 4, 0, 655433, 4, 0, 655434, 4, 0, 655435, 4, 0, 655436, 4, 0, 655437, 4, 0, 655438, 4, 0, 655444, 4, 0, 655445, 4, 0, 655447, 4, 0, 655448, 4, 0, 655450, 4, 0, 655452, 4, 0, 655453, 4, 0, 655455, 4, 0, 655485, 1, 0, 655509, 4, 0, 655510, 4, 0, 655511, 4, 0, 655512, 4, 0, 655513, 4, 0, 655514, 4, 0, 655515, 4, 0, 655516, 4, 0, 655517, 4, 0, 655518, 4, 0, 655519, 4, 0, 655520, 4, 0, 655521, 4, 0, 786427, 4, 0, 786428, 4, 0, 786429, 4, 0, 786430, 4, 0, 786431, 4, 0, 720896, 4, 0, 720897, 4, 0, 720898, 4, 0, 720899, 4, 0, 720900, 4, 0, 720901, 4, 0, 720902, 4, 0, 720903, 4, 0, 720904, 4, 0, 720905, 4, 0, 720906, 4, 0, 720907, 4, 0, 720908, 4, 0, 720909, 4, 0, 720910, 4, 0, 720911, 4, 0, 720932, 4, 0, 720933, 4, 0, 720934, 4, 0, 720935, 4, 0, 720936, 4, 0, 720937, 4, 0, 720938, 4, 0, 720939, 4, 0, 720940, 4, 0, 720941, 4, 0, 720942, 4, 0, 720947, 4, 0, 720948, 4, 0, 720968, 4, 0, 720969, 4, 0, 720970, 4, 0, 720971, 4, 0, 720972, 4, 0, 720973, 4, 0, 720974, 4, 0, 720980, 4, 0, 720981, 4, 0, 720983, 4, 0, 720985, 4, 0, 720986, 4, 0, 720988, 4, 0, 720989, 4, 0, 720991, 4, 0, 720993, 2, 0, 720994, 2, 0, 720995, 2, 0, 720996, 2, 0, 720997, 2, 0, 720998, 2, 0, 720999, 2, 0, 721000, 2, 0, 721001, 2, 0, 721002, 2, 0, 721003, 2, 0, 721004, 2, 0, 721005, 2, 0, 721006, 2, 0, 721007, 2, 0, 721008, 2, 0, 721009, 2, 0, 721010, 2, 0, 721011, 2, 0, 721012, 2, 0, 721013, 2, 0, 721014, 2, 0, 721015, 2, 0, 721045, 4, 0, 721046, 4, 0, 721047, 4, 0, 721048, 4, 0, 721049, 4, 0, 721050, 4, 0, 721051, 4, 0, 721052, 4, 0, 721053, 4, 0, 721054, 4, 0, 721055, 4, 0, 721056, 4, 0, 721057, 4, 0, 851963, 4, 0, 851964, 4, 0, 851965, 4, 0, 851966, 4, 0, 851967, 4, 0, 786432, 4, 0, 786433, 4, 0, 786434, 4, 0, 786435, 4, 0, 786436, 4, 0, 786437, 4, 0, 786438, 4, 0, 786439, 4, 0, 786440, 4, 0, 786441, 4, 0, 786442, 4, 0, 786443, 4, 0, 786444, 4, 0, 786445, 4, 0, 786446, 4, 0, 786447, 4, 0, 786468, 4, 0, 786469, 4, 0, 786470, 4, 0, 786471, 4, 0, 786472, 4, 0, 786473, 4, 0, 786474, 4, 0, 786475, 4, 0, 786476, 4, 0, 786477, 4, 0, 786478, 4, 0, 786483, 4, 0, 786484, 4, 0, 786504, 4, 0, 786506, 4, 0, 786507, 4, 0, 786508, 4, 0, 786509, 4, 0, 786510, 4, 0, 786516, 4, 0, 786517, 4, 0, 786519, 4, 0, 786520, 4, 0, 786521, 4, 0, 786522, 4, 0, 786523, 4, 0, 786524, 4, 0, 786525, 4, 0, 786527, 4, 0, 786581, 4, 0, 786582, 4, 0, 786583, 4, 0, 786584, 4, 0, 786585, 4, 0, 786586, 4, 0, 786587, 4, 0, 786588, 4, 0, 786589, 4, 0, 786590, 4, 0, 786591, 4, 0, 786592, 4, 0, 786593, 4, 0, 917499, 4, 0, 917500, 4, 0, 917501, 4, 0, 917502, 4, 0, 917503, 4, 0, 851968, 4, 0, 851969, 4, 0, 851970, 4, 0, 851971, 4, 0, 851972, 4, 0, 851973, 4, 0, 851974, 4, 0, 851975, 4, 0, 851976, 4, 0, 851977, 4, 0, 851978, 4, 0, 851979, 4, 0, 851980, 4, 0, 851981, 4, 0, 851982, 4, 0, 851983, 4, 0, 852004, 4, 0, 852005, 4, 0, 852006, 4, 0, 852007, 4, 0, 852008, 4, 0, 852009, 4, 0, 852010, 4, 0, 852011, 4, 0, 852012, 4, 0, 852013, 4, 0, 852014, 4, 0, 852019, 4, 0, 852020, 4, 0, 852040, 4, 0, 852042, 4, 0, 852043, 4, 0, 852044, 4, 0, 852045, 4, 0, 852046, 4, 0, 852052, 4, 0, 852053, 4, 0, 852054, 4, 0, 852055, 4, 0, 852056, 4, 0, 852057, 4, 0, 852058, 4, 0, 852059, 4, 0, 852061, 4, 0, 852063, 4, 0, 852065, 4, 0, 852066, 4, 0, 852067, 4, 0, 852068, 4, 0, 852069, 4, 0, 852070, 4, 0, 852071, 4, 0, 852072, 4, 0, 852073, 4, 0, 852074, 4, 0, 852075, 4, 0, 852076, 4, 0, 852077, 4, 0, 852078, 4, 0, 852079, 4, 0, 852080, 4, 0, 852081, 4, 0, 852082, 4, 0, 852083, 4, 0, 852084, 4, 0, 852085, 4, 0, 852086, 4, 0, 852117, 4, 0, 852118, 4, 0, 852119, 4, 0, 852120, 4, 0, 852121, 4, 0, 852122, 4, 0, 852123, 4, 0, 852124, 4, 0, 852125, 4, 0, 852126, 4, 0, 852127, 4, 0, 852128, 4, 0, 852129, 4, 0, 983035, 4, 0, 983036, 4, 0, 983037, 4, 0, 983038, 4, 0, 983039, 4, 0, 917504, 4, 0, 917505, 4, 0, 917506, 4, 0, 917507, 4, 0, 917508, 4, 0, 917509, 4, 0, 917510, 4, 0, 917511, 4, 0, 917512, 4, 0, 917513, 4, 0, 917514, 4, 0, 917515, 4, 0, 917516, 4, 0, 917517, 4, 0, 917518, 4, 0, 917519, 4, 0, 917540, 4, 0, 917541, 4, 0, 917542, 4, 0, 917543, 4, 0, 917544, 4, 0, 917545, 4, 0, 917546, 4, 0, 917547, 4, 0, 917548, 4, 0, 917549, 4, 0, 917550, 4, 0, 917555, 4, 0, 917556, 4, 0, 917576, 4, 0, 917578, 4, 0, 917579, 4, 0, 917581, 4, 0, 917582, 4, 0, 917588, 4, 0, 917589, 4, 0, 917590, 4, 0, 917591, 4, 0, 917592, 4, 0, 917593, 4, 0, 917594, 4, 0, 917595, 4, 0, 917596, 4, 0, 917597, 4, 0, 917598, 4, 0, 917599, 4, 0, 917600, 4, 0, 917601, 4, 0, 917602, 4, 0, 917603, 4, 0, 917604, 4, 0, 917605, 4, 0, 917606, 4, 0, 917607, 4, 0, 917608, 4, 0, 917609, 4, 0, 917610, 4, 0, 917611, 4, 0, 917612, 4, 0, 917613, 4, 0, 917614, 4, 0, 917615, 4, 0, 917616, 4, 0, 917617, 4, 0, 917618, 4, 0, 917619, 4, 0, 917620, 4, 0, 917622, 4, 0, 917653, 4, 0, 917654, 4, 0, 917655, 4, 0, 917656, 4, 0, 917657, 4, 0, 917658, 4, 0, 917659, 4, 0, 917660, 4, 0, 917661, 4, 0, 917662, 4, 0, 917663, 4, 0, 917664, 4, 0, 917665, 4, 0, 1048571, 4, 0, 1048572, 4, 0, 1048573, 4, 0, 1048574, 4, 0, 1048575, 4, 0, 983040, 4, 0, 983041, 4, 0, 983042, 4, 0, 983043, 4, 0, 983044, 4, 0, 983045, 4, 0, 983046, 4, 0, 983047, 4, 0, 983048, 4, 0, 983049, 4, 0, 983050, 4, 0, 983051, 4, 0, 983052, 4, 0, 983053, 4, 0, 983054, 4, 0, 983055, 4, 0, 983076, 4, 0, 983077, 4, 0, 983078, 4, 0, 983079, 4, 0, 983080, 4, 0, 983081, 4, 0, 983082, 4, 0, 983083, 4, 0, 983084, 4, 0, 983085, 4, 0, 983086, 4, 0, 983091, 4, 0, 983092, 4, 0, 983112, 4, 0, 983114, 4, 0, 983115, 4, 0, 983116, 4, 0, 983118, 4, 0, 983124, 4, 0, 983125, 4, 0, 983126, 4, 0, 983127, 4, 0, 983128, 4, 0, 983129, 4, 0, 983130, 4, 0, 983131, 4, 0, 983132, 4, 0, 983133, 4, 0, 983134, 4, 0, 983135, 4, 0, 983136, 4, 0, 983137, 4, 0, 983138, 4, 0, 983139, 4, 0, 983140, 4, 0, 983141, 4, 0, 983142, 4, 0, 983143, 4, 0, 983144, 4, 0, 983145, 4, 0, 983146, 4, 0, 983147, 4, 0, 983148, 4, 0, 983149, 4, 0, 983150, 4, 0, 983151, 4, 0, 983152, 4, 0, 983153, 4, 0, 983154, 4, 0, 983155, 4, 0, 983156, 4, 0, 983157, 4, 0, 983158, 4, 0, 983189, 4, 0, 983190, 4, 0, 983191, 4, 0, 983192, 4, 0, 983193, 4, 0, 983194, 4, 0, 983195, 4, 0, 983196, 4, 0, 983197, 4, 0, 983198, 4, 0, 983199, 4, 0, 983200, 4, 0, 983201, 4, 0, 1114107, 4, 0, 1114108, 4, 0, 1114109, 4, 0, 1114110, 4, 0, 1114111, 4, 0, 1048576, 4, 0, 1048577, 4, 0, 1048578, 4, 0, 1048579, 4, 0, 1048580, 4, 0, 1048581, 4, 0, 1048582, 4, 0, 1048583, 4, 0, 1048584, 4, 0, 1048585, 4, 0, 1048586, 4, 0, 1048587, 4, 0, 1048588, 4, 0, 1048589, 4, 0, 1048590, 4, 0, 1048591, 4, 0, 1048612, 4, 0, 1048613, 4, 0, 1048614, 4, 0, 1048615, 4, 0, 1048616, 4, 0, 1048617, 4, 0, 1048618, 4, 0, 1048619, 4, 0, 1048620, 4, 0, 1048621, 4, 0, 1048622, 4, 0, 1048627, 4, 0, 1048628, 4, 0, 1048648, 4, 0, 1048650, 4, 0, 1048651, 4, 0, 1048652, 4, 0, 1048654, 4, 0, 1048660, 4, 0, 1048661, 4, 0, 1048662, 4, 0, 1048663, 4, 0, 1048664, 4, 0, 1048665, 4, 0, 1048666, 4, 0, 1048667, 4, 0, 1048668, 4, 0, 1048669, 4, 0, 1048670, 4, 0, 1048671, 4, 0, 1048672, 4, 0, 1048673, 4, 0, 1048674, 4, 0, 1048675, 4, 0, 1048676, 4, 0, 1048677, 4, 0, 1048678, 4, 0, 1048679, 4, 0, 1048680, 4, 0, 1048681, 4, 0, 1048682, 4, 0, 1048683, 4, 0, 1048684, 4, 0, 1048685, 4, 0, 1048686, 4, 0, 1048687, 4, 0, 1048688, 4, 0, 1048689, 4, 0, 1048690, 4, 0, 1048691, 4, 0, 1048692, 4, 0, 1048693, 4, 0, 1048694, 4, 0, 1048725, 4, 0, 1048726, 4, 0, 1048727, 4, 0, 1048728, 4, 0, 1048729, 4, 0, 1048730, 4, 0, 1048731, 4, 0, 1048732, 4, 0, 1048733, 4, 0, 1048734, 4, 0, 1048735, 4, 0, 1048736, 4, 0, 1048737, 4, 0, 1179643, 4, 0, 1179644, 4, 0, 1179645, 4, 0, 1179646, 4, 0, 1179647, 4, 0, 1114112, 4, 0, 1114113, 4, 0, 1114114, 4, 0, 1114115, 4, 0, 1114116, 4, 0, 1114117, 4, 0, 1114118, 4, 0, 1114119, 4, 0, 1114120, 4, 0, 1114121, 4, 0, 1114122, 4, 0, 1114123, 4, 0, 1114124, 4, 0, 1114125, 4, 0, 1114126, 4, 0, 1114127, 4, 0, 1114148, 4, 0, 1114149, 4, 0, 1114150, 4, 0, 1114151, 4, 0, 1114152, 4, 0, 1114153, 4, 0, 1114154, 4, 0, 1114155, 4, 0, 1114156, 4, 0, 1114157, 4, 0, 1114158, 4, 0, 1114163, 4, 0, 1114164, 4, 0, 1114184, 4, 0, 1114185, 4, 0, 1114187, 4, 0, 1114188, 4, 0, 1114189, 4, 0, 1114190, 4, 0, 1114196, 4, 0, 1114198, 4, 0, 1114199, 4, 0, 1114200, 4, 0, 1114201, 4, 0, 1114202, 4, 0, 1114203, 4, 0, 1114204, 4, 0, 1114205, 4, 0, 1114206, 4, 0, 1114207, 4, 0, 1114208, 4, 0, 1114209, 4, 0, 1114210, 4, 0, 1114211, 4, 0, 1114212, 4, 0, 1114213, 4, 0, 1114214, 4, 0, 1114215, 4, 0, 1114216, 4, 0, 1114217, 4, 0, 1114218, 4, 0, 1114219, 4, 0, 1114220, 4, 0, 1114221, 4, 0, 1114222, 4, 0, 1114223, 4, 0, 1114224, 4, 0, 1114225, 4, 0, 1114226, 4, 0, 1114227, 4, 0, 1114228, 4, 0, 1114229, 4, 0, 1114230, 4, 0, 1114261, 4, 0, 1114262, 4, 0, 1114263, 4, 0, 1114264, 4, 0, 1114265, 4, 0, 1114266, 4, 0, 1114267, 4, 0, 1114268, 4, 0, 1114269, 4, 0, 1114270, 4, 0, 1114271, 4, 0, 1114272, 4, 0, 1114273, 4, 0, 1245179, 4, 0, 1245180, 4, 0, 1245181, 4, 0, 1245182, 4, 0, 1245183, 4, 0, 1179648, 4, 0, 1179649, 4, 0, 1179650, 4, 0, 1179651, 4, 0, 1179652, 4, 0, 1179653, 4, 0, 1179654, 4, 0, 1179655, 4, 0, 1179656, 4, 0, 1179657, 4, 0, 1179658, 4, 0, 1179659, 4, 0, 1179660, 4, 0, 1179661, 4, 0, 1179662, 4, 0, 1179663, 4, 0, 1179684, 4, 0, 1179685, 4, 0, 1179686, 4, 0, 1179687, 4, 0, 1179688, 4, 0, 1179689, 4, 0, 1179690, 4, 0, 1179691, 4, 0, 1179692, 4, 0, 1179693, 4, 0, 1179694, 4, 0, 1179699, 4, 0, 1179700, 4, 0, 1179720, 4, 0, 1179721, 4, 0, 1179722, 4, 0, 1179723, 4, 0, 1179724, 4, 0, 1179726, 4, 0, 1179732, 4, 0, 1179734, 4, 0, 1179735, 4, 0, 1179736, 4, 0, 1179737, 4, 0, 1179738, 4, 0, 1179739, 4, 0, 1179741, 4, 0, 1179742, 4, 0, 1179743, 4, 0, 1179744, 4, 0, 1179745, 4, 0, 1179746, 4, 0, 1179747, 4, 0, 1179748, 4, 0, 1179749, 4, 0, 1179750, 4, 0, 1179751, 4, 0, 1179752, 4, 0, 1179753, 4, 0, 1179754, 4, 0, 1179755, 4, 0, 1179756, 4, 0, 1179757, 4, 0, 1179758, 4, 0, 1179759, 4, 0, 1179760, 4, 0, 1179761, 4, 0, 1179762, 4, 0, 1179763, 4, 0, 1179764, 4, 0, 1179765, 4, 0, 1179766, 4, 0, 1179797, 4, 0, 1179798, 4, 0, 1179799, 4, 0, 1179800, 4, 0, 1179801, 4, 0, 1179802, 4, 0, 1179803, 4, 0, 1179804, 4, 0, 1179805, 4, 0, 1179806, 4, 0, 1179807, 4, 0, 1179808, 4, 0, 1179809, 4, 0, 1310715, 4, 0, 1310716, 4, 0, 1310717, 4, 0, 1310718, 4, 0, 1310719, 4, 0, 1245184, 4, 0, 1245185, 4, 0, 1245186, 4, 0, 1245187, 4, 0, 1245188, 4, 0, 1245189, 4, 0, 1245190, 4, 0, 1245191, 4, 0, 1245192, 4, 0, 1245193, 4, 0, 1245194, 4, 0, 1245195, 4, 0, 1245196, 4, 0, 1245197, 4, 0, 1245198, 4, 0, 1245199, 4, 0, 1245220, 4, 0, 1245221, 4, 0, 1245222, 4, 0, 1245223, 4, 0, 1245224, 4, 0, 1245225, 4, 0, 1245226, 4, 0, 1245227, 4, 0, 1245228, 4, 0, 1245229, 4, 0, 1245230, 4, 0, 1245235, 4, 0, 1245236, 4, 0 )
+
+[node name="Sign" type="Area2D" parent="."]
+position = Vector2( 9624.77, 54.4914 )
+z_index = -1
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Sign"]
+position = Vector2( 23.2233, 6.65259 )
+scale = Vector2( 1.79677, 1.93724 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sign"]
+position = Vector2( 21.2905, 5.42113 )
+shape = SubResource( 17 )
+
+[node name="Label" type="Label" parent="Sign"]
+visible = false
+margin_right = 40.0
+margin_bottom = 14.0
+text = "Be careful, the evil king is immune to your hammer."
+
+[node name="Cabinet" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 6258.92, 692.079 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Cabinet"]
+position = Vector2( 23.2233, 6.65259 )
+scale = Vector2( 1.79677, 1.93724 )
+frames = SubResource( 18 )
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cabinet"]
+position = Vector2( 21.2905, 5.42113 )
+shape = SubResource( 19 )
+
+[node name="changeOption" type="AudioStreamPlayer" parent="Cabinet"]
+stream = ExtResource( 10 )
+volume_db = -28.0
+
+[node name="Bombs" type="Node2D" parent="."]
+editor/display_folded = true
+position = Vector2( 1366.77, -165.498 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Bomb1" type="Area2D" parent="Bombs"]
+editor/display_folded = true
+position = Vector2( 331.075, 438.541 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bombs/Bomb1"]
+position = Vector2( 0.31189, 3.4308 )
+shape = SubResource( 20 )
+
+[node name="Sprite" type="Sprite" parent="Bombs/Bomb1"]
+texture = ExtResource( 12 )
+
+[node name="Bomb2" type="Area2D" parent="Bombs"]
+editor/display_folded = true
+position = Vector2( 1928.16, 110.982 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bombs/Bomb2"]
+position = Vector2( 0.31189, 3.4308 )
+shape = SubResource( 20 )
+
+[node name="Sprite" type="Sprite" parent="Bombs/Bomb2"]
+texture = ExtResource( 12 )
+
+[node name="Bomb3" type="Area2D" parent="Bombs"]
+editor/display_folded = true
+position = Vector2( 3013.59, 440.335 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bombs/Bomb3"]
+position = Vector2( 0.31189, 3.4308 )
+shape = SubResource( 20 )
+
+[node name="Sprite" type="Sprite" parent="Bombs/Bomb3"]
+texture = ExtResource( 12 )
+
+[node name="Bomb4" type="Area2D" parent="Bombs"]
+editor/display_folded = true
+position = Vector2( 6053.67, 616.468 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bombs/Bomb4"]
+position = Vector2( 0.31189, 3.4308 )
+shape = SubResource( 20 )
+
+[node name="Sprite" type="Sprite" parent="Bombs/Bomb4"]
+texture = ExtResource( 12 )
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Enemy" type="KinematicBody2D" parent="Enemies"]
+editor/display_folded = true
+position = Vector2( 841.999, 300.981 )
+scale = Vector2( 3, 3 )
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Collision" type="CollisionShape2D" parent="Enemies/Enemy"]
+position = Vector2( -3.27586, 9.22631 )
+shape = SubResource( 21 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Enemies/Enemy"]
+frames = SubResource( 22 )
+animation = "death"
+flip_h = true
+
+[node name="Timer" type="Timer" parent="Enemies/Enemy"]
+one_shot = true
+
+[node name="HitBox" type="Area2D" parent="Enemies/Enemy"]
+space_override = 3
+script = ExtResource( 35 )
+
+[node name="HitBoxCollision" type="CollisionShape2D" parent="Enemies/Enemy/HitBox"]
+position = Vector2( -2.54088, 6.62963 )
+shape = SubResource( 23 )
+
+[node name="HurtBox" type="Area2D" parent="Enemies/Enemy"]
+editor/display_folded = true
+space_override = 3
+script = ExtResource( 36 )
+
+[node name="HurtBoxCollision" type="CollisionShape2D" parent="Enemies/Enemy/HurtBox"]
+position = Vector2( -2.6934, -4.14747 )
+shape = SubResource( 24 )
+
+[node name="enemyKilled" type="AudioStreamPlayer" parent="Enemies/Enemy"]
+stream = ExtResource( 37 )
+volume_db = -28.0
+
+[node name="Enemy8" type="KinematicBody2D" parent="Enemies"]
+editor/display_folded = true
+position = Vector2( 2462.96, 297.465 )
+scale = Vector2( 3, 3 )
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Collision" type="CollisionShape2D" parent="Enemies/Enemy8"]
+position = Vector2( -3.27586, 9.22631 )
+shape = SubResource( 21 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Enemies/Enemy8"]
+frames = SubResource( 22 )
+animation = "death"
+flip_h = true
+
+[node name="Timer" type="Timer" parent="Enemies/Enemy8"]
+one_shot = true
+
+[node name="HitBox" type="Area2D" parent="Enemies/Enemy8"]
+space_override = 3
+script = ExtResource( 35 )
+
+[node name="HitBoxCollision" type="CollisionShape2D" parent="Enemies/Enemy8/HitBox"]
+position = Vector2( -2.54088, 6.62963 )
+shape = SubResource( 23 )
+
+[node name="HurtBox" type="Area2D" parent="Enemies/Enemy8"]
+editor/display_folded = true
+space_override = 3
+script = ExtResource( 36 )
+
+[node name="HurtBoxCollision" type="CollisionShape2D" parent="Enemies/Enemy8/HurtBox"]
+position = Vector2( -2.6934, -4.14747 )
+shape = SubResource( 24 )
+
+[node name="enemyKilled" type="AudioStreamPlayer" parent="Enemies/Enemy8"]
+stream = ExtResource( 37 )
+volume_db = -28.0
+
+[node name="Enemy9" type="KinematicBody2D" parent="Enemies"]
+editor/display_folded = true
+position = Vector2( 2888.41, 299.223 )
+scale = Vector2( 3, 3 )
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Collision" type="CollisionShape2D" parent="Enemies/Enemy9"]
+position = Vector2( -3.27586, 9.22631 )
+shape = SubResource( 21 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Enemies/Enemy9"]
+frames = SubResource( 22 )
+animation = "death"
+flip_h = true
+
+[node name="Timer" type="Timer" parent="Enemies/Enemy9"]
+one_shot = true
+
+[node name="HitBox" type="Area2D" parent="Enemies/Enemy9"]
+space_override = 3
+script = ExtResource( 35 )
+
+[node name="HitBoxCollision" type="CollisionShape2D" parent="Enemies/Enemy9/HitBox"]
+position = Vector2( -2.54088, 6.62963 )
+shape = SubResource( 23 )
+
+[node name="HurtBox" type="Area2D" parent="Enemies/Enemy9"]
+editor/display_folded = true
+space_override = 3
+script = ExtResource( 36 )
+
+[node name="HurtBoxCollision" type="CollisionShape2D" parent="Enemies/Enemy9/HurtBox"]
+position = Vector2( -2.6934, -4.14747 )
+shape = SubResource( 24 )
+
+[node name="enemyKilled" type="AudioStreamPlayer" parent="Enemies/Enemy9"]
+stream = ExtResource( 37 )
+volume_db = -28.0
+
+[node name="Enemy10" type="KinematicBody2D" parent="Enemies"]
+editor/display_folded = true
+position = Vector2( 4842.27, 447.272 )
+scale = Vector2( 3, 3 )
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Collision" type="CollisionShape2D" parent="Enemies/Enemy10"]
+position = Vector2( -3.27586, 9.22631 )
+shape = SubResource( 21 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Enemies/Enemy10"]
+frames = SubResource( 22 )
+animation = "death"
+flip_h = true
+
+[node name="Timer" type="Timer" parent="Enemies/Enemy10"]
+one_shot = true
+
+[node name="HitBox" type="Area2D" parent="Enemies/Enemy10"]
+space_override = 3
+script = ExtResource( 35 )
+
+[node name="HitBoxCollision" type="CollisionShape2D" parent="Enemies/Enemy10/HitBox"]
+position = Vector2( -2.54088, 6.62963 )
+shape = SubResource( 23 )
+
+[node name="HurtBox" type="Area2D" parent="Enemies/Enemy10"]
+editor/display_folded = true
+space_override = 3
+script = ExtResource( 36 )
+
+[node name="HurtBoxCollision" type="CollisionShape2D" parent="Enemies/Enemy10/HurtBox"]
+position = Vector2( -2.6934, -4.14747 )
+shape = SubResource( 24 )
+
+[node name="enemyKilled" type="AudioStreamPlayer" parent="Enemies/Enemy10"]
+stream = ExtResource( 37 )
+volume_db = -28.0
+
+[node name="Enemy11" type="KinematicBody2D" parent="Enemies"]
+editor/display_folded = true
+position = Vector2( 5574.73, 361.559 )
+scale = Vector2( 3, 3 )
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Collision" type="CollisionShape2D" parent="Enemies/Enemy11"]
+position = Vector2( -3.27586, 9.22631 )
+shape = SubResource( 21 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Enemies/Enemy11"]
+frames = SubResource( 22 )
+animation = "death"
+flip_h = true
+
+[node name="Timer" type="Timer" parent="Enemies/Enemy11"]
+one_shot = true
+
+[node name="HitBox" type="Area2D" parent="Enemies/Enemy11"]
+space_override = 3
+script = ExtResource( 35 )
+
+[node name="HitBoxCollision" type="CollisionShape2D" parent="Enemies/Enemy11/HitBox"]
+position = Vector2( -2.54088, 6.62963 )
+shape = SubResource( 23 )
+
+[node name="HurtBox" type="Area2D" parent="Enemies/Enemy11"]
+editor/display_folded = true
+space_override = 3
+script = ExtResource( 36 )
+
+[node name="HurtBoxCollision" type="CollisionShape2D" parent="Enemies/Enemy11/HurtBox"]
+position = Vector2( -2.6934, -4.14747 )
+shape = SubResource( 24 )
+
+[node name="enemyKilled" type="AudioStreamPlayer" parent="Enemies/Enemy11"]
+stream = ExtResource( 37 )
+volume_db = -28.0
+
+[node name="Enemy12" type="KinematicBody2D" parent="Enemies"]
+editor/display_folded = true
+position = Vector2( 6028.62, 359.611 )
+scale = Vector2( 3, 3 )
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Collision" type="CollisionShape2D" parent="Enemies/Enemy12"]
+position = Vector2( -3.27586, 9.22631 )
+shape = SubResource( 21 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Enemies/Enemy12"]
+frames = SubResource( 22 )
+animation = "death"
+flip_h = true
+
+[node name="Timer" type="Timer" parent="Enemies/Enemy12"]
+one_shot = true
+
+[node name="HitBox" type="Area2D" parent="Enemies/Enemy12"]
+space_override = 3
+script = ExtResource( 35 )
+
+[node name="HitBoxCollision" type="CollisionShape2D" parent="Enemies/Enemy12/HitBox"]
+position = Vector2( -2.54088, 6.62963 )
+shape = SubResource( 23 )
+
+[node name="HurtBox" type="Area2D" parent="Enemies/Enemy12"]
+editor/display_folded = true
+space_override = 3
+script = ExtResource( 36 )
+
+[node name="HurtBoxCollision" type="CollisionShape2D" parent="Enemies/Enemy12/HurtBox"]
+position = Vector2( -2.6934, -4.14747 )
+shape = SubResource( 24 )
+
+[node name="enemyKilled" type="AudioStreamPlayer" parent="Enemies/Enemy12"]
+stream = ExtResource( 37 )
+volume_db = -28.0
+
+[node name="Enemy13" type="KinematicBody2D" parent="Enemies"]
+editor/display_folded = true
+position = Vector2( 6539.62, 367.611 )
+scale = Vector2( 3, 3 )
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Collision" type="CollisionShape2D" parent="Enemies/Enemy13"]
+position = Vector2( -3.27586, 9.22631 )
+shape = SubResource( 21 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Enemies/Enemy13"]
+frames = SubResource( 22 )
+animation = "death"
+flip_h = true
+
+[node name="Timer" type="Timer" parent="Enemies/Enemy13"]
+one_shot = true
+
+[node name="HitBox" type="Area2D" parent="Enemies/Enemy13"]
+space_override = 3
+script = ExtResource( 35 )
+
+[node name="HitBoxCollision" type="CollisionShape2D" parent="Enemies/Enemy13/HitBox"]
+position = Vector2( -2.54088, 6.62963 )
+shape = SubResource( 23 )
+
+[node name="HurtBox" type="Area2D" parent="Enemies/Enemy13"]
+editor/display_folded = true
+space_override = 3
+script = ExtResource( 36 )
+
+[node name="HurtBoxCollision" type="CollisionShape2D" parent="Enemies/Enemy13/HurtBox"]
+position = Vector2( -2.6934, -4.14747 )
+shape = SubResource( 24 )
+
+[node name="enemyKilled" type="AudioStreamPlayer" parent="Enemies/Enemy13"]
+stream = ExtResource( 37 )
+volume_db = -28.0
+
+[node name="FlyingEnemy" type="KinematicBody2D" parent="Enemies"]
+position = Vector2( 1136.65, 108.402 )
+script = ExtResource( 38 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="HitBox" type="Area2D" parent="Enemies/FlyingEnemy"]
+script = ExtResource( 35 )
+
+[node name="HitBoxCollision" type="CollisionShape2D" parent="Enemies/FlyingEnemy/HitBox"]
+position = Vector2( 65.3005, 231.81 )
+shape = SubResource( 25 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Enemies/FlyingEnemy"]
+position = Vector2( 64.2295, 221.933 )
+scale = Vector2( 3, 3 )
+frames = SubResource( 26 )
+animation = "fly"
+
+[node name="HurtBox" type="Area2D" parent="Enemies/FlyingEnemy"]
+script = ExtResource( 36 )
+
+[node name="HurtBoxCollision" type="CollisionShape2D" parent="Enemies/FlyingEnemy/HurtBox"]
+position = Vector2( 65.4746, 212.011 )
+shape = SubResource( 27 )
+
+[node name="enemyKilled" type="AudioStreamPlayer" parent="Enemies/FlyingEnemy"]
+stream = ExtResource( 37 )
+volume_db = -28.0
+
+[node name="ChangeDirection" type="Timer" parent="Enemies/FlyingEnemy"]
+wait_time = 1.5
+one_shot = true
+
+[node name="Collision" type="CollisionShape2D" parent="Enemies/FlyingEnemy"]
+position = Vector2( 66.526, 222.767 )
+shape = SubResource( 28 )
+
+[node name="FlyingEnemy8" type="KinematicBody2D" parent="Enemies"]
+editor/display_folded = true
+position = Vector2( 2142.27, 110.16 )
+script = ExtResource( 38 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="HitBox" type="Area2D" parent="Enemies/FlyingEnemy8"]
+script = ExtResource( 35 )
+
+[node name="HitBoxCollision" type="CollisionShape2D" parent="Enemies/FlyingEnemy8/HitBox"]
+position = Vector2( 65.3005, 231.81 )
+shape = SubResource( 25 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Enemies/FlyingEnemy8"]
+position = Vector2( 64.2295, 221.933 )
+scale = Vector2( 3, 3 )
+frames = SubResource( 26 )
+animation = "fly"
+
+[node name="HurtBox" type="Area2D" parent="Enemies/FlyingEnemy8"]
+script = ExtResource( 36 )
+
+[node name="HurtBoxCollision" type="CollisionShape2D" parent="Enemies/FlyingEnemy8/HurtBox"]
+position = Vector2( 65.4746, 212.011 )
+shape = SubResource( 27 )
+
+[node name="enemyKilled" type="AudioStreamPlayer" parent="Enemies/FlyingEnemy8"]
+stream = ExtResource( 37 )
+volume_db = -28.0
+
+[node name="ChangeDirection" type="Timer" parent="Enemies/FlyingEnemy8"]
+wait_time = 1.5
+one_shot = true
+
+[node name="Collision" type="CollisionShape2D" parent="Enemies/FlyingEnemy8"]
+position = Vector2( 66.526, 222.767 )
+shape = SubResource( 28 )
+
+[node name="FlyingEnemy9" type="KinematicBody2D" parent="Enemies"]
+editor/display_folded = true
+position = Vector2( 3889.81, 20.4978 )
+script = ExtResource( 38 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="HitBox" type="Area2D" parent="Enemies/FlyingEnemy9"]
+script = ExtResource( 35 )
+
+[node name="HitBoxCollision" type="CollisionShape2D" parent="Enemies/FlyingEnemy9/HitBox"]
+position = Vector2( 65.3005, 231.81 )
+shape = SubResource( 25 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Enemies/FlyingEnemy9"]
+position = Vector2( 64.2295, 221.933 )
+scale = Vector2( 3, 3 )
+frames = SubResource( 26 )
+animation = "fly"
+
+[node name="HurtBox" type="Area2D" parent="Enemies/FlyingEnemy9"]
+script = ExtResource( 36 )
+
+[node name="HurtBoxCollision" type="CollisionShape2D" parent="Enemies/FlyingEnemy9/HurtBox"]
+position = Vector2( 65.4746, 212.011 )
+shape = SubResource( 27 )
+
+[node name="enemyKilled" type="AudioStreamPlayer" parent="Enemies/FlyingEnemy9"]
+stream = ExtResource( 37 )
+volume_db = -28.0
+
+[node name="ChangeDirection" type="Timer" parent="Enemies/FlyingEnemy9"]
+wait_time = 1.5
+one_shot = true
+
+[node name="Collision" type="CollisionShape2D" parent="Enemies/FlyingEnemy9"]
+position = Vector2( 66.526, 222.767 )
+shape = SubResource( 28 )
+
+[node name="FlyingEnemy10" type="KinematicBody2D" parent="Enemies"]
+editor/display_folded = true
+position = Vector2( 5189.04, 222.678 )
+script = ExtResource( 38 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="HitBox" type="Area2D" parent="Enemies/FlyingEnemy10"]
+script = ExtResource( 35 )
+
+[node name="HitBoxCollision" type="CollisionShape2D" parent="Enemies/FlyingEnemy10/HitBox"]
+position = Vector2( 65.3005, 231.81 )
+shape = SubResource( 25 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Enemies/FlyingEnemy10"]
+position = Vector2( 64.2295, 221.933 )
+scale = Vector2( 3, 3 )
+frames = SubResource( 26 )
+animation = "fly"
+
+[node name="HurtBox" type="Area2D" parent="Enemies/FlyingEnemy10"]
+script = ExtResource( 36 )
+
+[node name="HurtBoxCollision" type="CollisionShape2D" parent="Enemies/FlyingEnemy10/HurtBox"]
+position = Vector2( 65.4746, 212.011 )
+shape = SubResource( 27 )
+
+[node name="enemyKilled" type="AudioStreamPlayer" parent="Enemies/FlyingEnemy10"]
+stream = ExtResource( 37 )
+volume_db = -28.0
+
+[node name="ChangeDirection" type="Timer" parent="Enemies/FlyingEnemy10"]
+wait_time = 1.5
+one_shot = true
+
+[node name="Collision" type="CollisionShape2D" parent="Enemies/FlyingEnemy10"]
+position = Vector2( 66.526, 222.767 )
+shape = SubResource( 28 )
+
+[node name="FlyingEnemy11" type="KinematicBody2D" parent="Enemies"]
+editor/display_folded = true
+position = Vector2( 7040.3, 219.162 )
+script = ExtResource( 38 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="HitBox" type="Area2D" parent="Enemies/FlyingEnemy11"]
+script = ExtResource( 35 )
+
+[node name="HitBoxCollision" type="CollisionShape2D" parent="Enemies/FlyingEnemy11/HitBox"]
+position = Vector2( 65.3005, 231.81 )
+shape = SubResource( 25 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Enemies/FlyingEnemy11"]
+position = Vector2( 64.2295, 221.933 )
+scale = Vector2( 3, 3 )
+frames = SubResource( 26 )
+animation = "fly"
+
+[node name="HurtBox" type="Area2D" parent="Enemies/FlyingEnemy11"]
+script = ExtResource( 36 )
+
+[node name="HurtBoxCollision" type="CollisionShape2D" parent="Enemies/FlyingEnemy11/HurtBox"]
+position = Vector2( 65.4746, 212.011 )
+shape = SubResource( 27 )
+
+[node name="enemyKilled" type="AudioStreamPlayer" parent="Enemies/FlyingEnemy11"]
+stream = ExtResource( 37 )
+volume_db = -28.0
+
+[node name="ChangeDirection" type="Timer" parent="Enemies/FlyingEnemy11"]
+wait_time = 1.5
+one_shot = true
+
+[node name="Collision" type="CollisionShape2D" parent="Enemies/FlyingEnemy11"]
+position = Vector2( 66.526, 222.767 )
+shape = SubResource( 28 )
+
+[node name="FlyingEnemy12" type="KinematicBody2D" parent="Enemies"]
+editor/display_folded = true
+position = Vector2( 8364.14, 329.921 )
+script = ExtResource( 38 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="HitBox" type="Area2D" parent="Enemies/FlyingEnemy12"]
+script = ExtResource( 35 )
+
+[node name="HitBoxCollision" type="CollisionShape2D" parent="Enemies/FlyingEnemy12/HitBox"]
+position = Vector2( 65.3005, 231.81 )
+shape = SubResource( 25 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Enemies/FlyingEnemy12"]
+position = Vector2( 64.2295, 221.933 )
+scale = Vector2( 3, 3 )
+frames = SubResource( 26 )
+animation = "fly"
+
+[node name="HurtBox" type="Area2D" parent="Enemies/FlyingEnemy12"]
+script = ExtResource( 36 )
+
+[node name="HurtBoxCollision" type="CollisionShape2D" parent="Enemies/FlyingEnemy12/HurtBox"]
+position = Vector2( 65.4746, 212.011 )
+shape = SubResource( 27 )
+
+[node name="enemyKilled" type="AudioStreamPlayer" parent="Enemies/FlyingEnemy12"]
+stream = ExtResource( 37 )
+volume_db = -28.0
+
+[node name="ChangeDirection" type="Timer" parent="Enemies/FlyingEnemy12"]
+wait_time = 1.5
+one_shot = true
+
+[node name="Collision" type="CollisionShape2D" parent="Enemies/FlyingEnemy12"]
+position = Vector2( 66.526, 222.767 )
+shape = SubResource( 28 )
+
+[node name="FlyingEnemy13" type="KinematicBody2D" parent="Enemies"]
+editor/display_folded = true
+position = Vector2( 9185.17, -51.5838 )
+script = ExtResource( 38 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="HitBox" type="Area2D" parent="Enemies/FlyingEnemy13"]
+script = ExtResource( 35 )
+
+[node name="HitBoxCollision" type="CollisionShape2D" parent="Enemies/FlyingEnemy13/HitBox"]
+position = Vector2( 65.3005, 231.81 )
+shape = SubResource( 25 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Enemies/FlyingEnemy13"]
+position = Vector2( 64.2295, 221.933 )
+scale = Vector2( 3, 3 )
+frames = SubResource( 26 )
+animation = "fly"
+
+[node name="HurtBox" type="Area2D" parent="Enemies/FlyingEnemy13"]
+script = ExtResource( 36 )
+
+[node name="HurtBoxCollision" type="CollisionShape2D" parent="Enemies/FlyingEnemy13/HurtBox"]
+position = Vector2( 65.4746, 212.011 )
+shape = SubResource( 27 )
+
+[node name="enemyKilled" type="AudioStreamPlayer" parent="Enemies/FlyingEnemy13"]
+stream = ExtResource( 37 )
+volume_db = -28.0
+
+[node name="ChangeDirection" type="Timer" parent="Enemies/FlyingEnemy13"]
+wait_time = 1.5
+one_shot = true
+
+[node name="Collision" type="CollisionShape2D" parent="Enemies/FlyingEnemy13"]
+position = Vector2( 66.526, 222.767 )
+shape = SubResource( 28 )
+
+[node name="Player" type="KinematicBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 74.1414, 316.582 )
+scale = Vector2( 2, 2 )
+z_index = 2
+script = ExtResource( 54 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2( 14.2105, -12.6316 )
+scale = Vector2( 1.36437, 1.43557 )
+offset = Vector2( -550, -550 )
+anchor_mode = 0
+current = true
+zoom = Vector2( 0.7, 0.7 )
+
+[node name="PauseLayer" type="CanvasLayer" parent="Player/Camera2D"]
+pause_mode = 2
+layer = 2
+
+[node name="Pause" type="Control" parent="Player/Camera2D/PauseLayer"]
+pause_mode = 2
+visible = false
+margin_left = 528.999
+margin_top = 187.816
+margin_right = 1421.0
+margin_bottom = 856.816
+script = ExtResource( 55 )
+
+[node name="ColorRect" type="ColorRect" parent="Player/Camera2D/PauseLayer/Pause"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0509804, 0.121569, 0.223529, 0.831373 )
+
+[node name="MarginContainer" type="MarginContainer" parent="Player/Camera2D/PauseLayer/Pause/ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 110.0
+margin_top = 38.0
+margin_right = -69.9999
+margin_bottom = 2.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Player/Camera2D/PauseLayer/Pause/ColorRect/MarginContainer"]
+margin_right = 712.0
+margin_bottom = 633.0
+
+[node name="Title" type="Label" parent="Player/Camera2D/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer"]
+margin_right = 712.0
+margin_bottom = 151.0
+custom_fonts/font = SubResource( 29 )
+text = "Pause"
+align = 1
+
+[node name="MenuEntries" type="VBoxContainer" parent="Player/Camera2D/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer"]
+pause_mode = 2
+margin_top = 155.0
+margin_right = 712.0
+margin_bottom = 633.0
+size_flags_vertical = 3
+custom_constants/separation = 15
+alignment = 1
+
+[node name="Resume" type="Label" parent="Player/Camera2D/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer/MenuEntries"]
+pause_mode = 2
+margin_top = 72.0
+margin_right = 712.0
+margin_bottom = 173.0
+custom_fonts/font = SubResource( 30 )
+text = "Resume"
+script = ExtResource( 57 )
+
+[node name="Guide" type="Label" parent="Player/Camera2D/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer/MenuEntries"]
+pause_mode = 2
+margin_top = 188.0
+margin_right = 712.0
+margin_bottom = 289.0
+custom_fonts/font = SubResource( 30 )
+text = "Guide"
+script = ExtResource( 58 )
+
+[node name="TitleScreen" type="Label" parent="Player/Camera2D/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer/MenuEntries"]
+pause_mode = 2
+margin_top = 304.0
+margin_right = 712.0
+margin_bottom = 405.0
+custom_fonts/font = SubResource( 30 )
+text = "Title Screen"
+script = ExtResource( 59 )
+
+[node name="Pointer" type="Sprite" parent="Player/Camera2D/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer/MenuEntries"]
+pause_mode = 2
+editor/display_folded = true
+position = Vector2( -41.9886, 96.8071 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 60 )
+script = ExtResource( 61 )
+
+[node name="Sounds" type="Node" parent="Player/Camera2D/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer/MenuEntries/Pointer"]
+pause_mode = 2
+
+[node name="changeOption" type="AudioStreamPlayer" parent="Player/Camera2D/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer/MenuEntries/Pointer/Sounds"]
+stream = ExtResource( 10 )
+volume_db = -28.0
+
+[node name="rejectOption" type="AudioStreamPlayer" parent="Player/Camera2D/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer/MenuEntries/Pointer/Sounds"]
+stream = ExtResource( 62 )
+volume_db = -15.0
+
+[node name="confirmOption" type="AudioStreamPlayer" parent="Player/Camera2D/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer/MenuEntries/Pointer/Sounds"]
+stream = ExtResource( 63 )
+volume_db = -16.0
+
+[node name="Hurtbox" type="CollisionShape2D" parent="Player"]
+position = Vector2( -11.9297, 2.7294 )
+shape = SubResource( 31 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
+position = Vector2( -4.20714, 0.205643 )
+frames = SubResource( 32 )
+animation = "idle"
+
+[node name="BombsCooldown" type="Timer" parent="Player"]
+wait_time = 0.3
+one_shot = true
+
+[node name="EnterInteractionSprite" type="Sprite" parent="Player"]
+visible = false
+position = Vector2( -11.6098, -23.5514 )
+scale = Vector2( 0.12, 0.15 )
+texture = ExtResource( 103 )
+
+[node name="Sounds" type="Node" parent="Player"]
+editor/display_folded = true
+
+[node name="PickUpBombSound" type="AudioStreamPlayer" parent="Player/Sounds"]
+stream = ExtResource( 104 )
+volume_db = -28.0
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="Player/Sounds"]
+stream = ExtResource( 105 )
+volume_db = -25.0
+
+[node name="bombDropSound" type="AudioStreamPlayer" parent="Player/Sounds"]
+stream = ExtResource( 106 )
+volume_db = -22.0
+
+[node name="damageTaken" type="AudioStreamPlayer" parent="Player/Sounds"]
+stream = ExtResource( 107 )
+volume_db = -20.0
+
+[node name="gameOver" type="AudioStreamPlayer" parent="Player/Sounds"]
+stream = ExtResource( 108 )
+volume_db = -20.0
+
+[node name="hammerSwing" type="AudioStreamPlayer" parent="Player/Sounds"]
+stream = ExtResource( 109 )
+volume_db = -18.0
+
+[node name="AttackCooldown" type="Timer" parent="Player"]
+wait_time = 0.7
+one_shot = true
+
+[node name="HammerHitbox" type="Area2D" parent="Player"]
+script = ExtResource( 110 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="HitboxCollision" type="CollisionShape2D" parent="Player/HammerHitbox"]
+position = Vector2( 15.5, 0.999985 )
+shape = SubResource( 33 )
+disabled = true
+
+[node name="ActiveHammerHitbox" type="Timer" parent="Player/HammerHitbox"]
+wait_time = 0.4
+one_shot = true
+
+[node name="InvincibilityTime" type="Timer" parent="Player"]
+wait_time = 0.5
+one_shot = true
+
+[node name="BombRaycast" type="RayCast2D" parent="Player"]
+visible = false
+position = Vector2( -11.809, 2.42651 )
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource( 111 )
+
+[node name="LifeBar" type="TextureRect" parent="UI"]
+editor/display_folded = true
+margin_left = 7.01755
+margin_top = 7.01755
+margin_right = 73.0175
+margin_bottom = 47.0175
+rect_scale = Vector2( 3.5, 3.5 )
+texture = ExtResource( 112 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Hearts" type="Node2D" parent="UI/LifeBar"]
+position = Vector2( 0, -1 )
+
+[node name="AnimatedHeart1" type="AnimatedSprite" parent="UI/LifeBar/Hearts"]
+position = Vector2( 19.2982, 17.8947 )
+scale = Vector2( 0.8, 0.8 )
+frames = SubResource( 34 )
+animation = "heart_idle"
+frame = 1
+playing = true
+
+[node name="AnimatedHeart2" type="AnimatedSprite" parent="UI/LifeBar/Hearts"]
+position = Vector2( 31, 17.895 )
+scale = Vector2( 0.8, 0.8 )
+frames = SubResource( 34 )
+animation = "heart_idle"
+frame = 1
+playing = true
+
+[node name="AnimatedHeart3" type="AnimatedSprite" parent="UI/LifeBar/Hearts"]
+position = Vector2( 42, 17.895 )
+scale = Vector2( 0.8, 0.8 )
+frames = SubResource( 34 )
+animation = "heart_idle"
+frame = 1
+playing = true
+
+[node name="BombCount" type="TextureRect" parent="UI"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -99.0
+margin_top = 10.0
+margin_right = -99.0
+margin_bottom = 10.0
+rect_scale = Vector2( 2.5, 2.5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Bomb" type="Sprite" parent="UI/BombCount"]
+position = Vector2( 21.0527, 16.8421 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 12 )
+
+[node name="Label" type="Label" parent="UI/BombCount"]
+margin_left = -35.7895
+margin_top = 18.9474
+margin_right = 4.21051
+margin_bottom = 32.9474
+custom_fonts/font = SubResource( 35 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0"
+align = 2
+
+[node name="TextBox" type="NinePatchRect" parent="UI"]
+visible = false
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 58.0
+margin_top = -113.0
+margin_right = -56.0
+margin_bottom = -7.0
+texture = ExtResource( 121 )
+patch_margin_left = 21
+patch_margin_top = 21
+patch_margin_right = 21
+patch_margin_bottom = 21
+script = ExtResource( 122 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="UI/TextBox"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+custom_fonts/font = SubResource( 36 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 3
+autowrap = true
+clip_text = true
+
+[node name="Pointer" type="Sprite" parent="UI/TextBox"]
+position = Vector2( 547, 40.436 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 60 )
+
+[node name="Sounds" type="Node" parent="UI/TextBox"]
+
+[node name="confirm" type="AudioStreamPlayer" parent="UI/TextBox/Sounds"]
+stream = ExtResource( 63 )
+volume_db = -16.0
+
+[node name="reject" type="AudioStreamPlayer" parent="UI/TextBox/Sounds"]
+stream = ExtResource( 62 )
+volume_db = -15.0
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 123 )
+volume_db = -14.0
+autoplay = true
+
+[node name="FadingTime" type="Timer" parent="."]
+wait_time = 0.7
+one_shot = true
+
+[node name="LevelClearPoints" type="Node" parent="."]
+
+[node name="LevelClear" type="Node2D" parent="LevelClearPoints"]
+position = Vector2( 9925.95, 78.7751 )
+scale = Vector2( 4, 4 )
+z_index = -1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="LevelClearPoints/LevelClear"]
+pause_mode = 2
+script = ExtResource( 124 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelClearPoints/LevelClear/Area2D"]
+shape = SubResource( 37 )
+
+[node name="LevelClearSound" type="AudioStreamPlayer" parent="LevelClearPoints/LevelClear/Area2D"]
+stream = ExtResource( 125 )
+volume_db = -18.0
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="LevelClearPoints/LevelClear"]
+position = Vector2( -2.03975, 0.114182 )
+frames = SubResource( 38 )
+animation = "idle"
+frame = 8
+playing = true
+[connection signal="in_cabinet_range" from="Sign" to="Player" method="_on_Sign_in_cabinet_range"]
+[connection signal="out_cabinet_range" from="Sign" to="Player" method="_on_Sign_out_cabinet_range"]
+[connection signal="change_selection" from="Cabinet" to="UI/TextBox" method="_on_Cabinet_change_selection"]
+[connection signal="in_cabinet_range" from="Cabinet" to="Player" method="_on_Cabinet_in_cabinet_range"]
+[connection signal="out_cabinet_range" from="Cabinet" to="Player" method="_on_Cabinet_out_cabinet_range"]
+[connection signal="increase_bombs" from="Bombs/Bomb1" to="Player" method="_on_Bomb1_increase_bombs"]
+[connection signal="increase_bombs" from="Bombs/Bomb2" to="Player" method="_on_Bomb1_increase_bombs"]
+[connection signal="increase_bombs" from="Bombs/Bomb3" to="Player" method="_on_Bomb1_increase_bombs"]
+[connection signal="increase_bombs" from="Bombs/Bomb4" to="Player" method="_on_Bomb1_increase_bombs"]
+[connection signal="player_hit" from="Enemies/Enemy/HitBox" to="Player" method="_on_HitBox_player_hit"]
+[connection signal="enemy_death" from="Enemies/Enemy/HurtBox" to="Enemies/Enemy" method="_on_HurtBox_enemy_death"]
+[connection signal="player_hit" from="Enemies/Enemy8/HitBox" to="Player" method="_on_HitBox_player_hit"]
+[connection signal="enemy_death" from="Enemies/Enemy8/HurtBox" to="Enemies/Enemy8" method="_on_HurtBox_enemy_death"]
+[connection signal="player_hit" from="Enemies/Enemy9/HitBox" to="Player" method="_on_HitBox_player_hit"]
+[connection signal="enemy_death" from="Enemies/Enemy9/HurtBox" to="Enemies/Enemy9" method="_on_HurtBox_enemy_death"]
+[connection signal="player_hit" from="Enemies/Enemy10/HitBox" to="Player" method="_on_HitBox_player_hit"]
+[connection signal="enemy_death" from="Enemies/Enemy10/HurtBox" to="Enemies/Enemy10" method="_on_HurtBox_enemy_death"]
+[connection signal="player_hit" from="Enemies/Enemy11/HitBox" to="Player" method="_on_HitBox_player_hit"]
+[connection signal="enemy_death" from="Enemies/Enemy11/HurtBox" to="Enemies/Enemy11" method="_on_HurtBox_enemy_death"]
+[connection signal="player_hit" from="Enemies/Enemy12/HitBox" to="Player" method="_on_HitBox_player_hit"]
+[connection signal="enemy_death" from="Enemies/Enemy12/HurtBox" to="Enemies/Enemy12" method="_on_HurtBox_enemy_death"]
+[connection signal="player_hit" from="Enemies/Enemy13/HitBox" to="Player" method="_on_HitBox_player_hit"]
+[connection signal="enemy_death" from="Enemies/Enemy13/HurtBox" to="Enemies/Enemy13" method="_on_HurtBox_enemy_death"]
+[connection signal="player_hit" from="Enemies/FlyingEnemy/HitBox" to="Player" method="_on_HitBox_player_hit"]
+[connection signal="enemy_death" from="Enemies/FlyingEnemy/HurtBox" to="Enemies/FlyingEnemy" method="_on_HurtBox_enemy_death"]
+[connection signal="player_hit" from="Enemies/FlyingEnemy8/HitBox" to="Player" method="_on_HitBox_player_hit"]
+[connection signal="enemy_death" from="Enemies/FlyingEnemy8/HurtBox" to="Enemies/FlyingEnemy8" method="_on_HurtBox_enemy_death"]
+[connection signal="player_hit" from="Enemies/FlyingEnemy9/HitBox" to="Player" method="_on_HitBox_player_hit"]
+[connection signal="enemy_death" from="Enemies/FlyingEnemy9/HurtBox" to="Enemies/FlyingEnemy9" method="_on_HurtBox_enemy_death"]
+[connection signal="player_hit" from="Enemies/FlyingEnemy10/HitBox" to="Player" method="_on_HitBox_player_hit"]
+[connection signal="enemy_death" from="Enemies/FlyingEnemy10/HurtBox" to="Enemies/FlyingEnemy10" method="_on_HurtBox_enemy_death"]
+[connection signal="player_hit" from="Enemies/FlyingEnemy11/HitBox" to="Player" method="_on_HitBox_player_hit"]
+[connection signal="enemy_death" from="Enemies/FlyingEnemy11/HurtBox" to="Enemies/FlyingEnemy11" method="_on_HurtBox_enemy_death"]
+[connection signal="player_hit" from="Enemies/FlyingEnemy12/HitBox" to="Player" method="_on_HitBox_player_hit"]
+[connection signal="enemy_death" from="Enemies/FlyingEnemy12/HurtBox" to="Enemies/FlyingEnemy12" method="_on_HurtBox_enemy_death"]
+[connection signal="player_hit" from="Enemies/FlyingEnemy13/HitBox" to="Player" method="_on_HitBox_player_hit"]
+[connection signal="enemy_death" from="Enemies/FlyingEnemy13/HurtBox" to="Enemies/FlyingEnemy13" method="_on_HurtBox_enemy_death"]
+[connection signal="bomb_dropped" from="Player" to="UI" method="_on_Player_bomb_dropped"]
+[connection signal="bomb_taken" from="Player" to="UI" method="_on_Player_bomb_taken"]
+[connection signal="view_cabinet_text" from="Player" to="UI/TextBox" method="_on_Player_view_cabinet_text"]
+[connection signal="view_cabinet_text" from="Player" to="Cabinet" method="_on_Player_view_cabinet_text"]
+[connection signal="guide" from="Player/Camera2D/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer/MenuEntries/Guide" to="Player/Camera2D/PauseLayer/Pause" method="_on_Guide_guide"]
+[connection signal="dialog_finished" from="UI/TextBox" to="Player" method="_on_TextBox_dialog_finished"]

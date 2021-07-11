@@ -1,0 +1,146 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Scenes/UI.gd" type="Script" id=1]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/Live Bar.png" type="Texture" id=2]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/HeartIdle/tile000.png" type="Texture" id=3]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/HeartIdle/tile001.png" type="Texture" id=4]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/HeartIdle/tile002.png" type="Texture" id=5]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/HeartIdle/tile003.png" type="Texture" id=6]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/HeartIdle/tile004.png" type="Texture" id=7]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/HeartIdle/tile005.png" type="Texture" id=8]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/HeartIdle/tile006.png" type="Texture" id=9]
+[ext_resource path="res://AllSprites/Sprites/12-Live and Coins/HeartIdle/tile007.png" type="Texture" id=10]
+[ext_resource path="res://Entities/Bomb/09-Bomb/Bomb Off.png" type="Texture" id=11]
+[ext_resource path="res://AllSprites/Sprites/13-Dialogue Boxes/lunchds.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://assets/menu-frame-9patch.png" type="Texture" id=13]
+[ext_resource path="res://Scenes/TextBox.gd" type="Script" id=14]
+[ext_resource path="res://assets/RPGIcons/tile005.png" type="Texture" id=15]
+[ext_resource path="res://Audio/confirm.wav" type="AudioStream" id=16]
+[ext_resource path="res://Audio/rejectOption.wav" type="AudioStream" id=17]
+
+[sub_resource type="SpriteFrames" id=13]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "heart_idle",
+"speed": 10.0
+} ]
+
+[sub_resource type="DynamicFont" id=14]
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 50
+font_data = ExtResource( 12 )
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="LifeBar" type="TextureRect" parent="."]
+editor/display_folded = true
+margin_left = 7.01755
+margin_top = 7.01755
+margin_right = 73.0175
+margin_bottom = 47.0175
+rect_scale = Vector2( 3.5, 3.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Hearts" type="Node2D" parent="LifeBar"]
+position = Vector2( 0, -1 )
+
+[node name="AnimatedHeart1" type="AnimatedSprite" parent="LifeBar/Hearts"]
+position = Vector2( 19.2982, 17.8947 )
+scale = Vector2( 0.8, 0.8 )
+frames = SubResource( 13 )
+animation = "heart_idle"
+playing = true
+
+[node name="AnimatedHeart2" type="AnimatedSprite" parent="LifeBar/Hearts"]
+position = Vector2( 31, 17.895 )
+scale = Vector2( 0.8, 0.8 )
+frames = SubResource( 13 )
+animation = "heart_idle"
+playing = true
+
+[node name="AnimatedHeart3" type="AnimatedSprite" parent="LifeBar/Hearts"]
+position = Vector2( 42, 17.895 )
+scale = Vector2( 0.8, 0.8 )
+frames = SubResource( 13 )
+animation = "heart_idle"
+playing = true
+
+[node name="BombCount" type="TextureRect" parent="."]
+editor/display_folded = true
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -99.0
+margin_top = 10.0
+margin_right = -99.0
+margin_bottom = 10.0
+rect_scale = Vector2( 2.5, 2.5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Bomb" type="Sprite" parent="BombCount"]
+position = Vector2( 21.0527, 16.8421 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 11 )
+
+[node name="Label" type="Label" parent="BombCount"]
+margin_left = -35.7895
+margin_top = 18.9474
+margin_right = 4.21051
+margin_bottom = 32.9474
+custom_fonts/font = SubResource( 14 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0"
+align = 2
+
+[node name="TextBox" type="NinePatchRect" parent="."]
+editor/display_folded = true
+visible = false
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 58.0
+margin_top = -113.0
+margin_right = -636.0
+margin_bottom = -7.0
+texture = ExtResource( 13 )
+patch_margin_left = 21
+patch_margin_top = 21
+patch_margin_right = 21
+patch_margin_bottom = 21
+script = ExtResource( 14 )
+
+[node name="Label" type="Label" parent="TextBox"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+custom_fonts/font = SubResource( 15 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 3
+autowrap = true
+clip_text = true
+
+[node name="Pointer" type="Sprite" parent="TextBox"]
+position = Vector2( 547, 40.436 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 15 )
+
+[node name="Sounds" type="Node" parent="TextBox"]
+
+[node name="confirm" type="AudioStreamPlayer" parent="TextBox/Sounds"]
+stream = ExtResource( 16 )
+volume_db = -16.0
+
+[node name="reject" type="AudioStreamPlayer" parent="TextBox/Sounds"]
+stream = ExtResource( 17 )
+volume_db = -15.0

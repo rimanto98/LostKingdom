@@ -1,0 +1,81 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Scenes/Minigame2/Enemies/Enemy3.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Minigame2/resources/Ships/FastEnemy/FastEnemy0.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Minigame2/resources/Ships/FastEnemy/FastEnemy1.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Minigame2/resources/Ships/FastEnemy/FastEnemy2.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Minigame2/resources/SIEnemyEliminated.wav" type="AudioStream" id=5]
+[ext_resource path="res://Scenes/Minigame2/resources/SpeedEnemyDeath.wav" type="AudioStream" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 37.1942, 21.1929 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "moving",
+"speed": 5.0
+} ]
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.959532, 0.3779 ), -0.930692, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+render_priority = 1
+emission_shape = 1
+emission_sphere_radius = 1.0
+flag_align_y = true
+flag_disable_z = true
+spread = 180.0
+flatness = 1.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 75.0
+initial_velocity_random = 1.0
+angular_velocity = 1.74804
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+damping = 3.5
+scale = 5.0
+scale_curve = SubResource( 4 )
+color = Color( 0.513726, 0.529412, 0, 1 )
+
+[node name="SpeedEnemy" type="KinematicBody2D"]
+position = Vector2( 141.169, 84.0383 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 12.3806, 24.761 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 2 )
+animation = "moving"
+frame = 1
+playing = true
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( -0.21521, 1.07069 )
+emitting = false
+amount = 64
+explosiveness = 1.0
+randomness = 0.5
+process_material = SubResource( 5 )
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="EnemyDeath" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 5 )
+volume_db = -10.0
+
+[node name="Bonus" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 6 )
+volume_db = -20.0

@@ -1,0 +1,96 @@
+[gd_scene load_steps=30 format=2]
+
+[ext_resource path="res://Scenes/Emeny.gd" type="Script" id=1]
+[ext_resource path="res://Entities/Enemy/03-Pig/Idle/tile000.png" type="Texture" id=2]
+[ext_resource path="res://Entities/Enemy/03-Pig/Idle/tile001.png" type="Texture" id=3]
+[ext_resource path="res://Entities/Enemy/03-Pig/Idle/tile002.png" type="Texture" id=4]
+[ext_resource path="res://Entities/Enemy/03-Pig/Idle/tile003.png" type="Texture" id=5]
+[ext_resource path="res://Entities/Enemy/03-Pig/Idle/tile004.png" type="Texture" id=6]
+[ext_resource path="res://Entities/Enemy/03-Pig/Idle/tile005.png" type="Texture" id=7]
+[ext_resource path="res://Entities/Enemy/03-Pig/Idle/tile006.png" type="Texture" id=8]
+[ext_resource path="res://Entities/Enemy/03-Pig/Idle/tile007.png" type="Texture" id=9]
+[ext_resource path="res://Entities/Enemy/03-Pig/Idle/tile008.png" type="Texture" id=10]
+[ext_resource path="res://Entities/Enemy/03-Pig/Idle/tile009.png" type="Texture" id=11]
+[ext_resource path="res://Entities/Enemy/03-Pig/Idle/tile010.png" type="Texture" id=12]
+[ext_resource path="res://Entities/Enemy/03-Pig/Death/tile000.png" type="Texture" id=13]
+[ext_resource path="res://Entities/Enemy/03-Pig/Death/tile001.png" type="Texture" id=14]
+[ext_resource path="res://Entities/Enemy/03-Pig/Death/tile002.png" type="Texture" id=15]
+[ext_resource path="res://Entities/Enemy/03-Pig/Death/tile003.png" type="Texture" id=16]
+[ext_resource path="res://Entities/Enemy/03-Pig/Run/tile000.png" type="Texture" id=17]
+[ext_resource path="res://Entities/Enemy/03-Pig/Run/tile001.png" type="Texture" id=18]
+[ext_resource path="res://Entities/Enemy/03-Pig/Run/tile002.png" type="Texture" id=19]
+[ext_resource path="res://Entities/Enemy/03-Pig/Run/tile003.png" type="Texture" id=20]
+[ext_resource path="res://Entities/Enemy/03-Pig/Run/tile004.png" type="Texture" id=21]
+[ext_resource path="res://Entities/Enemy/03-Pig/Run/tile005.png" type="Texture" id=22]
+[ext_resource path="res://Scenes/HitBox.gd" type="Script" id=23]
+[ext_resource path="res://Scenes/HurtBox.gd" type="Script" id=24]
+[ext_resource path="res://Audio/enemyKilled.wav" type="AudioStream" id=25]
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 9.45868, 5.06414 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "idle",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "death",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "run",
+"speed": 10.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 11.5177, 7.32815 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 8.68042, 3.31779 )
+
+[node name="Enemy" type="KinematicBody2D"]
+position = Vector2( 557.999, 268.981 )
+scale = Vector2( 3, 3 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2( -3.27586, 9.22631 )
+shape = SubResource( 8 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+animation = "death"
+flip_h = true
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="HitBox" type="Area2D" parent="."]
+space_override = 3
+script = ExtResource( 23 )
+
+[node name="HitBoxCollision" type="CollisionShape2D" parent="HitBox"]
+position = Vector2( -2.54088, 6.62963 )
+shape = SubResource( 3 )
+
+[node name="HurtBox" type="Area2D" parent="."]
+editor/display_folded = true
+space_override = 3
+script = ExtResource( 24 )
+
+[node name="HurtBoxCollision" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2( -2.6934, -4.14747 )
+shape = SubResource( 4 )
+
+[node name="enemyKilled" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 25 )
+volume_db = -28.0
+[connection signal="enemy_death" from="HurtBox" to="." method="_on_HurtBox_enemy_death"]

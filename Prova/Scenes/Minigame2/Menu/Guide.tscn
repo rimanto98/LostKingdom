@@ -1,0 +1,125 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Scenes/Minigame2/resources/SpikeyBit.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scenes/Minigame2/Menu/PlayerGuide1.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Minigame2/resources/Ships/Player/PlayerIdle.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Minigame2/resources/Ships/Player/PlayerHit.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Minigame2/resources/Ships/Player/PlayerHit2.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Minigame2/resources/Ships/Player/PlayerShoot.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Minigame2/resources/Ships/Player/PlayerSx.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Minigame2/resources/Ships/Player/PlayerMovingR.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/Minigame2/resources/Ships/Player/PlayerProjectile.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/Minigame2/resources/Immagine.png" type="Texture" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 1 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 15.1246, 11.8488 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "hit",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "shoot",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "movingL",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "movingR",
+"speed": 5.0
+} ]
+
+[node name="Menu" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+pause_mode = 2
+margin_right = 1920.0
+margin_bottom = 1080.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="MOVE" type="Label" parent="ColorRect"]
+margin_left = 148.264
+margin_top = 390.0
+margin_right = 806.264
+margin_bottom = 438.0
+custom_fonts/font = SubResource( 1 )
+text = "PRESS <- OR -> TO MOVE"
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Player" type="KinematicBody2D" parent="ColorRect/MOVE"]
+position = Vector2( 639.001, -128.777 )
+scale = Vector2( 5, 5 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/MOVE/Player"]
+position = Vector2( 0.233246, 0.181969 )
+scale = Vector2( 0.935985, 0.902738 )
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ColorRect/MOVE/Player"]
+position = Vector2( 4.52917, 16.1859 )
+frames = SubResource( 3 )
+animation = "movingL"
+
+[node name="ChangeDir" type="Timer" parent="ColorRect/MOVE/Player"]
+wait_time = 3.0
+one_shot = true
+
+[node name="SHOOT" type="Label" parent="ColorRect"]
+pause_mode = 2
+margin_left = 1216.6
+margin_top = 390.0
+margin_right = 1874.6
+margin_bottom = 438.0
+custom_fonts/font = SubResource( 1 )
+text = "PRESS Z TO SHOOT"
+
+[node name="Shooting" type="Sprite" parent="ColorRect/SHOOT"]
+position = Vector2( 271.009, -48.697 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 6 )
+
+[node name="Shot" type="Sprite" parent="ColorRect/SHOOT/Shooting"]
+position = Vector2( -14.1173, -45.8162 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 9 )
+
+[node name="AUTOMODE" type="Label" parent="ColorRect"]
+margin_left = 316.409
+margin_top = 901.637
+margin_right = 1644.41
+margin_bottom = 949.637
+custom_fonts/font = SubResource( 1 )
+text = "PRESS C TO ENABLE AUTOMODE (IF AVAILABLE)"
+
+[node name="Sprite" type="Sprite" parent="ColorRect/AUTOMODE"]
+position = Vector2( 671.276, -237.777 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 10 )

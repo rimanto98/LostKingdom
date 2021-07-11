@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Minigame1/Countdown/Countdown.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Minigame1/Font/ALBAS___.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://Audio/Countdown.wav" type="AudioStream" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 250
+font_data = ExtResource( 2 )
+
+[node name="Countdown" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+pause_mode = 2
+margin_left = 880.0
+margin_top = 306.132
+margin_right = 1009.0
+margin_bottom = 700.132
+custom_fonts/font = SubResource( 1 )
+text = "3"
+align = 1
+valign = 1
+
+[node name="Audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -22.0
+autoplay = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.1
+one_shot = true
+autostart = true

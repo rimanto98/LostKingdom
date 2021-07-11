@@ -1,0 +1,417 @@
+[gd_scene load_steps=37 format=2]
+
+[ext_resource path="res://Scenes/Minigame2/SpaceInvadersAI.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Minigame2/Player/Player.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Minigame2/resources/Ships/Player/PlayerIdle.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Minigame2/resources/Ships/Player/PlayerHit.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Minigame2/resources/Ships/Player/PlayerHit2.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Minigame2/resources/Ships/Player/PlayerShoot.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Minigame2/resources/Ships/Player/PlayerSx.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Minigame2/resources/Ships/Player/PlayerMovingR.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/Minigame2/resources/CharacterProjectile.wav" type="AudioStream" id=9]
+[ext_resource path="res://Scenes/Minigame2/resources/SICharacterGotHit.wav" type="AudioStream" id=10]
+[ext_resource path="res://Scenes/Minigame2/resources/PlayerExplosion.wav" type="AudioStream" id=11]
+[ext_resource path="res://Scenes/Minigame2/resources/SIGameMusic.wav" type="AudioStream" id=12]
+[ext_resource path="res://Scenes/Minigame2/resources/SpikeyBit.ttf" type="DynamicFontData" id=13]
+[ext_resource path="res://Scenes/Minigame2/UI/Points.gd" type="Script" id=14]
+[ext_resource path="res://Scenes/Minigame2/UI/Lives.gd" type="Script" id=15]
+[ext_resource path="res://Scenes/Minigame2/UI/Automode.gd" type="Script" id=16]
+[ext_resource path="res://Scenes/Minigame1/Pause/Pause3D.gd" type="Script" id=17]
+[ext_resource path="res://Scenes/Minigame2/PauseMenu/Resume.gd" type="Script" id=18]
+[ext_resource path="res://Scenes/Minigame2/PauseMenu/Guide.gd" type="Script" id=19]
+[ext_resource path="res://Scenes/Minigame2/PauseMenu/Titlescreen.gd" type="Script" id=20]
+[ext_resource path="res://Scenes/PauseMenu/PointerPauseMenu.gd" type="Script" id=21]
+[ext_resource path="res://Scenes/Minigame2/resources/ChangeSelection.wav" type="AudioStream" id=22]
+[ext_resource path="res://Scenes/Minigame2/resources/Reject.wav" type="AudioStream" id=23]
+[ext_resource path="res://Scenes/Minigame2/resources/Confirm.wav" type="AudioStream" id=24]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 15.1246, 11.8488 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "hit",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "shoot",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "movingL",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "movingR",
+"speed": 5.0
+} ]
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.959532, 0.3779 ), -0.930692, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+render_priority = 1
+emission_shape = 1
+emission_sphere_radius = 1.0
+flag_align_y = true
+flag_disable_z = true
+spread = 180.0
+flatness = 1.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 75.0
+initial_velocity_random = 1.0
+angular_velocity = 10.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+damping = 3.5
+scale = 2.2
+scale_curve = SubResource( 4 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 70
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 45
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 150
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 100
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 50
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 150
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 90
+font_data = ExtResource( 13 )
+
+[node name="SpaceInvadersAI" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( 976.062, 970 )
+scale = Vector2( 5, 5 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2( 0.233246, 0.181969 )
+scale = Vector2( 0.935985, 0.902738 )
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
+position = Vector2( 4.52917, 16.1859 )
+frames = SubResource( 2 )
+animation = "movingL"
+
+[node name="BulletPoint" type="Node2D" parent="Player"]
+position = Vector2( 0.653259, -13.3238 )
+
+[node name="Sounds" type="Node" parent="Player"]
+
+[node name="CharacterProjectile" type="AudioStreamPlayer" parent="Player/Sounds"]
+stream = ExtResource( 9 )
+volume_db = -20.0
+
+[node name="CharacterHit" type="AudioStreamPlayer" parent="Player/Sounds"]
+stream = ExtResource( 10 )
+volume_db = -20.0
+
+[node name="CharacterDeath" type="AudioStreamPlayer" parent="Player/Sounds"]
+stream = ExtResource( 11 )
+volume_db = -13.0
+
+[node name="Invincibility" type="Timer" parent="Player"]
+one_shot = true
+
+[node name="Particles2D" type="Particles2D" parent="Player"]
+emitting = false
+amount = 64
+explosiveness = 1.0
+randomness = 0.5
+process_material = SubResource( 5 )
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 12 )
+volume_db = -20.0
+autoplay = true
+
+[node name="SpeedEnemySpawn" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="UI" type="CanvasLayer" parent="."]
+editor/display_folded = true
+
+[node name="Points" type="TextureRect" parent="UI"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Label" type="Label" parent="UI/Points"]
+modulate = Color( 1, 1, 1, 0.431373 )
+margin_left = 716.497
+margin_top = 36.426
+margin_right = 1069.5
+margin_bottom = 103.426
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 0.745098 )
+text = "POINTS : "
+
+[node name="Label2" type="Label" parent="UI/Points"]
+modulate = Color( 1, 1, 1, 0.431373 )
+margin_left = 1064.01
+margin_top = 38.585
+margin_right = 1417.01
+margin_bottom = 105.585
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 0.745098 )
+text = "0"
+script = ExtResource( 14 )
+
+[node name="Lives" type="TextureRect" parent="UI"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 15 )
+
+[node name="Sprite" type="Sprite" parent="UI/Lives"]
+modulate = Color( 1, 1, 1, 0.431373 )
+position = Vector2( 108.679, 1066.29 )
+scale = Vector2( 3.5, 3.5 )
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="UI/Lives"]
+modulate = Color( 1, 1, 1, 0.431373 )
+position = Vector2( 218.679, 1066.29 )
+scale = Vector2( 3.5, 3.5 )
+texture = ExtResource( 3 )
+
+[node name="Automode" type="TextureRect" parent="UI"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 16 )
+
+[node name="Label" type="Label" parent="UI/Automode"]
+modulate = Color( 1, 1, 1, 0.431373 )
+margin_left = 1543.31
+margin_top = 1000.0
+margin_right = 1847.31
+margin_bottom = 1048.0
+custom_fonts/font = SubResource( 7 )
+text = "AI CALL : "
+
+[node name="Label2" type="Label" parent="UI/Automode"]
+modulate = Color( 1, 1, 1, 0.431373 )
+margin_left = 1791.54
+margin_top = 1000.0
+margin_right = 2095.54
+margin_bottom = 1048.0
+custom_fonts/font = SubResource( 7 )
+text = "0"
+
+[node name="Label3" type="Label" parent="UI/Automode"]
+visible = false
+modulate = Color( 1, 1, 1, 0.352941 )
+margin_left = 531.0
+margin_top = 451.0
+margin_right = 1435.0
+margin_bottom = 593.0
+custom_fonts/font = SubResource( 8 )
+text = "AUTOMODE"
+
+[node name="Label4" type="Label" parent="UI/Automode"]
+visible = false
+modulate = Color( 1, 1, 1, 0.352941 )
+margin_left = 954.0
+margin_top = 609.0
+margin_right = 1154.0
+margin_bottom = 703.0
+custom_fonts/font = SubResource( 9 )
+text = "5"
+
+[node name="Wave" type="TextureRect" parent="UI"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Label" type="Label" parent="UI/Wave"]
+modulate = Color( 1, 1, 1, 0.431373 )
+margin_left = 32.377
+margin_top = 36.426
+margin_right = 168.377
+margin_bottom = 84.426
+custom_fonts/font = SubResource( 10 )
+text = "WAVE"
+
+[node name="Label2" type="Label" parent="UI/Wave"]
+modulate = Color( 1, 1, 1, 0.431373 )
+margin_left = 192.377
+margin_top = 36.426
+margin_right = 328.377
+margin_bottom = 84.426
+custom_fonts/font = SubResource( 10 )
+text = "0"
+
+[node name="AiFrequencyCall" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="ActiveAi" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="PauseNode" type="Control" parent="."]
+pause_mode = 2
+editor/display_folded = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 0.857361
+margin_bottom = 0.857422
+rect_scale = Vector2( 1.23869, 1.10023 )
+
+[node name="PauseLayer" type="CanvasLayer" parent="PauseNode"]
+pause_mode = 2
+layer = 2
+
+[node name="Pause" type="Control" parent="PauseNode/PauseLayer"]
+pause_mode = 2
+visible = false
+margin_left = 528.999
+margin_top = 29.1941
+margin_right = 1421.0
+margin_bottom = 698.194
+script = ExtResource( 17 )
+
+[node name="ColorRect" type="ColorRect" parent="PauseNode/PauseLayer/Pause"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 108.0
+margin_right = 25.999
+margin_bottom = 177.0
+color = Color( 0.721569, 0.721569, 0.721569, 0.784314 )
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseNode/PauseLayer/Pause/ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.43674
+margin_top = 32.9892
+margin_right = 25.5632
+margin_bottom = -3.01086
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseNode/PauseLayer/Pause/ColorRect/MarginContainer"]
+pause_mode = 2
+margin_right = 944.0
+margin_bottom = 701.0
+custom_constants/separation = 100
+
+[node name="Title" type="Label" parent="PauseNode/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer"]
+pause_mode = 2
+modulate = Color( 0, 0, 0, 1 )
+margin_right = 945.0
+margin_bottom = 142.0
+custom_fonts/font = SubResource( 11 )
+text = "Pause"
+align = 1
+
+[node name="MenuEntries" type="VBoxContainer" parent="PauseNode/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer"]
+pause_mode = 2
+margin_top = 242.0
+margin_right = 945.0
+margin_bottom = 597.0
+custom_constants/separation = 50
+
+[node name="Resume" type="Label" parent="PauseNode/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer/MenuEntries"]
+pause_mode = 2
+modulate = Color( 0, 0, 0, 1 )
+margin_right = 945.0
+margin_bottom = 85.0
+custom_fonts/font = SubResource( 12 )
+text = "Resume"
+align = 1
+script = ExtResource( 18 )
+
+[node name="Guide" type="Label" parent="PauseNode/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer/MenuEntries"]
+pause_mode = 2
+modulate = Color( 0, 0, 0, 1 )
+margin_top = 135.0
+margin_right = 945.0
+margin_bottom = 220.0
+custom_fonts/font = SubResource( 12 )
+text = "Guide"
+align = 1
+script = ExtResource( 19 )
+
+[node name="Titlescreen" type="Label" parent="PauseNode/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer/MenuEntries"]
+pause_mode = 2
+modulate = Color( 0, 0, 0, 1 )
+margin_top = 270.0
+margin_right = 945.0
+margin_bottom = 355.0
+custom_fonts/font = SubResource( 12 )
+text = "Titlescreen"
+align = 1
+script = ExtResource( 20 )
+
+[node name="Pointer" type="Sprite" parent="PauseNode/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer/MenuEntries"]
+pause_mode = 2
+position = Vector2( 110.016, 71.5927 )
+script = ExtResource( 21 )
+
+[node name="Label" type="Label" parent="PauseNode/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer/MenuEntries/Pointer"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 50.0
+margin_top = -50.0
+margin_right = 128.0
+margin_bottom = 108.0
+custom_fonts/font = SubResource( 12 )
+text = "--"
+
+[node name="Sounds" type="Node" parent="PauseNode/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer/MenuEntries/Pointer"]
+
+[node name="changeOption" type="AudioStreamPlayer" parent="PauseNode/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer/MenuEntries/Pointer/Sounds"]
+stream = ExtResource( 22 )
+volume_db = -15.0
+
+[node name="rejectOption" type="AudioStreamPlayer" parent="PauseNode/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer/MenuEntries/Pointer/Sounds"]
+stream = ExtResource( 23 )
+volume_db = -20.0
+
+[node name="confirmOption" type="AudioStreamPlayer" parent="PauseNode/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer/MenuEntries/Pointer/Sounds"]
+stream = ExtResource( 24 )
+volume_db = -15.0
+[connection signal="aiOutput" from="." to="Player" method="_on_SpaceInvadersAI_aiOutput"]
+[connection signal="reserveChange" from="." to="UI/Automode" method="_on_SpaceInvadersAI_reserveChange"]
+[connection signal="dead" from="Player" to="." method="_on_Player_dead"]
+[connection signal="lifeLost" from="Player" to="UI/Lives" method="_on_Player_lifeLost"]
+[connection signal="guide" from="PauseNode/PauseLayer/Pause/ColorRect/MarginContainer/VBoxContainer/MenuEntries/Guide" to="PauseNode/PauseLayer/Pause" method="_on_Guide_guide"]

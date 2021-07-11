@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/reject3D.wav-dbf4b5f0e8b585f1f5450a119c34b2d1.sample"
+
+[deps]
+
+source_file="res://Audio/reject3D.wav"
+dest_files=[ "res://.import/reject3D.wav-dbf4b5f0e8b585f1f5450a119c34b2d1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
